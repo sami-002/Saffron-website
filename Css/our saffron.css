@@ -1,3 +1,18 @@
+:root {
+    --accent: #6A041D;
+    --bg-page: #ffffff;
+    --text-main: #1e1e1e;
+    --surface: #ffffff;
+    --surface-soft: #f6f6f7;
+    --border-soft: rgba(0, 0, 0, 0.12);
+    --soft-glow: rgba(122, 91, 24, 0.22);
+}
+
+body {
+    background: var(--bg-page);
+    color: var(--text-main);
+    transition: background-color .35s ease, color .35s ease;
+}
  
          /* Navbar */
 
@@ -11,26 +26,7 @@
         }
 
 
-        .navbar-brand {
-        display: flex;
-        align-items: center;
-        font-weight: 700 !important;
-        font-size: 15px !important;
-        color: #000;
-        }
-
-        .navbar-brand span {
-        color: #000;
-        font-weight: 700 !important;
-        }
-
-        .navbar-brand small {
-        display: block;
-        font-size: 10px !important;
-        font-weight: 500;
-        color: #555;
-        margin-top: -5px;
-        }
+      
 
         .nav-link {
         color: #333;
@@ -182,27 +178,12 @@
 
         
             
-        :root {
-            --accent: #6A041D;
-            --bg-page: #ffffff;
-            --text-main: #1e1e1e;
-            --surface: #ffffff;
-            --surface-soft: #f6f6f7;
-            --border-soft: rgba(0, 0, 0, 0.12);
-            --soft-glow: rgba(122, 91, 24, 0.22);
-        }
-
-        body {
-            background: var(--bg-page);
-            color: var(--text-main);
-            transition: background-color .35s ease, color .35s ease;
-        }
 
        
    
 /* hero */
         .hero { background:
-        url(Real-practice/images/Hero/The\ WorldÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢s\ Most\ Precious\ Spice\ Is\ on\ the\ Verge\ of\ Disappearing_LE_upscale_prime.jpg) center/cover no-repeat;
+        url(../Photos/Saffron/bc.jpg) center/cover no-repeat;
         height: 80vh; 
         display: flex; 
         align-items: center; 
@@ -215,7 +196,7 @@
         font-weight: bold; 
         text-align:center;
         font-family: "Note Sans", sans-serif;
-        background-image: url(Real-practice/images/Hero/download\ \(3\).jpg);
+        background-image: url(../Photos/Saffron/download\ \(3\).jpg);
         background-size: cover;
         background-clip: text;
         color: transparent;
@@ -265,7 +246,6 @@ input[type="radio"] {
   width: min(100% - 4rem, 800px);
   margin-inline: auto;
   display: grid;
-  
   counter-reset: my-counter;
 }
 
@@ -437,7 +417,7 @@ input:checked + .cardo{
 input:checked:focus-visible + .cardo > .card-data > footer label,
 .card-data > footer label:hover{
   --label-clr-txt: #FFF;
-  --label-clr-bg: steelblue;
+  --label-clr-bg: #6A041D;
 }
 
 input:checked + .cardo{
@@ -468,12 +448,10 @@ input:checked +.cardo > .card-img{
         }
 
         .section-header {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            text-transform: uppercase;
+          
+            margin: 20px;
             letter-spacing: 2px;
-            text-align: left;
+            text-align: center;
         }
 
         /* The Flexbox Row */
@@ -499,7 +477,7 @@ input:checked +.cardo > .card-img{
             left: 15px;
             right: -5px;
             bottom: -5px;
-            background-image: url(Real-practice/images/Hero/download\ \(4\).jpg);
+            background-image: url(../Photos/Saffron/hidden.jpg);
             background-size: cover;
             background-position: center;
             border-radius: 12px;
@@ -610,9 +588,10 @@ input:checked +.cardo > .card-img{
         box-shadow:0 15px 35px rgba(0,0,0,0.08);
     }
     .ph {
-        border-radius: 80% 20% 55% 45% / 40% 70% 30% 60%;
+        border-radius: 12px;
         height: 300px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        width: 100%;
+       
 
     }
      /* Footer Wrapper */
@@ -623,35 +602,7 @@ input:checked +.cardo > .card-img{
             min-height: 300px;
         }
 
-        /* SVG Animated Waves */
-        .waves-container {
-            position: absolute;
-            top: -100px; /* Positions waves above the footer block */
-            width: 100%;
-            height: 100px;
-            margin-bottom: -7px; /* Fixes tiny gaps in some browsers */
-            min-height: 100px;
-        }
-
-        .waves-svg {
-            position: relative;
-            width: 100%;
-            height: 100px;
-        }
-
-        /* Wave Parallax Animation */
-        .parallax > use {
-            animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
-        }
-        .parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
-        .parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
-        .parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
-        .parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
-
-        @keyframes move-forever {
-            0% { transform: translate3d(-90px, 0, 0); }
-            100% { transform: translate3d(85px, 0, 0); }
-        }
+      
 
         /* Footer Content Columns */
          /* Footer Wrapper */
@@ -736,19 +687,26 @@ input:checked +.cardo > .card-img{
     display:inline-block;
     width:38px;
     height:38px;
-    border-radius:50%;
+    border-radius:12px;
     background:#2e1a1b;
-    color:#fff;
+    color:white !important;
     text-align:center;
     line-height:38px;
-    margin-right:10px;
+    margin: 0 8px;
     transition:.3s ease;
 }
+.footer-social a i{
+    font-size:16px;
+    margin: 0%;
+}
 
-.footer-social a:hover{
+.footer-social a:hover {
     background:#d4af37;
-    color:#000;
+    color:black !important;
     transform:translateY(-4px);
+}
+.footer-social a:hover i{
+    color: #000;
 }
 
         /* Mobile Responsiveness */
