@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en" class="h-full" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marghob Heray — Services</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Css/services.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Vazirmatn:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.tailwindcss.com/3.4.17"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body
+    class="h-full bg-stone-50 text-stone-900 dark:bg-stone-950 dark:text-stone-100 overflow-auto transition-colors duration-500"
+  >
+    <div id="app-wrapper" class="w-full h-full">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <div
+              class="logo-icon d-flex align-items-center justify-content-center"
+            >
+              <img
+                src="Photos/logo/logo.jpg"
+                alt=""
+                style="width: 90px; height: 60px"
+              />
+            </div>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="service.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="our saffron.html">Our Saffron</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Pages <i class="bi bi-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="gallery.html">Gallery</a>
+                  </li>
+                  <li><a class="dropdown-item" href="team.html">Team</a></li>
+                  <li><a class="dropdown-item" href="shop.html">Shop</a></li>
+                  <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                  <li><a class="dropdown-item" href="cart.html"> Cart </a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <!-- REPLACED BUTTON SECTION -->
+          <div class="ui-controls">
+            <!-- Language Switcher -->
+            <button class="btn-ui"><i class="bi bi-globe"></i> EN / DR</button>
+            <!-- Dark/Light Mode Toggle -->
+            <button class="btn-icon">
+              <i class="bi bi-moon-stars"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden">
+        <div class="absolute inset-0 hero-grain"></div>
+        <div
+          class="absolute top-20 right-10 w-72 h-72 bg-orange-200/30 dark:bg-orange-900/20 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-10 left-10 w-56 h-56 bg-amber-200/20 dark:bg-amber-900/15 rounded-full blur-3xl"
+        ></div>
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <div class="fade-up">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900/40 text-orange-800 dark:text-orange-300 text-xs font-semibold mb-6 tracking-wide uppercase"
+            >
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+              <span data-i18n="hero_badge">Premium Saffron Services</span>
+            </div>
+          </div>
+          <h1
+            id="hero-title"
+            class="fade-up stagger-1 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6"
+            style="font-family: &quot;Playfair Display&quot;, serif"
+          >
+            Empowering Afghan Agriculture
+          </h1>
+          <p
+            id="hero-desc"
+            class="fade-up stagger-2 text-lg sm:text-xl text-stone-600 dark:text-stone-400 max-w-2xl mx-auto leading-relaxed mb-10"
+          >
+            Women-led excellence in saffron processing, value addition, and
+            sustainable agricultural development across Herat Province.
+          </p>
+          <div class="fade-up stagger-3 flex justify-center">
+            <a
+              href="#services"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl saffron-gradient text-white font-semibold shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-shadow"
+            >
+              <span data-i18n="hero_cta">Explore Services</span>
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+          </div>
+          <!-- Floating decorative element -->
+          <div
+            class="float-anim absolute -right-8 top-1/2 hidden lg:block opacity-20 dark:opacity-10"
+          >
+            <svg width="120" height="120" viewbox="0 0 120 120" fill="none">
+              <path
+                d="M60 10 C60 10 80 40 60 60 C40 40 60 10 60 10Z"
+                fill="#3B0210"
+              />
+              <path
+                d="M60 10 C60 10 40 40 60 60 C80 40 60 10 60 10Z"
+                fill="#3B0210"
+                opacity="0.7"
+              />
+              <path d="M60 60 L60 110" stroke="#3B0210" stroke-width="2" />
+            </svg>
+          </div>
+        </div>
+      </section>
+      <!-- Services Section -->
+      <section id="services" class="py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-14">
+            <h2
+              class="fade-up text-3xl sm:text-4xl font-bold tracking-tight mb-4"
+              style="font-family: &quot;Playfair Display&quot;, serif"
+              data-i18n="services_title"
+            >
+              Our Capabilities
+            </h2>
+            <p
+              class="fade-up stagger-1 text-stone-500 dark:text-stone-400 max-w-xl mx-auto"
+              data-i18n="services_subtitle"
+            >
+              Comprehensive saffron value chain solutions with international
+              quality standards and women's economic empowerment.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+            id="services-grid"
+          >
+            <!-- Card 1 -->
+            <div
+              class="fade-up stagger-1 card-hover group bg-white dark:bg-stone-900 rounded-2xl p-7 border border-stone-200/60 dark:border-stone-800 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 transition-all"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-orange-100 dark:bg-orange-900/40 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform"
+              >
+                <i
+                  data-lucide="leaf"
+                  class="w-6 h-6 text-orange-700 dark:text-orange-400"
+                ></i>
+              </div>
+              <h3 class="text-lg font-bold mb-2" data-i18n="s1_title">
+                Saffron Processing &amp; Drying
+              </h3>
+              <p
+                class="text-sm text-stone-500 dark:text-stone-400 leading-relaxed"
+                data-i18n="s1_desc"
+              >
+                Advanced post-harvest processing with hygienic standards, stigma
+                separation, and premium drying techniques for optimal color and
+                aroma retention.
+              </p>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="fade-up stagger-2 card-hover group bg-white dark:bg-stone-900 rounded-2xl p-7 border border-stone-200/60 dark:border-stone-800 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 transition-all"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform"
+              >
+                <i
+                  data-lucide="quality-assurance"
+                  class="w-6 h-6 text-amber-700 dark:text-amber-400"
+                ></i>
+              </div>
+              <h3 class="text-lg font-bold mb-2" data-i18n="s2_title">
+                Quality Control &amp; Grading
+              </h3>
+              <p
+                class="text-sm text-stone-500 dark:text-stone-400 leading-relaxed"
+                data-i18n="s2_desc"
+              >
+                ISO-certified laboratory testing for crocin, safranal, and
+                picrocrocin levels with structured quality assurance systems
+                ensuring Grade I purity.
+              </p>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="fade-up stagger-3 card-hover group bg-white dark:bg-stone-900 rounded-2xl p-7 border border-stone-200/60 dark:border-stone-800 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 transition-all"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-900/40 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform"
+              >
+                <i
+                  data-lucide="package"
+                  class="w-6 h-6 text-red-700 dark:text-red-400"
+                ></i>
+              </div>
+              <h3 class="text-lg font-bold mb-2" data-i18n="s3_title">
+                Packaging &amp; Branding
+              </h3>
+              <p
+                class="text-sm text-stone-500 dark:text-stone-400 leading-relaxed"
+                data-i18n="s3_desc"
+              >
+                Premium, protective packaging solutions designed to preserve
+                aroma, color, and potency while meeting international export
+                standards.
+              </p>
+            </div>
+            <!-- Card 4 -->
+            <div
+              class="fade-up stagger-4 card-hover group bg-white dark:bg-stone-900 rounded-2xl p-7 border border-stone-200/60 dark:border-stone-800 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 transition-all"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform"
+              >
+                <i
+                  data-lucide="users"
+                  class="w-6 h-6 text-emerald-700 dark:text-emerald-400"
+                ></i>
+              </div>
+              <h3 class="text-lg font-bold mb-2" data-i18n="s4_title">
+                Farmer Support &amp; Linkages
+              </h3>
+              <p
+                class="text-sm text-stone-500 dark:text-stone-400 leading-relaxed"
+                data-i18n="s4_desc"
+              >
+                Direct collaboration with smallholder and women farmers through
+                guaranteed purchase mechanisms, fair pricing, and technical
+                guidance.
+              </p>
+            </div>
+            <!-- Card 5 -->
+            <div
+              class="fade-up stagger-5 card-hover group bg-white dark:bg-stone-900 rounded-2xl p-7 border border-stone-200/60 dark:border-stone-800 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 transition-all"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-violet-100 dark:bg-violet-900/40 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform"
+              >
+                <i
+                  data-lucide="archive"
+                  class="w-6 h-6 text-violet-700 dark:text-violet-400"
+                ></i>
+              </div>
+              <h3 class="text-lg font-bold mb-2" data-i18n="s5_title">
+                Supply Chain &amp; Logistics
+              </h3>
+              <p
+                class="text-sm text-stone-500 dark:text-stone-400 leading-relaxed"
+                data-i18n="s5_desc"
+              >
+                Full traceability, cold-chain management, and compliant
+                logistics ensuring product excellence from production through
+                export markets.
+              </p>
+            </div>
+            <!-- Card 6 -->
+            <div
+              class="fade-up stagger-6 card-hover group bg-white dark:bg-stone-900 rounded-2xl p-7 border border-stone-200/60 dark:border-stone-800 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 transition-all"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-sky-100 dark:bg-sky-900/40 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform"
+              >
+                <i
+                  data-lucide="handshake"
+                  class="w-6 h-6 text-sky-700 dark:text-sky-400"
+                ></i>
+              </div>
+              <h3 class="text-lg font-bold mb-2" data-i18n="s6_title">
+                Project Implementation
+              </h3>
+              <p
+                class="text-sm text-stone-500 dark:text-stone-400 leading-relaxed"
+                data-i18n="s6_desc"
+              >
+                Experienced local implementing partner with proven track record
+                executing donor-funded projects and ensuring measurable
+                development outcomes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Banner -->
+      <section class="py-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+          <div
+            class="fade-up saffron-gradient rounded-3xl p-10 sm:p-14 text-center text-white relative overflow-hidden"
+          >
+            <div class="absolute inset-0 hero-grain opacity-10"></div>
+            <div class="relative">
+              <h2
+                class="text-2xl sm:text-3xl font-bold mb-4"
+                style="font-family: &quot;Playfair Display&quot;, serif"
+                data-i18n="cta_title"
+              >
+                Women-Led Growth in Afghan Agriculture
+              </h2>
+              <p
+                class="text-white/80 max-w-lg mx-auto mb-8"
+                data-i18n="cta_desc"
+              >
+                Marghob Heray is committed to enhancing livelihoods,
+                strengthening women's economic empowerment, and delivering
+                quality saffron to global markets.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-white text-orange-800 font-semibold hover:bg-stone-100 transition-colors shadow-lg"
+              >
+                <span data-i18n="cta_btn">Get in Touch</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- footer -->
+      <footer class="footer">
+        <!-- Footer Links -->
+        <div class="footer-container mt-5">
+          <!-- BRAND COLUMN -->
+          <div class="footer-col brand-col reveal" style="--delay: 80ms">
+            <h2 class="footer-logo">Marghob Heray</h2>
+            <p class="footer-description">
+              Premium Afghan saffron from Herat. Women-owned company focused on
+              quality, clean processing, and global export.
+            </p>
+          </div>
+
+          <!-- QUICK LINKS -->
+          <div class="footer-col reveal" style="--delay: 140ms">
+            <h3>Business</h3>
+            <ul>
+              <li><a href="#">Bulk Sales</a></li>
+              <li><a href="#">Private Label</a></li>
+              <li><a href="#">Food Services</a></li>
+              <li><a href="#">Medical & Cosmetic</a></li>
+              <li><a href="#">Quality Control</a></li>
+            </ul>
+          </div>
+
+          <!-- QUALITY & EXPORT -->
+          <div class="footer-col reveal" style="--delay: 200ms">
+            <h3>Quality & Export</h3>
+            <ul>
+              <li>ISO 3632 Standard</li>
+              <li>Clean & Safe Processing</li>
+              <li>Moisture Controlled</li>
+              <li>Lab Tested</li>
+              <li>Global Shipping</li>
+            </ul>
+          </div>
+
+          <!-- CONTACT -->
+          <div class="footer-col reveal" style="--delay: 260ms">
+            <h3>Contact</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Herat, Afghanistan</p>
+            <p><i class="fa-solid fa-phone"></i> +93 795808155</p>
+            <p><i class="fa-solid fa-envelope"></i> marghobheray@gmail.com</p>
+
+            <!-- Social -->
+            <div class="footer-social">
+              <a href="https://wa.me/message/567LQQQKVJ7UB1"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="https://facebook.com/marghobherayco"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/marghob_heray_co?igsh=NzRianNtMWM1cWxq"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/marghob-heray-agricultural-and-livestock-co/"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <script>
+      const navbarToggler = document.querySelector(".navbar-toggler");
+      const navbarNav = document.querySelector("#navbarNav");
+
+      if (navbarToggler && navbarNav) {
+        navbarToggler.addEventListener("click", () => {
+          const isOpen = navbarNav.classList.toggle("is-open");
+          navbarToggler.setAttribute("aria-expanded", String(isOpen));
+        });
+      }
+
+      function initScrollAnimations() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+        );
+
+        document
+          .querySelectorAll(".fade-up")
+          .forEach((el) => observer.observe(el));
+      }
+
+      lucide.createIcons();
+      initScrollAnimations();
+    </script>
+  </body>
+</html>
