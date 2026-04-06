@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marghob Heray - Gallery</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        saffron: { deep: '#8B1A1A', rich: '#A0522D', gold: '#C8963E', cream: '#FDF6EC', warm: '#F5E6D0' },
+      }
+    }
+  }
+}
+</script>
+  <style>
+html, body { height: 100%; margin: 0; }
+body { font-family: 'DM Sans', sans-serif; background: #FDF6EC; }
+.font-display { font-family: 'Cormorant Garamond', serif; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.7s ease forwards; opacity: 0; }
+.fade-up-d1 { animation-delay: 0.1s; }
+.fade-up-d2 { animation-delay: 0.2s; }
+.fade-up-d3 { animation-delay: 0.3s; }
+
+.gallery-item img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-item .overlay {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.gallery-item:hover .overlay { opacity: 1; }
+
+.filter-btn {
+  transition: all 0.3s ease;
+  position: relative;
+}
+.filter-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 50%; width: 0; height: 2px;
+  background: #8B1A1A;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.filter-btn.active::after { width: 100%; }
+.filter-btn.active { color: #8B1A1A; }
+
+.lightbox { transition: opacity 0.3s ease; }
+
+.hero-pattern {
+  background-image:
+    radial-gradient(ellipse at 30% 50%, rgba(200, 150, 62, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(139, 26, 26, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #3D1308 0%, #5C1A0B 30%, #7A2E1A 60%, #4A1A0A 100%);
+}
+</style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app" class="w-full h-full overflow-auto bg-saffron-cream">
+   <!-- Hero -->
+   <section class="hero-pattern relative w-full" style="height: 65%;">
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+     <div class="fade-up">
+      <span class="inline-block w-16 h-px bg-saffron-gold mb-6"></span>
+      <h1 id="heroTitle" class="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-saffron-cream tracking-wide">Our Gallery</h1>
+      <p id="heroSubtitle" class="mt-4 text-lg sm:text-xl text-saffron-warm/80 font-light tracking-wider">From farm to final product.</p><span class="inline-block w-16 h-px bg-saffron-gold mt-6"></span>
+     </div>
+     <div class="fade-up fade-up-d2 mt-8">
+      <a href="#gallery" class="inline-flex items-center gap-2 text-saffron-gold/80 hover:text-saffron-gold transition-colors text-sm tracking-widest uppercase"> Explore <i data-lucide="chevron-down" style="width:16px;height:16px;"></i> </a>
+     </div>
+    </div><!-- decorative saffron threads SVG -->
+    <svg class="absolute bottom-0 left-0 w-full" style="height:60px;" viewbox="0 0 1440 60" fill="none" preserveaspectratio="none">
+     <path d="M0 60L1440 60L1440 20C1200 0 960 40 720 20C480 0 240 40 0 20Z" fill="#FDF6EC" />
+    </svg>
+   </section><!-- Intro -->
+   <section id="gallery" class="max-w-4xl mx-auto px-6 pt-16 pb-10 text-center">
+    <div class="fade-up">
+     <span class="text-saffron-gold text-sm tracking-[0.3em] uppercase font-semibold">Marghob Heray</span>
+     <h2 id="introHeading" class="font-display text-3xl sm:text-4xl text-saffron-deep font-bold mt-3">The Journey of Saffron</h2>
+     <div class="w-12 h-0.5 bg-saffron-gold mx-auto mt-4 mb-6"></div>
+     <p id="introText" class="text-gray-600 leading-relaxed max-w-2xl mx-auto">From the fertile fields of Herat province, our saffron undergoes a meticulous journey — hand-picked at dawn, carefully dried, and precisely packaged to preserve its extraordinary aroma, flavor, and color for markets around the world.</p>
+    </div>
+   </section><!-- Filters -->
+   <section class="max-w-6xl mx-auto px-6 pb-8">
+    <div class="flex flex-wrap justify-center gap-2 sm:gap-4" id="filters">
+     <button class="filter-btn active px-4 py-2 text-sm font-semibold tracking-wide text-saffron-deep" data-cat="all">All</button> <button class="filter-btn px-4 py-2 text-sm font-medium tracking-wide text-gray-500 hover:text-saffron-deep" data-cat="fields">Saffron Fields</button> <button class="filter-btn px-4 py-2 text-sm font-medium tracking-wide text-gray-500 hover:text-saffron-deep" data-cat="harvesting">Harvesting</button> <button class="filter-btn px-4 py-2 text-sm font-medium tracking-wide text-gray-500 hover:text-saffron-deep" data-cat="processing">Processing</button> <button class="filter-btn px-4 py-2 text-sm font-medium tracking-wide text-gray-500 hover:text-saffron-deep" data-cat="packaging">Packaging</button> <button class="filter-btn px-4 py-2 text-sm font-medium tracking-wide text-gray-500 hover:text-saffron-deep" data-cat="products">Products</button>
+    </div>
+   </section><!-- Gallery Grid -->
+   <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-10">
+    <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    </div>
+    <div class="text-center mt-12 mb-16" id="loadMoreWrap">
+     <button id="loadMoreBtn" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-saffron-deep text-saffron-deep rounded-full font-semibold text-sm tracking-wide hover:bg-saffron-deep hover:text-saffron-cream transition-all duration-300"> Load More <i data-lucide="arrow-down" style="width:16px;height:16px;"></i> </button>
+    </div>
+   </section><!-- Lightbox -->
+   <div id="lightbox" class="lightbox fixed inset-0 z-50 bg-black/90 flex items-center justify-center opacity-0 pointer-events-none" style="display:none;">
+    <button id="lbClose" class="absolute top-4 right-4 text-white/70 hover:text-white z-10 p-2"><i data-lucide="x" style="width:28px;height:28px;"></i></button> <button id="lbPrev" class="absolute left-2 sm:left-6 text-white/60 hover:text-white z-10 p-2 bg-white/10 rounded-full backdrop-blur-sm"><i data-lucide="chevron-left" style="width:28px;height:28px;"></i></button> <button id="lbNext" class="absolute right-2 sm:right-6 text-white/60 hover:text-white z-10 p-2 bg-white/10 rounded-full backdrop-blur-sm"><i data-lucide="chevron-right" style="width:28px;height:28px;"></i></button>
+    <div class="max-w-4xl w-full mx-4 text-center">
+     <div id="lbImageWrap" class="relative rounded-xl overflow-hidden bg-black/50" style="min-height:200px;"><img src="" alt="" loading="lazy" class="w-full h-auto rounded-xl">
+     </div>
+     <p id="lbCaption" class="text-white/80 font-display text-xl mt-4"></p>
+    </div>
+   </div>
+  </div>
+  <script>
+// Gallery data with real photos
+const galleryData = [
+  { id:1, cat:'fields', title:'Purple Fields at Dawn', img:'https://images.unsplash.com/photo-1500931156392-d0c5ff4dcc78?w=600&h=400&fit=crop', desc:'Rows of crocus flowers stretch across the Herat highlands' },
+  { id:2, cat:'fields', title:'Mountain Terraces', img:'https://images.unsplash.com/photo-1500929943458-d515ab3dd13f?w=600&h=400&fit=crop', desc:'Terraced saffron fields against the Hindu Kush backdrop' },
+  { id:3, cat:'harvesting', title:'Hand-Picking at Sunrise', img:'https://images.unsplash.com/photo-1516905033972-f5d0a1fec0aa?w=600&h=400&fit=crop', desc:'Workers carefully harvest each delicate flower by hand' },
+  { id:4, cat:'harvesting', title:'Morning Harvest Baskets', img:'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&h=400&fit=crop', desc:'Woven baskets overflow with freshly picked crocus blooms' },
+  { id:5, cat:'processing', title:'Separating the Stigma', img:'https://images.unsplash.com/photo-1516991410050-f6156f3db3a5?w=600&h=400&fit=crop', desc:'Skilled hands separate the precious red stigma threads' },
+  { id:6, cat:'processing', title:'Traditional Drying', img:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop', desc:'Saffron threads gently dried using time-honored methods' },
+  { id:7, cat:'packaging', title:'Premium Glass Jars', img:'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=600&h=400&fit=crop', desc:'Each jar carefully filled and sealed for freshness' },
+  { id:8, cat:'packaging', title:'Gift Box Collection', img:'https://images.unsplash.com/photo-1549887534-f92e768e360d?w=600&h=400&fit=crop', desc:'Elegant presentation boxes for export markets' },
+  { id:9, cat:'products', title:'Grade-1 Negin Saffron', img:'https://images.unsplash.com/photo-1599599810694-4c1b1dd9d313?w=600&h=400&fit=crop', desc:'Our finest all-red premium saffron threads' },
+  { id:10, cat:'products', title:'Saffron Powder', img:'https://images.unsplash.com/photo-1599599810604-9c50f6fcef5a?w=600&h=400&fit=crop', desc:'Finely ground saffron for culinary use' },
+  { id:11, cat:'fields', title:'Bloom Season Panorama', img:'https://images.unsplash.com/photo-1500610221742-f049cd451bba?w=600&h=400&fit=crop', desc:'A sea of purple during peak flowering season' },
+  { id:12, cat:'harvesting', title:'Community Harvest Day', img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop', desc:'The whole village joins for the annual harvest' },
+  { id:13, cat:'processing', title:'Quality Inspection', img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop', desc:'Every batch tested for color, aroma, and purity' },
+  { id:14, cat:'products', title:'Saffron Tea Blend', img:'https://images.unsplash.com/photo-1599599810735-57cbb78e92b4?w=600&h=400&fit=crop', desc:'Aromatic saffron blended with cardamom and rose' },
+  { id:15, cat:'packaging', title:'Export Ready Tins', img:'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=600&h=400&fit=crop', desc:'Hermetically sealed tins for international shipping' },
+  { id:16, cat:'fields', title:'Irrigation Channels', img:'https://images.unsplash.com/photo-1500931156392-d0c5ff4dcc78?w=600&h=400&fit=crop', desc:'Ancient water systems feeding the saffron beds' },
+];
+
+let currentCat = 'all';
+let visibleCount = 8;
+let filteredItems = [];
+let lightboxIdx = 0;
+
+function getFiltered() {
+  return currentCat === 'all' ? galleryData : galleryData.filter(i => i.cat === currentCat);
+}
+
+function renderGallery() {
+  filteredItems = getFiltered();
+  const grid = document.getElementById('galleryGrid');
+  const showing = filteredItems.slice(0, visibleCount);
+  grid.innerHTML = '';
+
+  showing.forEach((item, idx) => {
+    const div = document.createElement('div');
+    const tall = idx % 5 === 0 || idx % 5 === 3;
+    div.className = `gallery-item rounded-xl overflow-hidden shadow-md cursor-pointer fade-up ${tall ? 'sm:row-span-2' : ''}`;
+    div.style.animationDelay = `${idx * 0.05}s`;
+    div.innerHTML = `
+      <div class="relative w-full h-full" style="min-height:${tall ? '340px' : '240px'}">
+        <img src="${item.img}" alt="${item.title}" loading="lazy" class="w-full h-full object-cover" onerror="this.style.background='#C8963E'; this.alt='Image unavailable';">
+        <div class="overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-5">
+          <span class="text-saffron-gold text-xs tracking-widest uppercase font-semibold">${item.cat}</span>
+          <h3 class="font-display text-white text-xl font-bold mt-1">${item.title}</h3>
+          <p class="text-white/70 text-sm mt-1">${item.desc}</p>
+        </div>
+      </div>`;
+    div.onclick = () => openLightbox(filteredItems.indexOf(item));
+    grid.appendChild(div);
+  });
+
+  document.getElementById('loadMoreWrap').style.display = visibleCount >= filteredItems.length ? 'none' : 'block';
+  lucide.createIcons();
+}
+
+// Filters
+document.getElementById('filters').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active', 'font-semibold', 'text-saffron-deep'));
+  document.querySelectorAll('.filter-btn').forEach(b => { b.classList.add('text-gray-500', 'font-medium'); b.classList.remove('font-semibold'); });
+  btn.classList.add('active', 'font-semibold', 'text-saffron-deep');
+  btn.classList.remove('text-gray-500', 'font-medium');
+  currentCat = btn.dataset.cat;
+  visibleCount = 8;
+  renderGallery();
+});
+
+document.getElementById('loadMoreBtn').addEventListener('click', () => { visibleCount += 8; renderGallery(); });
+
+// Lightbox
+function openLightbox(idx) {
+  lightboxIdx = idx;
+  const lb = document.getElementById('lightbox');
+  lb.style.display = 'flex';
+  requestAnimationFrame(() => { lb.classList.remove('opacity-0', 'pointer-events-none'); lb.classList.add('opacity-100'); });
+  updateLightbox();
+}
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  lb.classList.remove('opacity-100'); lb.classList.add('opacity-0', 'pointer-events-none');
+  setTimeout(() => lb.style.display = 'none', 300);
+}
+function updateLightbox() {
+  const item = filteredItems[lightboxIdx];
+  if (!item) return;
+  const wrap = document.getElementById('lbImageWrap');
+  wrap.innerHTML = `<img src="${item.img}" alt="${item.title}" loading="lazy" class="w-full h-auto rounded-xl" onerror="this.style.background='#C8963E'; this.alt='Image unavailable';">`;
+  document.getElementById('lbCaption').textContent = item.title;
+}
+
+document.getElementById('lbClose').onclick = closeLightbox;
+document.getElementById('lightbox').onclick = e => { if (e.target === document.getElementById('lightbox')) closeLightbox(); };
+document.getElementById('lbPrev').onclick = e => { e.stopPropagation(); lightboxIdx = (lightboxIdx - 1 + filteredItems.length) % filteredItems.length; updateLightbox(); };
+document.getElementById('lbNext').onclick = e => { e.stopPropagation(); lightboxIdx = (lightboxIdx + 1) % filteredItems.length; updateLightbox(); };
+document.addEventListener('keydown', e => {
+  if (document.getElementById('lightbox').style.display === 'none') return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') { lightboxIdx = (lightboxIdx - 1 + filteredItems.length) % filteredItems.length; updateLightbox(); }
+  if (e.key === 'ArrowRight') { lightboxIdx = (lightboxIdx + 1) % filteredItems.length; updateLightbox(); }
+});
+
+// Element SDK
+const defaultConfig = {
+  hero_title: 'Our Gallery',
+  hero_subtitle: 'From farm to final product.',
+  intro_heading: 'The Journey of Saffron',
+  intro_text: 'From the fertile fields of Herat province, our saffron undergoes a meticulous journey — hand-picked at dawn, carefully dried, and precisely packaged to preserve its extraordinary aroma, flavor, and color for markets around the world.',
+  background_color: '#FDF6EC',
+  surface_color: '#FFFFFF',
+  text_color: '#4A3728',
+  primary_action_color: '#8B1A1A',
+  accent_color: '#C8963E',
+  font_family: 'DM Sans',
+  font_size: 16
+};
+
+function applyConfig(config) {
+  const c = { ...defaultConfig, ...config };
+  document.getElementById('heroTitle').textContent = c.hero_title;
+  document.getElementById('heroSubtitle').textContent = c.hero_subtitle;
+  document.getElementById('introHeading').textContent = c.intro_heading;
+  document.getElementById('introText').textContent = c.intro_text;
+
+  document.body.style.fontFamily = `${c.font_family}, DM Sans, sans-serif`;
+  document.querySelectorAll('.font-display').forEach(el => el.style.fontFamily = `Cormorant Garamond, ${c.font_family}, serif`);
+
+  const base = c.font_size || 16;
+  document.getElementById('heroTitle').style.fontSize = '';
+  document.getElementById('introText').style.fontSize = `${base}px`;
+  document.getElementById('introHeading').style.fontSize = `${base * 2}px`;
+
+  document.getElementById('app').style.backgroundColor = c.background_color;
+  document.querySelectorAll('.filter-btn.active').forEach(b => b.style.color = c.primary_action_color);
+  document.getElementById('loadMoreBtn').style.borderColor = c.primary_action_color;
+  document.getElementById('loadMoreBtn').style.color = c.primary_action_color;
+}
+
+window.elementSdk.init({
+  defaultConfig,
+  onConfigChange: async (config) => applyConfig(config),
+  mapToCapabilities: (config) => ({
+    recolorables: [
+      { get: () => config.background_color || defaultConfig.background_color, set: v => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); }},
+      { get: () => config.surface_color || defaultConfig.surface_color, set: v => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); }},
+      { get: () => config.text_color || defaultConfig.text_color, set: v => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); }},
+      { get: () => config.primary_action_color || defaultConfig.primary_action_color, set: v => { config.primary_action_color = v; window.elementSdk.setConfig({ primary_action_color: v }); }},
+      { get: () => config.accent_color || defaultConfig.accent_color, set: v => { config.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); }},
+    ],
+    borderables: [],
+    fontEditable: {
+      get: () => config.font_family || defaultConfig.font_family,
+      set: v => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); }
+    },
+    fontSizeable: {
+      get: () => config.font_size || defaultConfig.font_size,
+      set: v => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); }
+    }
+  }),
+  mapToEditPanelValues: (config) => new Map([
+    ['hero_title', config.hero_title || defaultConfig.hero_title],
+    ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+    ['intro_heading', config.intro_heading || defaultConfig.intro_heading],
+    ['intro_text', config.intro_text || defaultConfig.intro_text],
+  ])
+});
+
+renderGallery();
+lucide.createIcons();
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e79cfdbc500292c',t:'MTc3NTQwNTMxMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

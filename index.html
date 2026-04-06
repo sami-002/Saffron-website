@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Saffron</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="Css/index.css">
+ </head>
+ <body>
+  <!-- Navbar -->
+  <nav class="saffron-nav" id="mainNav">
+   <div class="nav-container"><!-- Logo --> <a href="#" class="brand-logo" onclick="event.preventDefault()">
+     <div class="logo-wrapper">
+      <div class="logo-glow"></div>
+       <img src="Screenshot 2026-02-24 193737.png" alt="">
+     </div>
+     <div class="brand-info"><span class="brand-name" id="brandName">Zafran</span> <span class="brand-tagline" id="brand-tagline">Premium Saffron</span>
+     </div></a> <!-- Desktop Menu -->
+    <ul class="nav-menu">
+     <li class="nav-item"><a href="#" class="nav-link active" onclick="event.preventDefault()">Home</a></li>
+     <li class="nav-item"><a href="#" class="nav-link" onclick="event.preventDefault()">About</a></li>
+     <li class="nav-item"><a href="#" class="nav-link" onclick="event.preventDefault()">Service</a></li>
+     <li class="nav-item"><a href="#" class="nav-link" onclick="event.preventDefault()">Our Saffron</a></li>
+     <li class="nav-item"><button class="nav-link dropdown-toggle" onclick="event.preventDefault()"> Pages 
+       <svg class="chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" />
+       </svg></button>
+      <div class="dropdown-menu"><a href="" class="dropdown-item" onclick="event.preventDefault()">Our Team</a> <a href="#" class="dropdown-item" onclick="event.preventDefault()">Gallery</a> <a href="#" class="dropdown-item" onclick="event.preventDefault()">Shop</a>
+      </div></li>
+     <li class="nav-item"><a href="#" class="nav-link" onclick="event.preventDefault()">Contact</a></li>
+    </ul><!-- Right Actions -->
+    <!-- RIGHT CONTROLS -->
+    <div class="nav-controls">
+     <div class="lang-group"><button class="lang-btn active" id="lang-en" onclick="setLang('en')">EN</button> <button class="lang-btn" id="lang-dr" onclick="setLang('dr')">دری</button>
+     </div><button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu"> <span></span> <span></span> <span></span> </button>
+    </div>
+   </div>
+  </nav><!-- Mobile Menu Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()">
+   <div class="mobile-nav-item">
+    <a href="#" class="mobile-link" onclick="closeMobileMenu()">Home</a>
+   </div>
+   <div class="mobile-nav-item">
+    <a href="#" class="mobile-link" onclick="closeMobileMenu()">Story</a>
+   </div>
+   <div class="mobile-nav-item">
+    <a href="#" class="mobile-link" onclick="closeMobileMenu()">Products</a>
+   </div>
+   <div class="mobile-nav-item">
+    <a href="#" class="mobile-link" onclick="closeMobileMenu()">Quality</a>
+   </div>
+   <div class="mobile-nav-item"><button class="mobile-link" onclick="toggleMobileSubmenu()"> Pages 
+     <svg style="width:14px;height:14px;float:right;margin-top:4px;transition:transform 0.3s" id="mobileChevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" />
+     </svg></button>
+    <div class="mobile-submenu" id="mobileSubmenu">
+     <div class="mobile-submenu-item">
+      <a href="#" class="mobile-submenu-link" onclick="closeMobileMenu()">Our Team</a>
+     </div>
+     <div class="mobile-submenu-item">
+      <a href="#" class="mobile-submenu-link" onclick="closeMobileMenu()">Gallery</a>
+     </div>
+     <div class="mobile-submenu-item">
+      <a href="#" class="mobile-submenu-link" onclick="closeMobileMenu()">Shop</a>
+     </div>
+    </div>
+   </div>
+   <div class="mobile-nav-item">
+    <a href="#" class="mobile-link" onclick="closeMobileMenu()">Contact</a>
+   </div>
+   <div class="mobile-cta-section"><button class="premium-btn" id="ctaBtnMobile" onclick="closeMobileMenu()">Explore Products</button>
+   </div>
+  </div><!-- Hero Section -->
+  <main class="hero-section" role="main">
+   <div class="hero-background"></div>
+   <div class="hero-content">
+    <div class="hero-accent-line"></div>
+    <h1 class="hero-title">The Finest Saffron<br>
+     From Ancient Lands</h1>
+    <p class="hero-subtitle">Hand-harvested · Pure · Authentic</p>
+   </div>
+  </main>
+  <!-- our mission and vision  -->
+    <section class="mission-vision-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-subtitle">Our Foundation</p>
+        <h2 class="section-title">Mission &amp; Vision</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="glass-effect purpose-card mission-card">
+            <div class="purpose-icon">
+              <i data-lucide="target" class="purpose-lucide"></i>
+            </div>
+            <h3 class="purpose-title" id="mission-title">Our Mission</h3>
+            <p class="purpose-text" id="mission-text">To deliver the world's finest Afghan saffron while honoring farmers and preserving centuries-old cultivation traditions. We believe in sustainable farming, fair trade, and authentic quality.</p>
+            <div class="accent-line"></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="glass-effect purpose-card vision-card">
+            <div class="purpose-icon">
+              <i data-lucide="sparkles" class="purpose-lucide"></i>
+            </div>
+            <h3 class="purpose-title" id="vision-title">Our Vision</h3>
+            <p class="purpose-text" id="vision-text">To become the global benchmark for premium, ethically-sourced saffron. We envision a future where every thread tells a story of passion, heritage, and excellence.</p>
+            <div class="accent-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-choose-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-subtitle">Our Commitment</p>
+        <h2 class="section-title" id="why-choose-title">Why Choose Zafaran</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <div class="icon-glow"></div><i data-lucide="leaf" class="feature-icon"></i>
+          </div>
+          <h3 class="feature-title">100% Pure &amp; Natural</h3>
+          <p class="feature-text">No additives, fillers, or artificial ingredients. Pure saffron threads directly from our farms to your table.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <div class="icon-glow"></div><i data-lucide="award" class="feature-icon"></i>
+          </div>
+          <h3 class="feature-title">Award-Winning Quality</h3>
+          <p class="feature-text">Certified and recognized globally for superior color, aroma, and potency. Our saffron meets the highest international standards.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <div class="icon-glow"></div><i data-lucide="users" class="feature-icon"></i>
+          </div>
+          <h3 class="feature-title">Farmer Empowerment</h3>
+          <p class="feature-text">We ensure fair compensation and sustainable practices for our farming partners. Supporting communities that have grown saffron for generations.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <div class="icon-glow"></div><i data-lucide="package" class="feature-icon"></i>
+          </div>
+          <h3 class="feature-title">Premium Packaging</h3>
+          <p class="feature-text">Elegantly designed, airtight packaging that preserves freshness and aroma. Every box is a work of art reflecting our brand's heritage.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <div class="icon-glow"></div><i data-lucide="zap" class="feature-icon"></i>
+          </div>
+          <h3 class="feature-title">Fast &amp; Secure Delivery</h3>
+          <p class="feature-text">Worldwide shipping with temperature control. Your saffron arrives fresh, protected, and on time - guaranteed.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <div class="icon-glow"></div><i data-lucide="shield-check" class="feature-icon"></i>
+          </div>
+          <h3 class="feature-title">Certified &amp; Trusted</h3>
+          <p class="feature-text">ISO certified, lab-tested for purity and authenticity. Trusted by chefs, nutritionists, and saffron enthusiasts worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    // LANGUAGE
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('zafaran-lang', lang);
+      const attr = lang === 'dr' ? 'data-dr' : 'data-en';
+      
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const val = el.getAttribute(attr);
+        if (val) {
+          if (el.id === 'hero-title' || el.id === 'hero-desc') {
+            el.innerHTML = val;
+          } else {
+            el.textContent = val;
+          }
+        }
+      });
+
+      document.getElementById('brand-tagline').textContent = document.getElementById('brand-tagline').getAttribute(attr);
+
+      ['lang-en', 'lang-dr', 'mob-lang-en', 'mob-lang-dr'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+          btn.classList.toggle('active', (lang === 'en' && id.includes('en')) || (lang === 'dr' && id.includes('dr')));
+        }
+      });
+
+      document.documentElement.dir = lang === 'dr' ? 'rtl' : 'ltr';
+    }
+
+  </script>
+  <script>
+    // Scroll effect
+    window.addEventListener('scroll', () => {
+      document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    // Hamburger menu
+    function toggleMobileMenu() {
+      const overlay = document.getElementById('mobileOverlay');
+      const hamburger = document.getElementById('hamburgerBtn');
+      overlay.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobileOverlay').classList.remove('open');
+      document.getElementById('hamburgerBtn').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function toggleMobileSubmenu() {
+      const submenu = document.getElementById('mobileSubmenu');
+      const chevron = document.getElementById('mobileChevron');
+      submenu.classList.toggle('open');
+      chevron.style.transform = submenu.classList.contains('open') ? 'rotate(180deg)' : '';
+    }
+
+    // Desktop nav active state
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>

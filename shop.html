@@ -1,0 +1,1177 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zafran House - Premium Saffron</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&amp;family=DM+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: white;
+      --bg2: #FFF7ED;
+      --text: #1A0A00;
+      --primary: #8B1A1A;
+      --accent: #C8963E;
+      --card: #FFFFFF;
+      --card-border: #8b1a1a20;
+      --glass: rgba(255, 251, 245, 0.8);
+      --nav-glass: rgba(255, 251, 245, 0.85);
+      --shadow: 0 8px 32px rgba(139, 26, 26, 0.08);
+      --glow: 0 0 20px rgba(200, 150, 62, 0.2);
+    }
+
+    html.dark {
+      --bg: #0D0907;
+      --bg2: #1A1210;
+      --text: #F5E6D3;
+      --primary: #E84040;
+      --accent: #D4A853;
+      --card: #1A1210;
+      --card-border: rgba(212, 168, 83, 0.2);
+      --glass: rgba(13, 9, 7, 0.85);
+      --nav-glass: rgba(13, 9, 7, 0.9);
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      --glow: 0 0 20px rgba(212, 168, 83, 0.15);
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .app-wrapper {
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background: var(--bg);
+    }
+
+    .font-display {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      background: var(--nav-glass);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s;
+    }
+
+    .nav-scrolled {
+      box-shadow: var(--shadow);
+    }
+
+    .navbar-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary) !important;
+    }
+
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--bg), var(--bg2));
+      padding: 80px 0 60px;
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      animation: orbFloat 8s ease-in-out infinite;
+    }
+
+    .hero-orb-1 {
+      width: 400px;
+      height: 400px;
+      background: var(--primary);
+      top: -100px;
+      right: -50px;
+      animation-delay: 0s;
+    }
+
+    .hero-orb-2 {
+      width: 300px;
+      height: 300px;
+      background: var(--accent);
+      bottom: -80px;
+      left: -40px;
+      animation-delay: 3s;
+    }
+
+    .hero-orb-3 {
+      width: 200px;
+      height: 200px;
+      background: var(--accent);
+      top: 40%;
+      left: 50%;
+      animation-delay: 5s;
+      opacity: 0.2;
+    }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -20px) scale(1.1); }
+    }
+
+    .saffron-thread {
+      position: absolute;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--primary));
+      border-radius: 2px;
+      opacity: 0.3;
+      animation: threadFall linear infinite;
+    }
+
+    @keyframes threadFall {
+      0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.3; }
+      90% { opacity: 0.3; }
+      100% { transform: translateY(100%) rotate(15deg); opacity: 0; }
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      opacity: 0.7;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #A02020);
+      color: white !important;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 26, 26, 0.3);
+      color: white;
+    }
+
+    .btn-primary:active {
+      transform: scale(0.96);
+    }
+
+    .product-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      height: 100%;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--glow), var(--shadow);
+    }
+
+    .card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--bg2), var(--bg));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card-img-wrap svg {
+      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      max-width: 160px;
+    }
+
+    .product-card:hover .card-img-wrap svg {
+      transform: scale(1.08) rotate(2deg);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--primary);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 6px;
+      z-index: 2;
+    }
+
+    .card-body {
+      padding: 16px;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-price {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+
+    .card-rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 0.5rem;
+    }
+
+    .filter-pill {
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--card-border);
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .filter-pill:hover,
+    .filter-pill.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .theme-toggle {
+      width: 48px;
+      height: 26px;
+      border-radius: 13px;
+      background: var(--card-border);
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s;
+      padding: 0;
+    }
+
+    .theme-toggle::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      top: 2px;
+      left: 2px;
+      transition: all 0.3s;
+    }
+
+    html.dark .theme-toggle::after {
+      left: 24px;
+    }
+
+    .lang-btn {
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 1px solid var(--card-border);
+      background: transparent;
+      color: var(--text);
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: var(--primary);
+      color: white;
+      font-size: 0.6rem;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 1400;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: var(--card);
+      border-radius: 20px;
+      max-width: 700px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: scale(0.9);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid var(--card-border);
+      position: relative;
+    }
+
+    .modal-backdrop.open .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--bg);
+      border: 1px solid var(--card-border);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 5;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+
+    .modal-close:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .modal-img-section {
+      padding: 40px;
+      background: linear-gradient(135deg, var(--bg), var(--bg2));
+      text-align: center;
+    }
+
+    .modal-img-section svg {
+      max-width: 200px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skeleton {
+      background: linear-gradient(90deg, var(--bg2) 25%, var(--card) 50%, var(--bg2) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 8px;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .footer-section {
+      background: var(--bg2);
+      border-top: 1px solid var(--card-border);
+      padding: 48px 0 24px;
+      margin-top: 60px;
+    }
+
+    .footer-col h4 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      font-size: 0.85rem;
+      opacity: 0.6;
+      line-height: 2;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      color: var(--text);
+    }
+
+    .social-icon:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 2000;
+      background: var(--primary);
+      color: white;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: 500;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .app-wrapper::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .app-wrapper::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    .app-wrapper::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 3px;
+    }
+
+    [dir="rtl"] .card-badge {
+      right: auto;
+      left: 12px;
+    }
+
+    [dir="rtl"] .modal-close {
+      right: auto;
+      left: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-orb {
+        transform: scale(0.5);
+      }
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="app-wrapper" id="app">
+   <!-- NAVBAR -->
+   <nav class="nav-bar" id="navbar">
+    <div class="container-fluid">
+     <div class="d-flex align-items-center justify-content-between py-3">
+      <a class="navbar-brand" href="#" onclick="goToShop()" style="cursor: pointer;">𝓩afran House</a>
+      <div class="d-flex align-items-center gap-2" style="margin-left: auto;">
+       <button class="lang-btn active" id="langEn" onclick="setLang('en')">EN</button> <button class="lang-btn" id="langDa" onclick="setLang('da')">دری</button> <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme"></button> <button onclick="goToCart()" style="background: none; border: none; cursor: pointer; color: var(--text); position: relative; padding: 4px; margin-left: 12px;">
+        <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;">
+         <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+        </svg><span class="cart-badge" id="cartBadge">0</span> </button>
+      </div>
+     </div>
+    </div>
+   </nav><!-- SHOP PAGE -->
+   <div id="shopPage">
+    <!-- HERO -->
+    <section class="hero-section" id="heroSection">
+     <div class="hero-orb hero-orb-1"></div>
+     <div class="hero-orb hero-orb-2"></div>
+     <div class="hero-orb hero-orb-3"></div>
+     <div id="saffronThreads"></div>
+     <div class="container-fluid">
+      <div class="row justify-content-center align-items-center">
+       <div class="col-lg-8 text-center position-relative z-1">
+        <div class="reveal">
+         <p style="color: var(--accent); font-weight: 600; letter-spacing: 3px; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 12px;" data-i18n="hero_tag">Handpicked Excellence</p>
+         <h1 class="font-display hero-title" id="heroTitle">Premium Afghan<br><span>Saffron</span></h1>
+         <p class="hero-subtitle" id="heroSubtitle">The world's finest saffron, cultivated in the highlands of Herat with centuries of tradition.</p><button class="btn-primary" onclick="scrollToShop()"> <span data-i18n="shop_now">Shop Now</span>
+          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
+           <line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" />
+          </svg></button>
+        </div>
+        <div class="mt-4 reveal" style="animation-delay: 0.2s;">
+         <svg viewbox="0 0 400 180" style="max-width: 360px; display: block; margin: 0 auto;" fill="none">
+          <g opacity="0.9">
+           <path d="M200 170 C200 170 195 80 170 40 C160 22 155 15 158 10 C162 4 168 8 172 18 C185 48 198 100 200 170Z" fill="url(#sf1)" />
+           <path d="M200 170 C200 170 205 80 230 40 C240 22 245 15 242 10 C238 4 232 8 228 18 C215 48 202 100 200 170Z" fill="url(#sf2)" />
+           <path d="M200 170 C200 170 200 90 200 30 C200 15 197 8 200 5 C203 8 200 15 200 30 C200 90 200 170 200 170Z" fill="url(#sf3)" />
+           <ellipse cx="170" cy="8" rx="6" ry="8" fill="#E84040" opacity="0.9" />
+           <ellipse cx="200" cy="3" rx="5" ry="7" fill="#C8963E" opacity="0.9" />
+           <ellipse cx="230" cy="8" rx="6" ry="8" fill="#E84040" opacity="0.9" />
+          </g> <defs>
+           <lineargradient id="sf1" x1="170" y1="10" x2="200" y2="170">
+            <stop stop-color="#C8963E" />
+            <stop offset="1" stop-color="#8B5E1A" />
+           </lineargradient>
+           <lineargradient id="sf2" x1="230" y1="10" x2="200" y2="170">
+            <stop stop-color="#C8963E" />
+            <stop offset="1" stop-color="#8B5E1A" />
+           </lineargradient>
+           <lineargradient id="sf3" x1="200" y1="5" x2="200" y2="170">
+            <stop stop-color="#D4A853" />
+            <stop offset="1" stop-color="#8B5E1A" />
+           </lineargradient>
+          </defs>
+         </svg>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- SHOP SECTION -->
+    <section id="shop" style="padding: 60px 0 40px;">
+     <div class="container-fluid">
+      <div class="row justify-content-center mb-4">
+       <div class="col-lg-8 text-center reveal">
+        <h2 class="font-display" style="font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem;" id="shopTitle">Our Collection</h2>
+        <p style="opacity: 0.6; margin-bottom: 1.5rem;" data-i18n="shop_sub">Premium saffron from Marghob Heray Agricultural Company — women-owned, quality-driven, from Herat</p>
+        <div style="display: inline-block; background: var(--bg2); border-radius: 12px; padding: 12px 20px; font-size: 0.85rem; opacity: 0.7;"><strong style="color: var(--accent);">✓ Women-Owned</strong> — <strong style="color: var(--accent);">✓ Lab-Tested</strong> — <strong style="color: var(--accent);">✓ Direct from Herat</strong>
+        </div>
+       </div>
+      </div>
+      <div class="mb-4 reveal" id="filterBar" style="display: flex; flex-wrap: wrap; gap: 10px; padding: 0 15px;">
+       <button class="filter-pill active" data-filter="all" data-i18n="filter_all">All</button> <button class="filter-pill" data-filter="super_negin">Super Negin</button> <button class="filter-pill" data-filter="negin">Negin</button> <button class="filter-pill" data-filter="pushal">Pushal</button> <button class="filter-pill" data-filter="sargol">Sargol</button> <button class="filter-pill" data-filter="powder" data-i18n="filter_powder">Powder</button> <button class="filter-pill" data-filter="gift" data-i18n="filter_gift">Gifts</button> <button class="filter-pill" data-filter="premium" data-i18n="filter_premium">Premium</button>
+      </div>
+      <div class="d-flex justify-content-end mb-3">
+       <select id="sortSelect" style="background: var(--card); border: 1px solid var(--card-border); border-radius: 8px; padding: 6px 12px; color: var(--text); font-size: 0.85rem; cursor: pointer;"> <option value="default">Sort: Featured</option> <option value="low">Price: Low to High</option> <option value="high">Price: High to Low</option> <option value="rating">Top Rated</option> </select>
+      </div>
+      <div id="skeletonGrid" class="row g-4" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;"></div>
+      <div id="productGrid" class="row g-4" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;"></div>
+      <p id="noResults" class="text-center py-5" style="display: none; opacity: 0.5;" data-i18n="no_results">No products found</p>
+     </div>
+    </section><!-- MODAL -->
+    <div class="modal-backdrop" id="productModal">
+     <div class="modal-content">
+      <div id="modalBody"></div>
+     </div>
+    </div>
+   </div><!-- CART & CHECKOUT PAGE -->
+   <div id="cartPage" style="display: none;">
+    <section style="padding: 40px 0; min-height: 100%;">
+     <div class="container-fluid">
+      <div class="row mb-4">
+       <div class="col-12">
+        <button class="btn" onclick="goToShop()" style="background: none; border: none; color: var(--accent); padding: 0; font-weight: 600; margin-bottom: 20px;">
+         <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;display:inline;margin-right:8px;">
+          <line x1="19" y1="12" x2="5" y2="12" /><polyline points="12 19 5 12 12 5" />
+         </svg>Back to Shop </button>
+       </div>
+      </div>
+      <div class="row">
+       <!-- Cart Items Column -->
+       <div class="col-lg-8 mb-4 mb-lg-0">
+        <div style="background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px;">
+         <h2 class="font-display" style="font-size: 1.75rem; font-weight: 700; margin-bottom: 24px;">Your Cart</h2>
+         <div id="cartItemsList"></div>
+        </div>
+       </div><!-- Checkout Column -->
+       <div class="col-lg-4">
+        <div style="background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; position: sticky; top: 100px;">
+         <h3 class="font-display" style="font-size: 1.35rem; font-weight: 700; margin-bottom: 20px;">Order Summary</h3>
+         <div id="orderSummary" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--card-border);"></div>
+         <div style="background: var(--bg2); border-radius: 12px; padding: 16px; margin-bottom: 24px;">
+          <div class="d-flex justify-content-between mb-2">
+           <span style="opacity: 0.6;">Subtotal</span> <span id="summarySubtotal">$0.00</span>
+          </div>
+          <div class="d-flex justify-content-between mb-3">
+           <span style="opacity: 0.6;">Shipping</span> <span id="summaryShipping">Free</span>
+          </div>
+          <div style="border-top: 1px solid var(--card-border); padding-top: 12px;">
+           <div class="d-flex justify-content-between" style="font-weight: 700; font-size: 1.1rem;">
+            <span>Total</span> <span id="summaryTotal">$0.00</span>
+           </div>
+          </div>
+         </div>
+         <form id="checkoutForm" onsubmit="handleCheckout(event)">
+          <div class="mb-3">
+           <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem;" id="fullNameLabel">Full Name</label> <input type="text" id="fullName" placeholder="John Doe" style="width: 100%; padding: 10px 14px; border: 1px solid var(--card-border); border-radius: 8px; background: var(--bg2); color: var(--text); font-size: 0.9rem;" required>
+          </div>
+          <div class="mb-3">
+           <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem;" id="phoneLabel">Phone Number</label> <input type="tel" id="phone" placeholder="+1 (555) 000-0000" style="width: 100%; padding: 10px 14px; border: 1px solid var(--card-border); border-radius: 8px; background: var(--bg2); color: var(--text); font-size: 0.9rem;" required>
+          </div>
+          <div class="mb-3">
+           <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem;" id="addressLabel">Delivery Address</label> <textarea id="address" placeholder="123 Main Street, City, Country" style="width: 100%; padding: 10px 14px; border: 1px solid var(--card-border); border-radius: 8px; background: var(--bg2); color: var(--text); font-size: 0.9rem; resize: vertical; min-height: 80px;" required></textarea>
+          </div><button type="submit" class="btn-primary w-100" style="padding: 12px 20px; font-size: 0.95rem; border: none; cursor: pointer;" id="placeOrderBtn"> <span>Place Order</span> </button>
+         </form><!-- Success Message -->
+         <div id="successMessage" style="display: none; background: #10B981; color: white; padding: 16px; border-radius: 12px; text-align: center; margin-top: 12px;">
+          <svg viewbox="0 0 24 24" fill="currentColor" style="width:24px;height:24px;display:inline;margin-bottom:8px;margin-right:8px;">
+           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+          </svg>
+          <p style="margin: 0; font-weight: 600;">Order Placed Successfully!</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- TOAST -->
+   <div class="toast" id="toast">
+    <svg viewbox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px;">
+     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+    </svg><span id="toastText">Added to cart!</span>
+   </div><!-- FOOTER -->
+   <footer class="footer-section">
+    <div class="container-fluid">
+     <div class="row mb-4">
+      <div class="col-md-6 col-lg-3 footer-col">
+       <h4 style="color: var(--primary);">𝓩afran House</h4>
+       <p style="font-size: 0.85rem; line-height: 1.6; opacity: 0.6;" data-i18n="footer_about">Bringing the finest Afghan saffron to the world since 2018. Our saffron is handpicked and lab-tested for purity.</p>
+      </div>
+      <div class="col-md-6 col-lg-3 footer-col">
+       <h4 data-i18n="footer_shop">Shop</h4>
+       <ul>
+        <li data-i18n="ft_threads">Saffron Threads</li>
+        <li data-i18n="ft_powder">Saffron Powder</li>
+        <li data-i18n="ft_gifts">Gift Sets</li>
+        <li data-i18n="ft_bulk">Bulk Orders</li>
+       </ul>
+      </div>
+      <div class="col-md-6 col-lg-3 footer-col">
+       <h4 data-i18n="footer_company">Company</h4>
+       <ul>
+        <li data-i18n="ft_about">About Us</li>
+        <li data-i18n="ft_story">Our Story</li>
+        <li data-i18n="ft_contact">Contact</li>
+        <li data-i18n="ft_faq">FAQ</li>
+       </ul>
+      </div>
+      <div class="col-md-6 col-lg-3 footer-col">
+       <h4 data-i18n="footer_connect">Connect</h4>
+       <div class="social-icons">
+        <span class="social-icon">
+         <svg viewbox="0 0 24 24" fill="currentColor" style="width: 16px; height: 16px;">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.05 1.37-.63 4.05-3.57 4.13-.6.02-1.08.27-1.44.74-.36-.47-.84-.72-1.44-.74-2.94-.08-3.52-2.76-3.57-4.13-.03-.55.43-1.01.97-.98.53.03.96.47.99 1.01.07 1.14.57 2.29 2.05 2.35 1.48-.06 1.98-1.21 2.05-2.35.03-.54.46-.98.99-1.01.54-.03.99.43.97.98zM10 13h4v2h-4z" />
+         </svg></span> <span class="social-icon">
+         <svg viewbox="0 0 24 24" fill="currentColor" style="width: 16px; height: 16px;">
+          <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2s9 5 20 5a9.5 9.5 0 0 0-9-5.5c4.75 2.25 7-7 7-7s1.08-7.81-2-11z" />
+         </svg></span> <span class="social-icon">
+         <svg viewbox="0 0 24 24" fill="currentColor" style="width: 16px; height: 16px;">
+          <path d="M18 2h-3a6 6 0 0 0-6 6v3H2v4h7v8h4v-8h3l1-4h-4V8a2 2 0 0 1 2-2h3z" />
+         </svg></span>
+       </div>
+      </div>
+     </div>
+     <div class="text-center pt-3" style="border-top: 1px solid var(--card-border); font-size: 0.8rem; opacity: 0.5;" id="footerText">
+      © 2024 Zafran House. All rights reserved.
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // ===== GLOBALS =====
+    const products = [
+      // Super Negin Grade I
+      {id:1,name:"Super Negin Grade I",nameDa:"سوپر نگین درجه یک",cat:"super_negin",price:32,rating:5,badge:"Premium Quality",badgeDa:"کیفیت ممتاز",desc:"Grade I Super Negin threads from Marghob Heray. Highest purity, vibrant crimson color, authentic Herat aroma. Crocin level: 270+. Hand-sorted for excellence.",descDa:"تارهای سوپر نگین درجه یک از مرغوب هیرای. خالصترین، رنگ سرخ روشن، عطر اصیل هرات. سطح کروسین: ۲۷۰+.",weight:"1g",color1:"#8B1A1A",color2:"#C8963E",image:"https://images.unsplash.com/photo-1599599810694-b0c2e0bf0a32?w=400&h=400&fit=crop"},
+      {id:2,name:"Super Negin Grade II",nameDa:"سوپر نگین درجه دوم",cat:"super_negin",price:26,rating:4.5,badge:"Best Value",badgeDa:"بهترین قیمت",desc:"Grade II Super Negin with excellent quality standards. Premium color and aroma. Perfect for cooking and traditional use. Crocin level: 250+.",descDa:"سوپر نگین درجه دوم با استانداردهای کیفی عالی. رنگ و عطر ممتاز. برای آشپزی و استفاده سنتی مناسب. سطح کروسین: ۲۵۰+.",weight:"1g",color1:"#A02020",color2:"#D4A853",image:"https://images.unsplash.com/photo-1596040680447-fa3e7a9b8eb8?w=400&h=400&fit=crop"},
+      
+      // Negin Standard
+      {id:3,name:"Negin Saffron Select",nameDa:"زعفران نگین منتخب",cat:"negin",price:22,rating:4,badge:"Popular",badgeDa:"محبوب",desc:"Standard grade Negin saffron from women farmer cooperatives in Herat. Consistent quality, rich flavor. Ideal for daily cooking. Crocin level: 230+.",descDa:"زعفران نگین درجه معیار از تعاونی‌های کشاورزان زنان هرات. کیفیت ثابت، طعم غنی. برای آشپزی روزانه ایده‌آل. سطح کروسین: ۲۳۰+.",weight:"1g",color1:"#B82828",color2:"#D4A853",image:"https://images.unsplash.com/photo-1596119456514-46b6c82ebf8d?w=400&h=400&fit=crop"},
+      {id:4,name:"Negin Bulk 5g",nameDa:"نگین فله ۵ گرمی",cat:"negin",price:95,rating:4.5,badge:"Value Pack",badgeDa:"بسته اقتصادی",desc:"5 grams of quality Negin saffron. Bulk pricing for restaurants, professional chefs, and commercial use. Consistent quality throughout.",descDa:"۵ گرم زعفران نگین با کیفیت. قیمت عمده برای رستوران‌ها و آشپزهای حرفه‌ای. کیفیت ثابت در تمام محصول.",weight:"5g",color1:"#8B1A1A",color2:"#C8963E",image:"https://images.unsplash.com/photo-1596119512641-5b6e6d1c5e5f?w=400&h=400&fit=crop"},
+      
+      // Pushal Grade
+      {id:5,name:"Pushal Threads Premium",nameDa:"پوشال تاری ممتاز",cat:"pushal",price:18,rating:4,badge:null,badgeDa:null,desc:"Pushal grade with longer threads and attached stigma style. Rich red color, authentic aroma. Great for visual presentation in dishes. Crocin: 200+.",descDa:"درجه پوشال با تارهای طولانی‌تر. رنگ قرمز غنی، عطر اصیل. برای ارائه بصری در غذاها عالی. کروسین: ۲۰۰+.",weight:"1g",color1:"#9B2C2C",color2:"#D4A853",image:"https://images.unsplash.com/photo-1596119812838-e0e8a9d0a7b4?w=400&h=400&fit=crop"},
+      {id:6,name:"Pushal Bulk 2.5kg",nameDa:"پوشال فله ۲۵۰۰ گرمی",cat:"pushal",price:380,rating:4.5,badge:"Commercial",badgeDa:"تجاری",desc:"2.5kg commercial grade Pushal saffron for food processors and large-scale food manufacturing. Direct from Marghob Heray production.",descDa:"۲۵۰۰ گرم زعفران پوشال درجه تجاری برای کارخانه‌های پردازش مواد غذایی. مستقیم از تولید مرغوب هیرای.",weight:"2.5kg",color1:"#8B1A1A",color2:"#C8963E",image:"https://images.unsplash.com/photo-1596119812854-f9e1d2f5e5f0?w=400&h=400&fit=crop"},
+      
+      // Sargol (Red Stigma)
+      {id:7,name:"Sargol Red Stigma Premium",nameDa:"سرگل پوشش قرمز ممتاز",cat:"sargol",price:28,rating:5,badge:"Finest Sargol",badgeDa:"بهترین سرگل",desc:"Pure red stigma (sargol) without white style. Highest color concentration. Premium quality for culinary excellence. Perfect for authentic Persian/Afghan cooking. Crocin: 280+.",descDa:"پوشش قرمز خالص بدون سفید. بیشترین تمرکز رنگ. کیفیت ممتاز برای آشپزی عالی. برای آشپزی فارسی/افغانی اصیل مناسب. کروسین: ۲۸۰+.",weight:"1g",color1:"#C41E3A",color2:"#8B1A1A",image:"https://images.unsplash.com/photo-1596040680447-fef9e9c0a5e1?w=400&h=400&fit=crop"},
+      {id:8,name:"Sargol Bulk 500g",nameDa:"سرگل فله ۵۰۰ گرمی",cat:"sargol",price:220,rating:4.5,badge:"Restaurant Grade",badgeDa:"درجه رستوران",desc:"500g of premium Sargol for professional kitchens. Intense color, maximum potency. Ideal for food coloring and premium preparations.",descDa:"۵۰۰ گرم سرگل ممتاز برای آشپزخانه‌های حرفه‌ای. رنگ شدید، قوت حداکثر. برای رنگدهی مواد غذایی و تهیه‌های بخصوص مناسب.",weight:"500g",color1:"#8B1A1A",color2:"#D4A853",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7b5?w=400&h=400&fit=crop"},
+      
+      // Powder & Extracts
+      {id:9,name:"Saffron Powder Pure",nameDa:"پودر زعفران خالص",cat:"powder",price:24,rating:4.5,badge:"Processed",badgeDa:"پردازش‌شده",desc:"100% pure saffron powder ground from high-grade threads. No additives. Easy to mix in drinks and dishes. Perfect for modern cooking convenience.",descDa:"۱۰۰٪ پودر زعفران خالص آسیاب‌شده از تارهای درجه بالا. بدون افزودنی‌ها. آسان برای مخلوط کردن در نوشیدنی‌ها و غذاها.",weight:"2g",color1:"#D4A853",color2:"#8B5E1A",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7b6?w=400&h=400&fit=crop"},
+      {id:10,name:"Saffron Extract Liquid",nameDa:"عصاره مایع زعفران",cat:"powder",price:35,rating:5,badge:"Easy Use",badgeDa:"استفاده آسان",desc:"Concentrated liquid saffron extract. Ready to use drops for instant flavor and color. Shelf-stable, convenient for modern cooking.",descDa:"عصاره مایع زعفران متمرکز. قطره‌های آماده برای طعم و رنگ فوری. قابل نگهداری طولانی‌مدت، برای آشپزی مدرن مناسب.",weight:"30ml",color1:"#A02020",color2:"#C8963E",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7b7?w=400&h=400&fit=crop"},
+      
+      // Gift & Premium Sets
+      {id:11,name:"Marghob Heray Gift Box",nameDa:"جعبه هدیه مرغوب هیرای",cat:"gift",price:72,rating:5,badge:"Premium Gift",badgeDa:"هدیه ممتاز",desc:"Luxury gift set featuring: 2g Super Negin Grade I, 1g Sargol, golden measuring spoon, premium packaging highlighting women's empowerment story. Perfect corporate & personal gifts.",descDa:"ست هدیه لوکس شامل: ۲ گرم سوپر نگین درجه یک، ۱ گرم سرگل، قاشق اندازه‌گیری طلایی، بسته‌بندی فاخر. هدایای کorporate و فردی مناسب.",weight:"3g Set",color1:"#C8963E",color2:"#8B1A1A",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7b8?w=400&h=400&fit=crop"},
+      {id:12,name:"Women's Empowerment Collection",nameDa:"مجموعه توانمندسازی زنان",cat:"gift",price:95,rating:5,badge:"Social Impact",badgeDa:"تاثیر اجتماعی",desc:"Premium 5g collection supporting women farmers. Includes Super Negin, Sargol, Pushal samples. Every purchase directly benefits smallholder women farmer cooperatives in Herat.",descDa:"مجموعه فاخر ۵ گرمی حمایت‌کننده کشاورزان زن. شامل نمونه‌های سوپر نگین، سرگل، پوشال. هر خریدی مستقیم به منفعت تعاونی‌های کشاورزان زن هرات.",weight:"5g Collection",color1:"#8B1A1A",color2:"#D4A853",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7b9?w=400&h=400&fit=crop"},
+      
+      // Specialty
+      {id:13,name:"Organic Certified Saffron",nameDa:"زعفران دارای گواهی ارگانیک",cat:"premium",price:52,rating:5,badge:"Certified Organic",badgeDa:"گواهی‌شده ارگانیک",desc:"Marghob Heray organic saffron with international certifications. Grown without synthetic pesticides. Lab-tested for purity and safety. Premium Grade I quality. Crocin: 275+.",descDa:"زعفران ارگانیک مرغوب هیرای با گواهی‌های بین‌المللی. بدون حشره‌کش‌های مصنوعی. آزمایش‌شده برای خالصیت و ایمنی. درجه یک ممتاز. کروسین: ۲۷۵+.",weight:"1g",color1:"#5B8C3E",color2:"#C8963E",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7ba?w=400&h=400&fit=crop"},
+      {id:14,name:"Heritage Blend Selection",nameDa:"انتخاب مخلوط میراث",cat:"premium",price:65,rating:4.5,badge:"Tasting Set",badgeDa:"ست چشایی",desc:"Curated sampler featuring different saffron grades: Super Negin, Sargol, Pushal. Educational package for connoisseurs and cooking enthusiasts. Traditional Herat varieties.",descDa:"نمونه منتخب با درجات مختلف زعفران: سوپر نگین، سرگل، پوشال. بسته آموزشی برای شناسندگان و علاقه‌مندان آشپزی. اقسام سنتی هرات.",weight:"3g Total",color1:"#8B1A1A",color2:"#D4A853",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7bb?w=400&h=400&fit=crop"},
+      {id:15,name:"Tea & Wellness Blend",nameDa:"دمنوش و سلامتی",cat:"gift",price:28,rating:4.5,badge:"Wellness",badgeDa:"سلامتی",desc:"Saffron blended with rose petals, cardamom, and dried fruits. Traditional wellness tea. 12 brew bags. Supports women farmers' cooperatives.",descDa:"زعفران مخلوط با گلبرگ رز، هل و میوه‌های خشک‌شده. چای سنتی سلامتی. ۱۲ بسته دم‌کنی. از تعاونی‌های کشاورزان زن حمایت می‌کند.",weight:"60g / 12 Bags",color1:"#D4A853",color2:"#8B1A1A",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7bc?w=400&h=400&fit=crop"},
+      {id:16,name:"Royal Kitchen Bundle",nameDa:"بسته پخت شاهی",cat:"gift",price:110,rating:5,badge:"Complete Kit",badgeDa:"بسته کامل",desc:"Complete saffron cooking kit: 2g Super Negin, 1g Sargol, measuring spoon, recipe card (EN/DA), premium gift box. Professional quality for home chefs. Direct from Marghob Heray.",descDa:"بسته کامل آشپزی زعفران: ۲ گرم سوپر نگین، ۱ گرم سرگل، قاشق اندازه‌گیری، کارت دستور (EN/DA)، جعبه هدیه فاخر. کیفیت حرفه‌ای برای آشپزهای خانه‌ای.",weight:"3g Kit",color1:"#C8963E",color2:"#8B1A1A",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7bd?w=400&h=400&fit=crop"}
+    ];
+
+    const i18n = {
+      en: {hero_tag:"Handpicked Excellence",shop_now:"Shop Now",shop_sub:"Explore our premium range of saffron products",filter_all:"All",filter_threads:"Threads",filter_powder:"Powder",filter_gift:"Gift Sets",filter_premium:"Premium",add_cart:"Add to Cart",quick_view:"Quick View",cart_title:"Your Cart",total:"Total",checkout:"Checkout",no_results:"No products found",footer_about:"Bringing the finest Afghan saffron to the world since 2018. Our saffron is handpicked and lab-tested for purity.",footer_shop:"Shop",footer_company:"Company",footer_connect:"Connect",ft_threads:"Saffron Threads",ft_powder:"Saffron Powder",ft_gifts:"Gift Sets",ft_bulk:"Bulk Orders",ft_about:"About Us",ft_story:"Our Story",ft_contact:"Contact",ft_faq:"FAQ",added:"Added to cart!",empty_cart:"Your cart is empty",sort_default:"Sort: Featured",sort_low:"Price: Low to High",sort_high:"Price: High to Low",sort_rating:"Top Rated",weight:"Weight",remove:"Remove",full_name:"Full Name",phone:"Phone Number",address:"Delivery Address",place_order:"Place Order"},
+      da: {hero_tag:"برتری دست‌چین‌شده",shop_now:"خرید کنید",shop_sub:"مجموعه ممتاز زعفران ما را کاوش کنید",filter_all:"همه",filter_threads:"تار",filter_powder:"پودر",filter_gift:"ست هدیه",filter_premium:"ممتاز",add_cart:"افزودن به سبد",quick_view:"مشاهده سریع",cart_title:"سبد شما",total:"مجموع",checkout:"تسویه حساب",no_results:"محصولی یافت نشد",footer_about:"از سال ۲۰۱۸ بهترین زعفران افغانستان را به جهان عرضه می‌کنیم.",footer_shop:"فروشگاه",footer_company:"شرکت",footer_connect:"ارتباط",ft_threads:"تار زعفران",ft_powder:"پودر زعفران",ft_gifts:"ست هدیه",ft_bulk:"سفارش عمده",ft_about:"درباره ما",ft_story:"داستان ما",ft_contact:"تماس",ft_faq:"سوالات متداول",added:"به سبد اضافه شد!",empty_cart:"سبد شما خالی است",sort_default:"مرتب‌سازی: ویژه",sort_low:"قیمت: کم به زیاد",sort_high:"قیمت: زیاد به کم",sort_rating:"بالاترین امتیاز",weight:"وزن",remove:"حذف",full_name:"نام کامل",phone:"شماره تماس",address:"آدرس تحویل",place_order:"ثبت سفارش"}
+    };
+
+    let currentLang = 'en', cart = [], currentFilter = 'all', searchQuery = '', currentPage = 'shop';
+
+    // ===== STORAGE =====
+    function saveCart() {
+      localStorage.setItem('saffron-cart', JSON.stringify(cart));
+    }
+
+    function loadCart() {
+      try {
+        const saved = localStorage.getItem('saffron-cart');
+        cart = saved ? JSON.parse(saved) : [];
+      } catch (e) {
+        cart = [];
+      }
+    }
+
+    // ===== PAGE NAVIGATION =====
+    function goToShop() {
+      currentPage = 'shop';
+      document.getElementById('shopPage').style.display = 'block';
+      document.getElementById('cartPage').style.display = 'none';
+      document.getElementById('app').scrollTop = 0;
+    }
+
+    function goToCart() {
+      currentPage = 'cart';
+      document.getElementById('shopPage').style.display = 'none';
+      document.getElementById('cartPage').style.display = 'block';
+      document.getElementById('app').scrollTop = 0;
+      renderCartPage();
+    }
+
+    function scrollToShop() {
+      const shopElement = document.getElementById('shop');
+      if (shopElement) {
+        shopElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // ===== LANGUAGE & THEME =====
+    function setLang(lang) {
+      currentLang = lang;
+      document.documentElement.dir = lang === 'da' ? 'rtl' : 'ltr';
+      document.documentElement.lang = lang === 'da' ? 'fa' : 'en';
+      document.getElementById('langEn').classList.toggle('active', lang === 'en');
+      document.getElementById('langDa').classList.toggle('active', lang === 'da');
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const k = el.getAttribute('data-i18n');
+        if (i18n[lang][k]) el.textContent = i18n[lang][k];
+      });
+      updateLabels();
+      if (currentPage === 'shop') renderProducts();
+      else renderCartPage();
+    }
+
+    function updateLabels() {
+      document.getElementById('fullNameLabel').textContent = i18n[currentLang].full_name;
+      document.getElementById('phoneLabel').textContent = i18n[currentLang].phone;
+      document.getElementById('addressLabel').textContent = i18n[currentLang].address;
+      document.getElementById('placeOrderBtn').textContent = i18n[currentLang].place_order;
+    }
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('saffron-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); } catch (e) {}
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toastText').textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2200);
+    }
+
+    // ===== SVG GENERATION =====
+    function generateSVG(p, size = 160) {
+      const s = size;
+      return `<svg viewBox="0 0 ${s} ${s}" width="${s}" height="${s}" style="display:block;margin:auto" fill="none">
+        <defs><linearGradient id="pg${p.id}${size}" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${p.color1}"/><stop offset="1" stop-color="${p.color2}"/></linearGradient></defs>
+        <circle cx="${s/2}" cy="${s/2}" r="${s*.32}" fill="url(#pg${p.id}${size})" opacity=".12"/>
+        <g transform="translate(${s/2},${s/2})">
+          ${[0,72,144,216,288].map(a=>`<path d="M0,-8 C12,-40 8,-55 0,-62 C-8,-55 -12,-40 0,-8Z" fill="url(#pg${p.id}${size})" opacity=".8" transform="rotate(${a})"/>`).join('')}
+          <circle r="8" fill="${p.color1}"/>
+        </g>
+      </svg>`;
+    }
+
+    function stars(r) {
+      let s = '';
+      for (let i = 1; i <= 5; i++) {
+        if (i <= Math.floor(r))
+          s += '<svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px;color:var(--accent);display:inline;vertical-align:middle"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+        else if (i - r < 1)
+          s += '<svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px;color:var(--accent);opacity:.5;display:inline;vertical-align:middle"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+        else
+          s += '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;color:var(--accent);opacity:.3;display:inline;vertical-align:middle"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+      }
+      return s;
+    }
+
+    // ===== PRODUCTS =====
+    function getFilteredProducts() {
+      let list = [...products];
+      if (currentFilter !== 'all') list = list.filter(p => p.cat === currentFilter);
+      const sort = document.getElementById('sortSelect').value;
+      if (sort === 'low') list.sort((a, b) => a.price - b.price);
+      else if (sort === 'high') list.sort((a, b) => b.price - a.price);
+      else if (sort === 'rating') list.sort((a, b) => b.rating - a.rating);
+      return list;
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('productGrid');
+      const filtered = getFilteredProducts();
+      document.getElementById('noResults').style.display = filtered.length ? 'none' : 'block';
+      
+      grid.innerHTML = filtered.map((p, i) => `
+        <div class="product-card reveal${i < 8 ? ' visible' : ''}" style="animation-delay: ${i * 80}ms">
+          <div class="card-img-wrap" style="cursor: pointer; background: linear-gradient(135deg, var(--bg2), var(--bg));" onclick="openModal(${p.id})">
+            ${p.badge ? `<span class="card-badge">${currentLang === 'da' ? p.badgeDa : p.badge}</span>` : ''}
+            <img src="${p.image}" alt="${currentLang === 'da' ? p.nameDa : p.name}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.display='none'; this.parentElement.appendChild((() => { const d = document.createElement('div'); d.innerHTML = '${generateSVG(p)}'; return d.firstChild; })());">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">${currentLang === 'da' ? p.nameDa : p.name}</h3>
+            <div class="card-rating">${stars(p.rating)}</div>
+            <div class="d-flex align-items-center justify-content-between">
+              <span class="card-price">$${p.price}</span>
+              <button class="btn-primary" style="padding: 8px 14px; font-size: 0.8rem; gap: 4px;" onclick="addToCart(${p.id})">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;display:inline"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                <span>${i18n[currentLang].add_cart}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      observeReveal();
+    }
+
+    function openModal(id) {
+      const p = products.find(x => x.id === id);
+      if (!p) return;
+      const m = document.getElementById('modalBody');
+      m.innerHTML = `
+        <button class="modal-close" onclick="closeModal()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+        <div class="modal-img-section">
+          <img src="${p.image}" alt="${currentLang === 'da' ? p.nameDa : p.name}" loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;" onerror="console.error('Image failed to load:', this.src); this.style.display='none'; this.parentElement.innerHTML += '${generateSVG(p, 200)}';">
+        </div>
+        <div class="modal-body">
+          ${p.badge ? `<span style="background: var(--primary); color: white; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 6px; display: inline-block; margin-bottom: 8px;">${currentLang === 'da' ? p.badgeDa : p.badge}</span>` : ''}
+          <h2 class="font-display" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">${currentLang === 'da' ? p.nameDa : p.name}</h2>
+          <div class="card-rating mb-2">${stars(p.rating)}<span style="opacity: 0.5; font-size: 0.8rem; margin-left: 8px;">(${p.rating})</span></div>
+          <p style="opacity: 0.7; line-height: 1.7; margin-bottom: 1rem;">${currentLang === 'da' ? p.descDa : p.desc}</p>
+          <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 1.25rem;">
+            <span style="font-size: 1.75rem; font-weight: 700; color: var(--primary);">$${p.price}</span>
+            <span style="opacity: 0.5; font-size: 0.8rem;">${i18n[currentLang].weight}: ${p.weight}</span>
+          </div>
+          <button class="btn-primary w-100" style="padding: 12px 28px; font-size: 0.95rem;" onclick="addToCart(${p.id}); closeModal();">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;display:inline"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span>${i18n[currentLang].add_cart}</span>
+          </button>
+        </div>
+      `;
+      document.getElementById('productModal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('productModal').classList.remove('open');
+    }
+
+    // ===== CART =====
+    function addToCart(id) {
+      const existing = cart.find(c => c.id === id);
+      if (existing) existing.qty++;
+      else cart.push({ id, qty: 1 });
+      saveCart();
+      updateCartBadge();
+      showToast(i18n[currentLang].added);
+    }
+
+    function updateCartBadge() {
+      const badge = document.getElementById('cartBadge');
+      const total = cart.reduce((s, c) => s + c.qty, 0);
+      badge.textContent = total;
+      badge.style.display = total ? 'flex' : 'none';
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(c => c.id !== id);
+      saveCart();
+      updateCartBadge();
+      renderCartPage();
+    }
+
+    function updateQty(id, qty) {
+      const item = cart.find(c => c.id === id);
+      if (!item) return;
+      item.qty = qty;
+      if (item.qty <= 0) removeFromCart(id);
+      else {
+        saveCart();
+        renderCartPage();
+      }
+    }
+
+    function renderCartPage() {
+      const itemsList = document.getElementById('cartItemsList');
+      const summary = document.getElementById('orderSummary');
+      
+      if (!cart.length) {
+        itemsList.innerHTML = `<p style="text-align: center; opacity: 0.5; padding: 40px; font-size: 0.9rem;">${i18n[currentLang].empty_cart}</p>`;
+        summary.innerHTML = '';
+        document.getElementById('summarySubtotal').textContent = '$0.00';
+        document.getElementById('summaryTotal').textContent = '$0.00';
+        return;
+      }
+
+      let subtotal = 0;
+      itemsList.innerHTML = cart.map(c => {
+        const p = products.find(x => x.id === c.id);
+        const itemTotal = p.price * c.qty;
+        subtotal += itemTotal;
+        return `
+          <div style="display: flex; gap: 16px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--card-border);">
+            <div style="width: 100px; height: 100px; border-radius: 12px; background: var(--bg2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <img src="${p.image}" alt="${currentLang === 'da' ? p.nameDa : p.name}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;" onerror="console.error('Image failed to load:', this.src); this.style.display='none';">
+            </div>
+            <div style="flex: 1;">
+              <h4 style="font-weight: 700; margin-bottom: 4px; font-size: 0.95rem;">${currentLang === 'da' ? p.nameDa : p.name}</h4>
+              <p style="opacity: 0.6; font-size: 0.85rem; margin-bottom: 8px;">$${p.price} × ${c.qty}</p>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <button onclick="updateQty(${p.id}, ${c.qty - 1})" style="width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--bg2); cursor: pointer; color: var(--text); font-weight: 600;">−</button>
+                <span style="min-width: 30px; text-align: center; font-weight: 600;">${c.qty}</span>
+                <button onclick="updateQty(${p.id}, ${c.qty + 1})" style="width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--bg2); cursor: pointer; color: var(--text); font-weight: 600;">+</button>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <p style="font-weight: 700; font-size: 1rem; color: var(--primary); margin-bottom: 12px;">$${itemTotal.toFixed(2)}</p>
+              <button onclick="removeFromCart(${p.id})" style="background: transparent; border: none; color: var(--accent); cursor: pointer; text-decoration: underline; font-size: 0.85rem; font-weight: 500;">${i18n[currentLang].remove}</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      summary.innerHTML = cart.map(c => {
+        const p = products.find(x => x.id === c.id);
+        return `
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; opacity: 0.7;">
+            <span>${currentLang === 'da' ? p.nameDa : p.name} ×${c.qty}</span>
+            <span>$${(p.price * c.qty).toFixed(2)}</span>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('summarySubtotal').textContent = '$' + subtotal.toFixed(2);
+      document.getElementById('summaryTotal').textContent = '$' + subtotal.toFixed(2);
+    }
+
+    // ===== CHECKOUT =====
+    function handleCheckout(e) {
+      e.preventDefault();
+      if (cart.length === 0) {
+        showToast('Cart is empty');
+        return;
+      }
+
+      const fullName = document.getElementById('fullName').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+
+      if (!fullName || !phone || !address) {
+        showToast('Please fill all fields');
+        return;
+      }
+
+      document.getElementById('checkoutForm').style.display = 'none';
+      document.getElementById('successMessage').style.display = 'block';
+
+      setTimeout(() => {
+        cart = [];
+        saveCart();
+        updateCartBadge();
+        document.getElementById('fullName').value = '';
+        document.getElementById('phone').value = '';
+        document.getElementById('address').value = '';
+        document.getElementById('checkoutForm').style.display = 'block';
+        document.getElementById('successMessage').style.display = 'none';
+        goToShop();
+      }, 2500);
+    }
+
+    // ===== EVENTS =====
+    document.getElementById('filterBar').addEventListener('click', e => {
+      if (!e.target.classList.contains('filter-pill')) return;
+      document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      e.target.classList.add('active');
+      currentFilter = e.target.dataset.filter;
+      renderProducts();
+    });
+
+    document.getElementById('sortSelect').addEventListener('change', renderProducts);
+
+    document.getElementById('productModal').addEventListener('click', e => {
+      if (e.target === e.currentTarget) closeModal();
+    });
+
+    // ===== REVEAL OBSERVER =====
+    function observeReveal() {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.classList.add('visible');
+        });
+      }, { threshold: 0.1, root: document.getElementById('app') });
+      document.querySelectorAll('.reveal:not(.visible)').forEach(el => obs.observe(el));
+    }
+
+    // ===== SAFFRON THREADS =====
+    function createThreads() {
+      const c = document.getElementById('saffronThreads');
+      if (!c) return;
+      for (let i = 0; i < 8; i++) {
+        const t = document.createElement('div');
+        t.className = 'saffron-thread';
+        t.style.left = Math.random() * 100 + '%';
+        t.style.height = (20 + Math.random() * 30) + 'px';
+        t.style.animationDuration = (4 + Math.random() * 6) + 's';
+        t.style.animationDelay = Math.random() * 5 + 's';
+        c.appendChild(t);
+      }
+    }
+
+    // ===== SKELETONS =====
+    function showSkeletons() {
+      const g = document.getElementById('skeletonGrid');
+      g.innerHTML = Array(16).fill(0).map(() => `
+        <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--card-border);">
+          <div class="skeleton" style="height: 180px;"></div>
+          <div style="padding: 16px;">
+            <div class="skeleton" style="height: 16px; width: 70%; margin-bottom: 8px;"></div>
+            <div class="skeleton" style="height: 12px; width: 40%; margin-bottom: 12px;"></div>
+            <div class="d-flex justify-content-between">
+              <div class="skeleton" style="height: 20px; width: 50px;"></div>
+              <div class="skeleton" style="height: 34px; width: 100px; border-radius: 10px;"></div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ===== INIT =====
+    try {
+      if (localStorage.getItem('saffron-theme') === 'dark')
+        document.documentElement.classList.add('dark');
+    } catch (e) {}
+
+    loadCart();
+    updateCartBadge();
+    showSkeletons();
+    createThreads();
+    updateLabels();
+
+    setTimeout(() => {
+      document.getElementById('skeletonGrid').style.display = 'none';
+      document.getElementById('productGrid').style.display = 'grid';
+      renderProducts();
+      observeReveal();
+    }, 1200);
+
+    document.getElementById('app').addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('nav-scrolled', document.getElementById('app').scrollTop > 20);
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e77a1d8d04e292c',t:'MTc3NTM4MjQ1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Contact Saffron Luxe for inquiries, support, or orders. We're happy to help with premium saffron questions – reply within 24 hours."/>
+  <title>Contact Us – Saffron Luxe | Premium Persian Saffron</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --saffron-gold: #DAA520;
+      --saffron-red: #C41E3A;
+      --beige: #FDF8F0;
+      --dark-text: #2c1a0f;
+    }
+    body { 
+      font-family: 'Roboto', sans-serif; 
+      background-color: var(--beige); 
+      color: var(--dark-text); 
+      position: relative;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    .navbar { background-color: white !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .navbar-brand, .nav-link { color: var(--dark-text) !important; }
+    .nav-link:hover { color: var(--saffron-gold) !important; }
+    .btn-saffron { background-color: var(--saffron-gold); color: white; border: none; transition: all 0.3s; }
+    .btn-saffron:hover { background-color: var(--saffron-red); transform: translateY(-2px); }
+    .form-control:focus { border-color: var(--saffron-gold); box-shadow: 0 0 0 0.25rem rgba(218,165,32,0.25); }
+    .shake { animation: shake 0.5s; }
+    @keyframes shake { 0%,100% { transform: translateX(0); } 10%,30%,50%,70%,90% { transform: translateX(-5px); } 20%,40%,60%,80% { transform: translateX(5px); } }
+    .success-msg { opacity: 0; transition: opacity 0.8s ease; }
+    .success-msg.show { opacity: 1; }
+    .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; overflow: hidden; }
+    .particle { position: absolute; background: linear-gradient(to bottom, #FF9933, #DAA520); border-radius: 50%; opacity: 0.4; animation: float linear infinite; }
+    @keyframes float { 0% { transform: translateY(100vh) rotate(0deg); } 100% { transform: translateY(-20vh) rotate(360deg); } }
+    .fade-in-section { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+    .fade-in-section.is-visible { opacity: 1; transform: none; }
+    #back-to-top { position: fixed; bottom: 20px; right: 20px; display: none; z-index: 1000; }
+    footer { background-color: #f8f1e9; }
+    footer a:hover { color: var(--saffron-gold) !important; }
+    .contact-method:hover { transform: scale(1.08); transition: transform 0.3s; }
+  </style>
+</head>
+<body>
+
+  <!-- Subtle floating saffron threads background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Preloader -->
+  <div id="preloader" style="position:fixed;top:0;left:0;width:100%;height:100%;background:white;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">
+    <div class="spinner-border text-warning" role="status"><span class="visually-hidden">Loading...</span></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="index.html">Saffron Luxe</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="recipes.html">Recipes</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="py-5 mt-5 text-center fade-in-section">
+    <div class="container pt-5">
+      <h1 class="display-4 fw-bold">Get in Touch</h1>
+      <p class="lead">We reply within 24 hours. Have a question about our saffron or an order? We're here to help.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form + Info/Map -->
+  <section class="py-5 fade-in-section">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Left: Form -->
+        <div class="col-lg-6">
+          <h2 class="mb-4">Send Us a Message</h2>
+          <form id="contactForm" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="name" required aria-required="true">
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" id="email" required aria-required="true">
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+              <textarea class="form-control" id="message" rows="5" required aria-required="true"></textarea>
+              <div class="invalid-feedback">Please enter your message.</div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <div class="spinner-border text-saffron-gold me-3 d-none" id="progress" role="status"><span class="visually-hidden">Sending...</span></div>
+              <button type="submit" class="btn btn-saffron btn-lg px-5" id="submitBtn">Send Message</button>
+            </div>
+            <div id="formMessage" class="alert success-msg mt-3 d-none" role="alert">
+              <i class="bi bi-check-circle-fill me-2"></i> Thank you! Your message has been sent. We'll reply within 24 hours.
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Contact Info + Map -->
+        <div class="col-lg-6">
+          <h2 class="mb-4">Our Details</h2>
+          <p class="lead mb-4">Saffron Luxe<br>Premium Persian Saffron</p>
+          <ul class="list-unstyled mb-5">
+            <li class="mb-3 contact-method">
+              <a href="tel:+1234567890" class="text-dark text-decoration-none">
+                <i class="bi bi-telephone-fill me-2 text-saffron-gold"></i> +1 (234) 567-890
+              </a>
+            </li>
+            <li class="mb-3 contact-method">
+              <a href="mailto:hello@saffronluxe.com" class="text-dark text-decoration-none">
+                <i class="bi bi-envelope-fill me-2 text-saffron-gold"></i> hello@saffronluxe.com
+              </a>
+            </li>
+            <li class="mb-3 contact-method">
+              <a href="https://wa.me/1234567890?text=Hello%20Saffron%20Luxe" target="_blank" class="text-dark text-decoration-none">
+                <i class="bi bi-whatsapp me-2 text-saffron-gold"></i> WhatsApp Chat
+              </a>
+            </li>
+          </ul>
+
+          <h3 class="mb-3">Find Us</h3>
+          <!-- Google Maps Embed (customize in https://www.google.com/maps → Share → Embed map) -->
+          <div class="ratio ratio-16x9 rounded shadow">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.123456789!2d51.388973!3d35.689197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00491ff3db11%3A0x4b0b6b0b0b0b0b0b!2sTehran%2C%20Iran!5e0!3m2!1sen!2sus!4v1690000000000!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing saffron origin region in Iran"></iframe>
+          </div>
+          <p class="text-muted mt-2 small">Representative location: Tehran, Iran (primary saffron sourcing hub). Contact us for exact details.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="py-5 bg-light fade-in-section">
+    <div class="container">
+      <h2 class="text-center mb-5 display-5">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              How long does shipping take?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Standard shipping within the US takes 3–7 business days. International orders typically arrive in 7–14 days, depending on customs.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              How to identify pure saffron?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Real saffron: Releases golden-yellow color slowly in warm water (15+ min), smells sweet/aromatic, tastes slightly bitter, threads are trumpet-shaped and turn skin yellow when rubbed. Fake: Colors water red instantly, no aroma, sweet taste, uniform thin threads.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              What is your return policy?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              We accept returns within 14 days for unopened products. Contact us to start the process.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 text-center">
+    <div class="container">
+      <p>&copy; 2026 Saffron Luxe. All rights reserved.</p>
+      <div>
+        <a href="#" class="mx-2 text-dark"><i class="bi bi-instagram fs-4"></i></a>
+        <a href="#" class="mx-2 text-dark"><i class="bi bi-facebook fs-4"></i></a>
+        <a href="#" class="mx-2 text-dark"><i class="bi bi-pinterest fs-4"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" class="btn btn-saffron rounded-circle shadow" aria-label="Back to top">↑</button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <script>
+    // Floating particles (subtle saffron threads)
+    function createParticles() {
+      const container = document.getElementById('particles');
+      for (let i = 0; i < 15; i++) {  // Low count for performance
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        const size = Math.random() * 4 + 2;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size * 8}px`;  // thread-like
+        particle.style.left = `${Math.random() * 100}vw`;
+        particle.style.animationDuration = `${Math.random() * 20 + 20}s`;
+        particle.style.animationDelay = `${Math.random() * 10}s`;
+        container.appendChild(particle);
+      }
+    }
+    createParticles();
+
+    // Form handling
+    const form = document.getElementById('contactForm');
+    const message = document.getElementById('formMessage');
+    const progress = document.getElementById('progress');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        form.classList.add('shake');
+        setTimeout(() => form.classList.remove('shake'), 500);
+        return;
+      }
+
+      progress.classList.remove('d-none');
+      submitBtn.disabled = true;
+
+      // Simulate send (replace with real fetch/API later)
+      setTimeout(() => {
+        progress.classList.add('d-none');
+        submitBtn.disabled = false;
+        message.classList.remove('d-none');
+        message.classList.add('alert-success', 'show');
+        form.reset();
+        form.classList.remove('was-validated');
+        setTimeout(() => message.classList.add('d-none'), 8000);
+      }, 1500);
+    });
+
+    // Fade-in, preloader, back-to-top (same as previous)
+    const fadeSections = document.querySelectorAll('.fade-in-section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
+    }, { threshold: 0.1 });
+    fadeSections.forEach(s => observer.observe(s));
+
+    window.addEventListener('load', () => {
+      document.getElementById('preloader').style.opacity = '0';
+      setTimeout(() => document.getElementById('preloader').style.display = 'none', 500);
+    });
+
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => { backToTop.style.display = window.scrollY > 300 ? 'block' : 'none'; });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</body>
+</html>

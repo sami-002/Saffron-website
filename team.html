@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meet Our Team — Minimal Section (Animated)</title>
+  <!-- Bootstrap 5 (layout utilities) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+   <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  <style>
+    :root{
+      --bg: #f7f7f7;
+      --card-bg: #ffffff;
+      --muted: #9b9b9b;
+      --accent: #e9e9e9;
+      --shadow: 0 6px 18px rgba(24,24,24,0.06);
+      --card-width: 220px;
+      --card-height: 380px;
+      --font-stack: 'Helvetica Neue', Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{background:var(--bg); font-family:var(--font-stack);}
+
+    .team-section{padding:70px 0 90px}
+    .team-title{letter-spacing:1px; font-weight:800; color:#222; font-size:20px}
+    .title-underline{width:60px; height:4px; background:#d3d3d3; margin:10px auto 28px; border-radius:4px}
+
+    .team-row{display:flex; gap:28px; justify-content:center; align-items:flex-start; flex-wrap:wrap}
+
+    /* Card base */
+    .team-card{
+      width:var(--card-width);
+      height:var(--card-height);
+      background:var(--card-bg);
+      box-shadow:var(--shadow);
+      border-radius: calc(var(--card-width) / 2);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding-top:28px;
+      position:relative;
+      overflow:visible;
+      text-align:center;
+      transform-style:preserve-3d;
+      transition:transform 420ms cubic-bezier(.2,.9,.3,1), box-shadow 320ms ease, filter 320ms ease;
+      will-change:transform;
+      opacity:0; /* animated in */
+      transform: translateY(20px) scale(.98);
+    }
+
+    /* entrance animation staggered using nth-child */
+    .team-card.fade-in{animation:fadeInUp 600ms forwards cubic-bezier(.2,.9,.3,1)}
+    .team-card:nth-child(1){animation-delay:120ms}
+    .team-card:nth-child(2){animation-delay:220ms}
+    .team-card:nth-child(3){animation-delay:320ms}
+    .team-card:nth-child(4){animation-delay:420ms}
+
+    @keyframes fadeInUp{
+      to{opacity:1; transform:translateY(0) scale(1)}
+    }
+
+    .team-card::before{
+      content:'';
+      position:absolute;
+      top:-40px;
+      left:50%;
+      transform:translateX(-50%);
+      width:160px;
+      height:160px;
+      background:var(--accent);
+      border-radius:50%;
+      z-index:0;
+      transition:background 320ms ease;
+    }
+
+    .avatar{
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      object-fit:cover;
+      position:relative;
+      z-index:1;
+      margin-top:-20px;
+      background:#fff;
+      border:8px solid transparent;
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+      transition:transform 520ms cubic-bezier(.2,.9,.3,1), box-shadow 320ms ease;
+    }
+
+    .card-body{padding:18px 18px 24px; z-index:2}
+    .name{font-weight:700; font-size:14px; letter-spacing:0.6px; color:#222; margin-top:8px}
+    .desc{font-size:13px; color:var(--muted); margin-top:6px; line-height:1.35}
+
+    .socials{display:flex; gap:10px; justify-content:center; margin-top:16px}
+    .social-btn{
+      width:36px; height:36px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; border:1px solid #e1e1e1; background:#fff;
+      box-shadow:none; cursor:pointer; text-decoration:none; transform:translateZ(0); transition:transform 240ms ease, box-shadow 240ms ease, background 240ms ease;
+    }
+    .social-btn svg{width:16px; height:16px; display:block}
+
+    /* Hover / focus effects */
+    .team-card:hover{transform:translateY(-12px) rotateX(6deg) scale(1.02); box-shadow:0 18px 40px rgba(0,0,0,0.10)}
+    .team-card:hover::before{background:#f5f5f5}
+    .team-card:hover .avatar{transform:translateY(-8px) scale(1.03); box-shadow:0 22px 50px rgba(0,0,0,0.12)}
+    .team-card:hover .social-btn{transform:translateY(-6px)}
+
+    /* Hover for each social individually */
+    .social-btn:hover{transform:scale(1.12); box-shadow:0 6px 14px rgba(0,0,0,0.08)}
+
+    /* subtle avatar breathing animation */
+    .avatar.float{animation:float 6s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+
+    /* responsive tweaks */
+    @media (max-width:991px){
+      .team-card{width:48%; border-radius:32px}
+      .team-card::before{left:50%}
+    }
+    @media (max-width:575px){
+      .team-card{width:100%; border-radius:28px}
+      .team-row{gap:16px}
+    }
+  </style>
+</head>
+<body>
+      <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" data-aos="fade-down" data-aos-duration="800">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <div class="logo-icon">
+            <img
+              src="logo/Desenho_de_logotipo_de_modelo_simples_de_empresa_de_construção___Vetor_Premium-removebg-preview.png"
+              alt=""
+              style="width: 70px"
+            />
+          </div>
+          <div>
+            <span>XTRA</span><br />
+            <small>BUSINESS</small>
+          </div>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link " href="index a.html">Home</a>
+            </li>
+            <li class="nav-item"><a class="nav-link " href="about a.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="Services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a></li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                Pages <i class="fa-solid fa-angle-down"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="FAQ.html">FAQ</a></li>
+                <li><a class="dropdown-item active" href="Team.html">Team</a></li>
+                <li><a class="dropdown-item" href="Shop-animation.html">shop</a></li>
+                <li><a class="dropdown-item" href="Ragistration.html">Ragistration</a></li>
+                <li><a class="dropdown-item" href="Ragistration.html">Dropdown Menu</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <button class="btn btn-consult" data-aos="zoom-in" data-aos-delay="300">Free Consultation</button>
+      </div>
+    </nav>
+  <section class="team-section my-5">
+    <div class="container text-center">
+      <h2 class="team-title my-3">MEET OUR TEAM</h2>
+      <div class="title-underline mx-auto" aria-hidden="true"></div>
+
+      <div class="team-row mt-4">
+        <!-- Card 1 -->
+        <div class="team-card">
+          <img class="avatar float" src="Team/11 best gift ideas for brothers, including a fisherman sweater and a hilarious mug_ (1).jpeg" alt="Arik Smith">
+          <div class="card-body">
+            <div class="name">ARIK SMITH</div>
+            <div class="desc">Lorem ipsum dolor sit amet, consectetur</div>
+            <div class="socials">
+              <a class="social-btn" href="#" aria-label="Behance">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h6" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 7h6" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="7" r="3" stroke="#333" stroke-width="1.6"/><path d="M14 14h4" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="social-btn" href="#" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="#333" xmlns="http://www.w3.org/2000/svg"><path d="M15 8h2.5V4.5H15C13.4 4.5 12.5 5.6 12.5 7.2V9H10v2.7h2.5V20h2.8v-8.3H17l.5-2.7h-2.2V7.6C15.3 7.3 15.1 7.1 15 8z"/></svg>
+              </a>
+              <a class="social-btn" href="#" aria-label="Google+">
+                <svg viewBox="0 0 24 24" fill="#333" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v3h5.2c-.2 1.2-1.2 3.6-5.2 3.6-3.1 0-5.6-2.6-5.6-5.8S8.9 1.6 12 1.6c2 0 3.3.9 3.9 1.8l2.6-2.5C17.9.6 15.7 0 12 0 5.4 0 .7 4.9.7 11.2S5.4 22.4 12 22.4c6 0 10.3-4 10.3-9.6 0-.6-.1-1.1-.2-1.5H12z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="team-card">
+          <img class="avatar float" src="Team/30s businesswoman in white background _ Premium AI-generated PSD.jpeg" alt="Arik Smith">
+          <div class="card-body">
+            <div class="name">ARIK SMITH</div>
+            <div class="desc">Lorem ipsum dolor sit amet, consectetur</div>
+            <div class="socials">
+              <a class="social-btn" href="#" aria-label="Behance"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h6" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 7h6" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="7" r="3" stroke="#333" stroke-width="1.6"/><path d="M14 14h4" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a class="social-btn" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="#333" xmlns="http://www.w3.org/2000/svg"><path d="M15 8h2.5V4.5H15C13.4 4.5 12.5 5.6 12.5 7.2V9H10v2.7h2.5V20h2.8v-8.3H17l.5-2.7h-2.2V7.6C15.3 7.3 15.1 7.1 15 8z"/></svg></a>
+              <a class="social-btn" href="#" aria-label="Google+"><svg viewBox="0 0 24 24" fill="#333" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v3h5.2c-.2 1.2-1.2 3.6-5.2 3.6-3.1 0-5.6-2.6-5.6-5.8S8.9 1.6 12 1.6c2 0 3.3.9 3.9 1.8l2.6-2.5C17.9.6 15.7 0 12 0 5.4 0 .7 4.9.7 11.2S5.4 22.4 12 22.4c6 0 10.3-4 10.3-9.6 0-.6-.1-1.1-.2-1.5H12z"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="team-card">
+          <img class="avatar float" src="Team/Alexis Petit, french model, France ;.jpeg" alt="Arik Smith">
+          <div class="card-body">
+            <div class="name">ARIK SMITH</div>
+            <div class="desc">Lorem ipsum dolor sit amet, consectetur</div>
+            <div class="socials">
+              <a class="social-btn" href="#" aria-label="Behance"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h6" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 7h6" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="7" r="3" stroke="#333" stroke-width="1.6"/><path d="M14 14h4" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a class="social-btn" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="#333" xmlns="http://www.w3.org/2000/svg"><path d="M15 8h2.5V4.5H15C13.4 4.5 12.5 5.6 12.5 7.2V9H10v2.7h2.5V20h2.8v-8.3H17l.5-2.7h-2.2V7.6C15.3 7.3 15.1 7.1 15 8z"/></svg></a>
+              <a class="social-btn" href="#" aria-label="Google+"><svg viewBox="0 0 24 24" fill="#333" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v3h5.2c-.2 1.2-1.2 3.6-5.2 3.6-3.1 0-5.6-2.6-5.6-5.8S8.9 1.6 12 1.6c2 0 3.3.9 3.9 1.8l2.6-2.5C17.9.6 15.7 0 12 0 5.4 0 .7 4.9.7 11.2S5.4 22.4 12 22.4c6 0 10.3-4 10.3-9.6 0-.6-.1-1.1-.2-1.5H12z"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="team-card">
+          <img class="avatar float" src="Team/download (10).jpeg" alt="Arik Smith">
+          <div class="card-body">
+            <div class="name">ARIK SMITH</div>
+            <div class="desc">Lorem ipsum dolor sit amet, consectetur</div>
+            <div class="socials">
+              <a class="social-btn" href="#" aria-label="Behance"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h6" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 7h6" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="7" r="3" stroke="#333" stroke-width="1.6"/><path d="M14 14h4" stroke="#333" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a class="social-btn" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="#333" xmlns="http://www.w3.org/2000/svg"><path d="M15 8h2.5V4.5H15C13.4 4.5 12.5 5.6 12.5 7.2V9H10v2.7h2.5V20h2.8v-8.3H17l.5-2.7h-2.2V7.6C15.3 7.3 15.1 7.1 15 8z"/></svg></a>
+              <a class="social-btn" href="#" aria-label="Google+"><svg viewBox="0 0 24 24" fill="#333" xmlns="http://www.w3.org/2000/svg"><path d="M12 6v3h5.2c-.2 1.2-1.2 3.6-5.2 3.6-3.1 0-5.6-2.6-5.6-5.8S8.9 1.6 12 1.6c2 0 3.3.9 3.9 1.8l2.6-2.5C17.9.6 15.7 0 12 0 5.4 0 .7 4.9.7 11.2S5.4 22.4 12 22.4c6 0 10.3-4 10.3-9.6 0-.6-.1-1.1-.2-1.5H12z"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Footer Section -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <!-- Footer Column 1: Brand and Social -->
+          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <h5 class="footer-title">BuildCo</h5>
+            <p>Your trusted partner in construction. We deliver high-quality projects and exceptional service.</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <!-- Footer Column 2: Quick Links -->
+          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <h5 class="footer-title">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Services</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <!-- Footer Column 3: Latest Projects -->
+          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <h5 class="footer-title">Latest Projects</h5>
+            <div class="footer-thumbs">
+              <img src="testmonial/download (12).jpeg" alt="">
+              <img src="testmonial/Modern Living Room Designs _ Living Room Decor _ Luxury Living Room.jpeg" alt="">
+              <img src="testmonial/scandinavian living rooms.jpeg" alt="">
+              <img src="About-photo/download (13).jpeg" alt="">
+            </div>
+          </div>
+          <!-- Footer Column 4: Contact Info -->
+          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <h5 class="footer-title">Contact Us</h5>
+            <p><i class="fa fa-phone-alt"></i> +1 234 567 890</p>
+            <p><i class="fa fa-envelope"></i> info@buildco.com</p>
+            <p><i class="fa fa-map-marker-alt"></i> 123 Construction Ave, Builder City</p>
+          </div>
+        </div>
+        <hr style="border-color: rgba(255,255,255,0.1);" />
+        <p class="text-center mt-3">© 2023 BuildCo. All rights reserved.</p>
+      </div>
+    </footer>
+
+  <!-- JS: entrance + tilt micro-interactions -->
+  <script>
+    // Add fade-in class after DOM ready to allow CSS animation with delays
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('.team-card').forEach(function(card, idx){
+        // force staggered appearance by adding a small timeout (matches CSS delays)
+        setTimeout(function(){ card.classList.add('fade-in'); }, 80 * (idx+1));
+      });
+
+      // Add mousemove tilt effect for each card
+      const cards = document.querySelectorAll('.team-card');
+      cards.forEach(card => {
+        card.addEventListener('mousemove', handleTilt);
+        card.addEventListener('mouseleave', resetTilt);
+      });
+
+      function handleTilt(e){
+        const card = e.currentTarget;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left; // x position within the card
+        const y = e.clientY - rect.top;  // y position within the card
+        const cx = rect.width/2;
+        const cy = rect.height/2;
+        const dx = (x - cx) / cx; // -1 .. 1
+        const dy = (y - cy) / cy; // -1 .. 1
+        const rotY = dx * 6; // rotateY degrees
+        const rotX = -dy * 6; // rotateX degrees
+        card.style.transform = `perspective(800px) translateY(-10px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.02)`;
+      }
+      function resetTilt(e){
+        const card = e.currentTarget;
+        card.style.transform = '';
+      }
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
