@@ -12,7 +12,7 @@
  <body>
   <!-- Navbar -->
   <nav class="saffron-nav" id="mainNav">
-   <div class="nav-container"><!-- Logo --> <a href="#" class="brand-logo" onclick="event.preventDefault()">
+   <div class="nav-container"><!-- Logo --> <a href="index.html" class="brand-logo">
      <div class="logo-wrapper">
       <div class="logo-glow"></div>
        <img src="Screenshot 2026-02-24 193737.png" alt="">
@@ -20,58 +20,59 @@
      <div class="brand-info"><span class="brand-name" id="brandName">Zafran</span> <span class="brand-tagline" id="brand-tagline">Premium Saffron</span>
      </div></a> <!-- Desktop Menu -->
     <ul class="nav-menu">
-     <li class="nav-item"><a href="#" class="nav-link active" onclick="event.preventDefault()">Home</a></li>
-     <li class="nav-item"><a href="#" class="nav-link" onclick="event.preventDefault()">About</a></li>
-     <li class="nav-item"><a href="#" class="nav-link" onclick="event.preventDefault()">Service</a></li>
-     <li class="nav-item"><a href="#" class="nav-link" onclick="event.preventDefault()">Our Saffron</a></li>
+     <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+     <li class="nav-item"><a href="service.html" class="nav-link">Service</a></li>
+     <li class="nav-item"><a href="our saffron.html" class="nav-link">Our Saffron</a></li>
      <li class="nav-item"><button class="nav-link dropdown-toggle" onclick="event.preventDefault()"> Pages 
        <svg class="chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" />
        </svg></button>
-      <div class="dropdown-menu"><a href="" class="dropdown-item" onclick="event.preventDefault()">Our Team</a> <a href="#" class="dropdown-item" onclick="event.preventDefault()">Gallery</a> <a href="#" class="dropdown-item" onclick="event.preventDefault()">Shop</a>
+      <div class="dropdown-menu"><a href="team.html" class="dropdown-item">Our Team</a> <a href="gallery.html" class="dropdown-item">Gallery</a> <a href="shop.html" class="dropdown-item">Shop</a>
       </div></li>
-     <li class="nav-item"><a href="#" class="nav-link" onclick="event.preventDefault()">Contact</a></li>
+     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
     </ul><!-- Right Actions -->
     <!-- RIGHT CONTROLS -->
     <div class="nav-controls">
-     <div class="lang-group"><button class="lang-btn active" id="lang-en" onclick="setLang('en')">EN</button> <button class="lang-btn" id="lang-dr" onclick="setLang('dr')">Ø¯Ø±ÛŒ</button>
+     <div class="lang-group"><button class="lang-btn active" id="lang-en" onclick="setLang('en')">EN</button> <button class="lang-btn" id="lang-dr" onclick="setLang('dr')">دری</button>
      </div><button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu"> <span></span> <span></span> <span></span> </button>
     </div>
    </div>
   </nav><!-- Mobile Menu Overlay -->
   <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()">
    <div class="mobile-nav-item">
-    <a href="#" class="mobile-link" onclick="closeMobileMenu()">Home</a>
+    <a href="index.html" class="mobile-link" onclick="closeMobileMenu()">Home</a>
    </div>
    <div class="mobile-nav-item">
-    <a href="#" class="mobile-link" onclick="closeMobileMenu()">Story</a>
+    <a href="about.html" class="mobile-link" onclick="closeMobileMenu()">Story</a>
    </div>
    <div class="mobile-nav-item">
-    <a href="#" class="mobile-link" onclick="closeMobileMenu()">Products</a>
+    <a href="service.html" class="mobile-link" onclick="closeMobileMenu()">Products</a>
    </div>
    <div class="mobile-nav-item">
-    <a href="#" class="mobile-link" onclick="closeMobileMenu()">Quality</a>
+    <a href="our saffron.html" class="mobile-link" onclick="closeMobileMenu()">Quality</a>
    </div>
    <div class="mobile-nav-item"><button class="mobile-link" onclick="toggleMobileSubmenu()"> Pages 
      <svg style="width:14px;height:14px;float:right;margin-top:4px;transition:transform 0.3s" id="mobileChevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" />
      </svg></button>
     <div class="mobile-submenu" id="mobileSubmenu">
      <div class="mobile-submenu-item">
-      <a href="#" class="mobile-submenu-link" onclick="closeMobileMenu()">Our Team</a>
+      <a href="team.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Our Team</a>
      </div>
      <div class="mobile-submenu-item">
-      <a href="#" class="mobile-submenu-link" onclick="closeMobileMenu()">Gallery</a>
+      <a href="gallery.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Gallery</a>
      </div>
      <div class="mobile-submenu-item">
-      <a href="#" class="mobile-submenu-link" onclick="closeMobileMenu()">Shop</a>
+      <a href="shop.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Shop</a>
      </div>
     </div>
    </div>
    <div class="mobile-nav-item">
-    <a href="#" class="mobile-link" onclick="closeMobileMenu()">Contact</a>
+    <a href="contact.html" class="mobile-link" onclick="closeMobileMenu()">Contact</a>
    </div>
    <div class="mobile-cta-section"><button class="premium-btn" id="ctaBtnMobile" onclick="closeMobileMenu()">Explore Products</button>
    </div>
-  </div><!-- Hero Section -->
+  </div>
+  <!-- Hero Section -->
   <main class="hero-section" role="main">
    <div class="hero-background"></div>
    <div class="hero-content">

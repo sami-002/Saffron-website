@@ -110,6 +110,9 @@
       transition: color 0.3s ease; font-family: 'Montserrat', sans-serif;
     }
 
+    /* Hide Bootstrap's default dropdown arrow to avoid double icon */
+    .saffron-nav .dropdown-toggle::after { display: none !important; }
+
     /* Glowing underline effect */
     .nav-link::before, .dropdown-toggle::before {
       content: ''; position: absolute; bottom: 6px; left: 50%;
@@ -129,7 +132,8 @@
     .nav-link.active::before { width: 60%; }
 
     /* Dropdown Menu */
-    .dropdown-menu {
+    .saffron-nav .dropdown-menu {
+      display: block;
       position: absolute; top: 110%; left: 50%; transform: translateX(-50%) translateY(15px);
       background: rgba(25, 20, 15, 0.95);
       backdrop-filter: blur(20px); border: 1px solid rgba(212, 147, 45, 0.2);
