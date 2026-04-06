@@ -13,29 +13,54 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
 
   <style>
     :root {
-      --saffron-gold: #DAA520;
-      --saffron-red: #C41E3A;
-      --beige: #FDF8F0;
-      --dark-text: #2c1a0f;
+      --saffron-gold: #d4932d;
+      --saffron-gold-light: #f4c563;
+      --saffron-red: #b8460f;
+      --bg-dark: #0f0d0a;
+      --surface: rgba(26, 20, 16, 0.78);
+      --surface-strong: rgba(26, 20, 16, 0.94);
+      --text-main: #e8dcc8;
+      --text-muted: rgba(232, 220, 200, 0.72);
     }
     body { 
-      font-family: 'Roboto', sans-serif; 
-      background-color: var(--beige); 
-      color: var(--dark-text); 
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
       position: relative;
       overflow-x: hidden;
+      line-height: 1.6;
     }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
-    .navbar { background-color: white !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-    .navbar-brand, .nav-link { color: var(--dark-text) !important; }
-    .nav-link:hover { color: var(--saffron-gold) !important; }
-    .btn-saffron { background-color: var(--saffron-gold); color: white; border: none; transition: all 0.3s; }
-    .btn-saffron:hover { background-color: var(--saffron-red); transform: translateY(-2px); }
-    .form-control:focus { border-color: var(--saffron-gold); box-shadow: 0 0 0 0.25rem rgba(218,165,32,0.25); }
+    html[dir="rtl"] body { font-family: 'Vazirmatn', sans-serif; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; color: #f5e6d0; }
+    .lead, .form-label, .accordion-body, p, li { color: var(--text-muted); }
+   
+    .btn-saffron { background: linear-gradient(135deg, var(--saffron-gold), var(--saffron-gold-light)); color: #1a1209; border: none; transition: all 0.3s; font-weight: 600; }
+    .btn-saffron:hover { background: linear-gradient(135deg, var(--saffron-gold-light), #e8b530); transform: translateY(-2px); box-shadow: 0 0 16px rgba(212,147,45,0.35); }
+    .text-saffron-gold { color: var(--saffron-gold) !important; }
+    .form-control { background: rgba(255,255,255,0.04); color: var(--text-main); border: 1px solid rgba(212,147,45,0.2); }
+    .form-control::placeholder { color: rgba(232,220,200,0.45); }
+    .form-control:focus { background: rgba(255,255,255,0.06); color: var(--text-main); border-color: var(--saffron-gold); box-shadow: 0 0 0 0.25rem rgba(212,147,45,0.2); }
+    .form-control:disabled { background: rgba(255,255,255,0.03); color: rgba(232,220,200,0.5); }
+    .form-control, .form-control:focus { caret-color: var(--saffron-gold-light); }
+    .contact-link { color: var(--text-main); text-decoration: none; transition: color 0.25s ease; }
+    .contact-link:hover { color: var(--saffron-gold-light); }
+
+    .ratio, #contactForm, .accordion, .accordion-item { background: transparent; }
+    .accordion-item { border: 1px solid rgba(212,147,45,0.18); }
+    .accordion-button { background: var(--surface); color: #f5e6d0; }
+    .accordion-button:not(.collapsed) { background: rgba(34,24,16,0.95); color: var(--saffron-gold-light); box-shadow: inset 0 -1px 0 rgba(212,147,45,0.18); }
+    .accordion-button:focus { box-shadow: 0 0 0 0.2rem rgba(212,147,45,0.25); border-color: rgba(212,147,45,0.45); }
+    .accordion-button::after { filter: invert(83%) sepia(13%) saturate(479%) hue-rotate(344deg) brightness(102%) contrast(90%); }
+    .accordion-body { background: rgba(26,20,16,0.85); color: var(--text-muted); }
+    .faq-section { background: linear-gradient(160deg, rgba(26,20,16,0.86), rgba(34,24,16,0.84)); border-top: 1px solid rgba(212,147,45,0.12); border-bottom: 1px solid rgba(212,147,45,0.12); }
+
+    .text-muted { color: rgba(232,220,200,0.55) !important; }
+    .invalid-feedback { color: #ff9a8e; }
     .shake { animation: shake 0.5s; }
     @keyframes shake { 0%,100% { transform: translateX(0); } 10%,30%,50%,70%,90% { transform: translateX(-5px); } 20%,40%,60%,80% { transform: translateX(5px); } }
     .success-msg { opacity: 0; transition: opacity 0.8s ease; }
@@ -46,9 +71,35 @@
     .fade-in-section { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
     .fade-in-section.is-visible { opacity: 1; transform: none; }
     #back-to-top { position: fixed; bottom: 20px; right: 20px; display: none; z-index: 1000; }
-    footer { background-color: #f8f1e9; }
-    footer a:hover { color: var(--saffron-gold) !important; }
-    .contact-method:hover { transform: scale(1.08); transition: transform 0.3s; }
+    #preloader { background: var(--bg-dark) !important; }
+
+    /* Contact page only: remove navbar shadow */
+    .saffron-nav,
+    .saffron-nav.scrolled {
+      box-shadow: none !important;
+    }
+
+    /* Scrollbar theme (index-style saffron) */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: #b8460f #120e0b;
+    }
+    ::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #120e0b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #d4932d, #b8460f);
+      border-radius: 999px;
+      border: 2px solid #120e0b;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #f4c563, #d4772c);
+    }
+   
   </style>
 </head>
 <body>
@@ -57,28 +108,74 @@
   <div class="particles" id="particles"></div>
 
   <!-- Preloader -->
-  <div id="preloader" style="position:fixed;top:0;left:0;width:100%;height:100%;background:white;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">
+  <div id="preloader" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">
     <div class="spinner-border text-warning" role="status"><span class="visually-hidden">Loading...</span></div>
   </div>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold fs-4" href="index.html">Saffron Luxe</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="recipes.html">Recipes</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+      <!-- Navbar -->
+  <nav class="saffron-nav" id="mainNav">
+   <div class="nav-container"><!-- Logo --> <a href="index.html" class="brand-logo">
+     <div class="logo-wrapper">
+      <div class="logo-glow"></div>
+       <img src="Screenshot 2026-02-24 193737.png" alt="">
+     </div>
+     <div class="brand-info"><span class="brand-name" id="brandName">Zafran</span> <span class="brand-tagline" id="brand-tagline">Premium Saffron</span>
+     </div></a> <!-- Desktop Menu -->
+    <ul class="nav-menu">
+     <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+     <li class="nav-item"><a href="service.html" class="nav-link">Service</a></li>
+     <li class="nav-item"><a href="our saffron.html" class="nav-link">Our Saffron</a></li>
+     <li class="nav-item"><button class="nav-link dropdown-toggle" onclick="event.preventDefault()"> Pages 
+       <svg class="chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" />
+       </svg></button>
+      <div class="dropdown-menu"><a href="team.html" class="dropdown-item">Our Team</a> <a href="gallery.html" class="dropdown-item">Gallery</a> <a href="shop.html" class="dropdown-item">Shop</a>
+      </div></li>
+     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul><!-- Right Actions -->
+    <!-- RIGHT CONTROLS -->
+    <div class="nav-controls">
+     <div class="lang-group"><button class="lang-btn active" id="lang-en" onclick="setLang('en')">EN</button> <button class="lang-btn" id="lang-dr" onclick="setLang('dr')">دری</button>
+     </div><button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu"> <span></span> <span></span> <span></span> </button>
     </div>
-  </nav>
+   </div>
+  </nav><!-- Mobile Menu Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()">
+   <div class="mobile-nav-item">
+    <a href="index.html" class="mobile-link" onclick="closeMobileMenu()">Home</a>
+   </div>
+   <div class="mobile-nav-item">
+    <a href="about.html" class="mobile-link" onclick="closeMobileMenu()">Story</a>
+   </div>
+   <div class="mobile-nav-item">
+    <a href="service.html" class="mobile-link" onclick="closeMobileMenu()">Products</a>
+   </div>
+   <div class="mobile-nav-item">
+    <a href="our saffron.html" class="mobile-link" onclick="closeMobileMenu()">Quality</a>
+   </div>
+   <div class="mobile-nav-item"><button class="mobile-link" onclick="toggleMobileSubmenu()"> Pages 
+     <svg style="width:14px;height:14px;float:right;margin-top:4px;transition:transform 0.3s" id="mobileChevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" />
+     </svg></button>
+    <div class="mobile-submenu" id="mobileSubmenu">
+     <div class="mobile-submenu-item">
+      <a href="team.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Our Team</a>
+     </div>
+     <div class="mobile-submenu-item">
+      <a href="gallery.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Gallery</a>
+     </div>
+     <div class="mobile-submenu-item">
+      <a href="shop.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Shop</a>
+     </div>
+    </div>
+   </div>
+   <div class="mobile-nav-item">
+    <a href="contact.html" class="mobile-link" onclick="closeMobileMenu()">Contact</a>
+   </div>
+   <div class="mobile-cta-section"><button class="premium-btn" id="ctaBtnMobile" onclick="closeMobileMenu()">Explore Products</button>
+   </div>
+  </div>
+
+
+  
 
   <!-- Header -->
   <section class="py-5 mt-5 text-center fade-in-section">
@@ -124,20 +221,20 @@
         <!-- Right: Contact Info + Map -->
         <div class="col-lg-6">
           <h2 class="mb-4">Our Details</h2>
-          <p class="lead mb-4">Saffron Luxe<br>Premium Persian Saffron</p>
+          <p class="lead mb-4">Marghob Heray<br>Herat, Afghanistan</p>
           <ul class="list-unstyled mb-5">
             <li class="mb-3 contact-method">
-              <a href="tel:+1234567890" class="text-dark text-decoration-none">
+              <a href="tel:+1234567890" class="contact-link">
                 <i class="bi bi-telephone-fill me-2 text-saffron-gold"></i> +1 (234) 567-890
               </a>
             </li>
             <li class="mb-3 contact-method">
-              <a href="mailto:hello@saffronluxe.com" class="text-dark text-decoration-none">
+              <a href="mailto:hello@saffronluxe.com" class="contact-link">
                 <i class="bi bi-envelope-fill me-2 text-saffron-gold"></i> hello@saffronluxe.com
               </a>
             </li>
             <li class="mb-3 contact-method">
-              <a href="https://wa.me/1234567890?text=Hello%20Saffron%20Luxe" target="_blank" class="text-dark text-decoration-none">
+              <a href="https://wa.me/1234567890?text=Hello%20Saffron%20Luxe" target="_blank" class="contact-link">
                 <i class="bi bi-whatsapp me-2 text-saffron-gold"></i> WhatsApp Chat
               </a>
             </li>
@@ -146,16 +243,16 @@
           <h3 class="mb-3">Find Us</h3>
           <!-- Google Maps Embed (customize in https://www.google.com/maps → Share → Embed map) -->
           <div class="ratio ratio-16x9 rounded shadow">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.123456789!2d51.388973!3d35.689197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00491ff3db11%3A0x4b0b6b0b0b0b0b0b!2sTehran%2C%20Iran!5e0!3m2!1sen!2sus!4v1690000000000!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing saffron origin region in Iran"></iframe>
+            <iframe src="https://www.google.com/maps?q=Herat,Afghanistan&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing Herat, Afghanistan"></iframe>
           </div>
-          <p class="text-muted mt-2 small">Representative location: Tehran, Iran (primary saffron sourcing hub). Contact us for exact details.</p>
+          <p class="text-muted mt-2 small">Representative location: Herat, Afghanistan. Contact us for exact details.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ Accordion -->
-  <section class="py-5 bg-light fade-in-section">
+  <section class="py-5 faq-section fade-in-section">
     <div class="container">
       <h2 class="text-center mb-5 display-5">Frequently Asked Questions</h2>
       <div class="accordion" id="faqAccordion">
@@ -199,16 +296,72 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="py-4 text-center">
-    <div class="container">
-      <p>&copy; 2026 Saffron Luxe. All rights reserved.</p>
-      <div>
-        <a href="#" class="mx-2 text-dark"><i class="bi bi-instagram fs-4"></i></a>
-        <a href="#" class="mx-2 text-dark"><i class="bi bi-facebook fs-4"></i></a>
-        <a href="#" class="mx-2 text-dark"><i class="bi bi-pinterest fs-4"></i></a>
+        <!-- footer -->
+  <footer class="footer-wrap w-full h-full overflow-auto relative" id="footer-root"><!-- Decorative background threads -->
+   <svg class="saffron-thread" style="top:10%;right:5%;width:120px" viewbox="0 0 60 200"><path d="M30 0 Q35 50 25 100 Q15 150 30 200" stroke="#d4a020" fill="none" stroke-width="1.5" />
+   </svg>
+   <svg class="saffron-thread" style="bottom:20%;left:8%;width:80px" viewbox="0 0 60 200"><path d="M30 0 Q20 60 35 120 Q45 170 30 200" stroke="#d4a020" fill="none" stroke-width="1.2" />
+   </svg>
+   <div class="max-w-7xl mx-auto px-6 py-14 relative z-10"><!-- Main Grid -->
+    <div class="fade-section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12"><!-- Brand -->
+     <div class="lg:col-span-1">
+      <div class="flex items-center gap-3 mb-4">
+       <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg,#d4a020,#e8b530);">
+        <svg width="22" height="22" viewbox="0 0 24 24" fill="none" stroke="#1a1209" stroke-width="2" stroke-linecap="round">
+         <path d="M12 2 C12 2 8 8 8 13 C8 17 10 20 12 22 C14 20 16 17 16 13 C16 8 12 2 12 2Z" /><line x1="12" y1="8" x2="12" y2="16" />
+        </svg>
+       </div>
+       <h2 class="brand-font text-2xl font-bold" style="color:#ffc13b;" id="brand-name">Zafran</h2>
       </div>
+      <p class="text-sm leading-relaxed mb-5" style="color:rgba(232,220,200,0.65);" id="tagline">Pure Afghan Saffron Ã¢â‚¬â€ harvested with care, delivered with trust. The essence of authenticity in every thread.</p>
+      <div class="flex items-center gap-2">
+       <div class="glow-dot"></div><span class="text-xs tracking-widest uppercase" style="color:rgba(212,160,32,0.6);">Premium Quality</span>
+      </div>
+     </div><!-- Quick Links -->
+     <div>
+      <h3 class="brand-font text-lg font-semibold mb-5" style="color:#ffc13b;">Quick Links</h3>
+      <nav class="flex flex-col gap-3"><a href="#" class="nav-link text-sm" onclick="event.preventDefault()">Home</a> <a href="#" class="nav-link text-sm" onclick="event.preventDefault()">About Us</a> <a href="#" class="nav-link text-sm" onclick="event.preventDefault()">Products</a> <a href="#" class="nav-link text-sm" onclick="event.preventDefault()">Gallery</a> <a href="#" class="nav-link text-sm" onclick="event.preventDefault()">Contact</a>
+      </nav>
+     </div><!-- Contact -->
+     <div>
+      <h3 class="brand-font text-lg font-semibold mb-5" style="color:#ffc13b;">Get in Touch</h3>
+      <div class="flex flex-col gap-4">
+       <div class="flex items-start gap-3"><i data-lucide="mail" style="width:18px;height:18px;color:#d4a020;margin-top:2px;flex-shrink:0;"></i> <span class="text-sm" style="color:#e8dcc8;" id="email-text">info@zafran.com</span>
+       </div>
+       <div class="flex items-start gap-3"><i data-lucide="phone" style="width:18px;height:18px;color:#d4a020;margin-top:2px;flex-shrink:0;"></i> <span class="text-sm" style="color:#e8dcc8;" id="phone-text">+93 700 123 456</span>
+       </div>
+       <div class="flex items-start gap-3"><i data-lucide="map-pin" style="width:18px;height:18px;color:#d4a020;margin-top:2px;flex-shrink:0;"></i> <span class="text-sm" style="color:#e8dcc8;" id="location-text">Herat, Afghanistan</span>
+       </div>
+      </div><!-- Social -->
+      <div class="flex gap-3 mt-6">
+       <div class="social-icon">
+        <i data-lucide="instagram" style="width:18px;height:18px;"></i>
+       </div>
+       <div class="social-icon">
+        <i data-lucide="facebook" style="width:18px;height:18px;"></i>
+       </div>
+       <div class="social-icon">
+        <i data-lucide="twitter" style="width:18px;height:18px;"></i>
+       </div>
+       <div class="social-icon">
+        <i data-lucide="youtube" style="width:18px;height:18px;"></i>
+       </div>
+      </div>
+     </div><!-- Newsletter -->
+     <div>
+      <h3 class="brand-font text-lg font-semibold mb-5" style="color:#ffc13b;">Stay Connected</h3>
+      <p class="text-sm mb-4" style="color:rgba(232,220,200,0.6);">Get updates on new harvests, exclusive offers, and saffron stories.</p>
+      <form id="subscribe-form" class="flex" onsubmit="event.preventDefault();"><input type="email" class="subscribe-input" placeholder="Your email address" aria-label="Email for newsletter"> <button type="submit" class="subscribe-btn" id="sub-btn">Subscribe</button>
+      </form>
+      <p class="text-xs mt-3 hidden" id="sub-success" style="color:#d4a020;">Ã¢Å“â€œ Thank you for subscribing!</p>
+     </div>
+    </div><!-- Divider -->
+    <div class="divider-line mb-6 fade-section"></div><!-- Bottom Bar -->
+    <div class="fade-section flex flex-col sm:flex-row items-center justify-between gap-3 text-xs" style="color:rgba(232,220,200,0.4);"><span id="copyright-text">Ã‚Â© 2025 Zafran. All rights reserved.</span>
+     <div class="flex gap-5"><a href="#" class="nav-link text-xs" onclick="event.preventDefault()">Privacy Policy</a> <a href="#" class="nav-link text-xs" onclick="event.preventDefault()">Terms of Service</a>
+     </div>
     </div>
+   </div>
   </footer>
 
   <!-- Back to Top -->
@@ -281,5 +434,6 @@
     window.addEventListener('scroll', () => { backToTop.style.display = window.scrollY > 300 ? 'block' : 'none'; });
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
+  <script src="javascript.js"></script>
 </body>
 </html>
