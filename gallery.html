@@ -37,12 +37,6 @@ body { font-family: 'DM Sans', sans-serif; background: #FDF6EC; }
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .gallery-item:hover img { transform: scale(1.08); }
-.gallery-item .overlay {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-.gallery-item:hover .overlay { opacity: 1; }
-
 .filter-btn {
   transition: all 0.3s ease;
   position: relative;
@@ -98,7 +92,7 @@ body { font-family: 'DM Sans', sans-serif; background: #FDF6EC; }
    </section><!-- Filters -->
    <section class="max-w-6xl mx-auto px-6 pb-8">
     <div class="flex flex-wrap justify-center gap-2 sm:gap-4" id="filters">
-     <button class="filter-btn active px-4 py-2 text-sm font-semibold tracking-wide text-saffron-deep" data-cat="all">All</button> <button class="filter-btn px-4 py-2 text-sm font-medium tracking-wide text-gray-500 hover:text-saffron-deep" data-cat="fields">Saffron Fields</button> <button class="filter-btn px-4 py-2 text-sm font-medium tracking-wide text-gray-500 hover:text-saffron-deep" data-cat="harvesting">Harvesting</button> <button class="filter-btn px-4 py-2 text-sm font-medium tracking-wide text-gray-500 hover:text-saffron-deep" data-cat="processing">Processing</button> <button class="filter-btn px-4 py-2 text-sm font-medium tracking-wide text-gray-500 hover:text-saffron-deep" data-cat="packaging">Packaging</button> <button class="filter-btn px-4 py-2 text-sm font-medium tracking-wide text-gray-500 hover:text-saffron-deep" data-cat="products">Products</button>
+     <button class="filter-btn active px-4 py-2 text-sm font-semibold tracking-wide text-saffron-deep" data-cat="all">All</button> <button class="filter-btn px-4 py-2 text-sm font-medium tracking-wide text-gray-500 hover:text-saffron-deep" data-cat="fields">Saffron Fields</button> <button class="filter-btn px-4 py-2 text-sm font-medium tracking-wide text-gray-500 hover:text-saffron-deep" data-cat="harvesting">Harvesting</button> <button class="filter-btn px-4 py-2 text-sm font-medium tracking-wide text-gray-500 hover:text-saffron-deep" data-cat="processing">Processing</button> <button class="filter-btn px-4 py-2 text-sm font-medium tracking-wide text-gray-500 hover:text-saffron-deep" data-cat="packaging">Packaging</button>
     </div>
    </section><!-- Gallery Grid -->
    <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-10">
@@ -113,29 +107,25 @@ body { font-family: 'DM Sans', sans-serif; background: #FDF6EC; }
     <div class="max-w-4xl w-full mx-4 text-center">
      <div id="lbImageWrap" class="relative rounded-xl overflow-hidden bg-black/50" style="min-height:200px;"><img src="" alt="" loading="lazy" class="w-full h-auto rounded-xl">
      </div>
-     <p id="lbCaption" class="text-white/80 font-display text-xl mt-4"></p>
     </div>
    </div>
   </div>
   <script>
 // Gallery data with real photos
 const galleryData = [
-  { id:1, cat:'fields', title:'Purple Fields at Dawn', img:'https://images.unsplash.com/photo-1500931156392-d0c5ff4dcc78?w=600&h=400&fit=crop', desc:'Rows of crocus flowers stretch across the Herat highlands' },
-  { id:2, cat:'fields', title:'Mountain Terraces', img:'https://images.unsplash.com/photo-1500929943458-d515ab3dd13f?w=600&h=400&fit=crop', desc:'Terraced saffron fields against the Hindu Kush backdrop' },
-  { id:3, cat:'harvesting', title:'Hand-Picking at Sunrise', img:'https://images.unsplash.com/photo-1516905033972-f5d0a1fec0aa?w=600&h=400&fit=crop', desc:'Workers carefully harvest each delicate flower by hand' },
-  { id:4, cat:'harvesting', title:'Morning Harvest Baskets', img:'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&h=400&fit=crop', desc:'Woven baskets overflow with freshly picked crocus blooms' },
-  { id:5, cat:'processing', title:'Separating the Stigma', img:'https://images.unsplash.com/photo-1516991410050-f6156f3db3a5?w=600&h=400&fit=crop', desc:'Skilled hands separate the precious red stigma threads' },
-  { id:6, cat:'processing', title:'Traditional Drying', img:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop', desc:'Saffron threads gently dried using time-honored methods' },
-  { id:7, cat:'packaging', title:'Premium Glass Jars', img:'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=600&h=400&fit=crop', desc:'Each jar carefully filled and sealed for freshness' },
-  { id:8, cat:'packaging', title:'Gift Box Collection', img:'https://images.unsplash.com/photo-1549887534-f92e768e360d?w=600&h=400&fit=crop', desc:'Elegant presentation boxes for export markets' },
-  { id:9, cat:'products', title:'Grade-1 Negin Saffron', img:'https://images.unsplash.com/photo-1599599810694-4c1b1dd9d313?w=600&h=400&fit=crop', desc:'Our finest all-red premium saffron threads' },
-  { id:10, cat:'products', title:'Saffron Powder', img:'https://images.unsplash.com/photo-1599599810604-9c50f6fcef5a?w=600&h=400&fit=crop', desc:'Finely ground saffron for culinary use' },
-  { id:11, cat:'fields', title:'Bloom Season Panorama', img:'https://images.unsplash.com/photo-1500610221742-f049cd451bba?w=600&h=400&fit=crop', desc:'A sea of purple during peak flowering season' },
-  { id:12, cat:'harvesting', title:'Community Harvest Day', img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop', desc:'The whole village joins for the annual harvest' },
-  { id:13, cat:'processing', title:'Quality Inspection', img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop', desc:'Every batch tested for color, aroma, and purity' },
-  { id:14, cat:'products', title:'Saffron Tea Blend', img:'https://images.unsplash.com/photo-1599599810735-57cbb78e92b4?w=600&h=400&fit=crop', desc:'Aromatic saffron blended with cardamom and rose' },
-  { id:15, cat:'packaging', title:'Export Ready Tins', img:'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=600&h=400&fit=crop', desc:'Hermetically sealed tins for international shipping' },
-  { id:16, cat:'fields', title:'Irrigation Channels', img:'https://images.unsplash.com/photo-1500931156392-d0c5ff4dcc78?w=600&h=400&fit=crop', desc:'Ancient water systems feeding the saffron beds' },
+  { id:1, cat:'fields', title:'Purple Fields at Dawn', img:'photos/Gallery/fields/pho1.jpg', desc:'Rows of crocus flowers stretch across the Herat highlands' },
+  { id:2, cat:'fields', title:'Mountain Terraces', img:'photos/Gallery/fields/pho2.jpg', desc:'Terraced saffron fields against the Hindu Kush backdrop' },
+  { id:3, cat:'harvesting', title:'Hand-Picking at Sunrise', img:'photos/Gallery/harvesting/pho1.jpg', desc:'Workers carefully harvest each delicate flower by hand' },
+  { id:4, cat:'harvesting', title:'Morning Harvest Baskets', img:'photos/Gallery/harvesting/pho2.jpg', desc:'Woven baskets overflow with freshly picked crocus blooms' },
+  { id:5, cat:'processing', title:'Separating the Stigma', img:'photos/Gallery/processing/pho1.jpg', desc:'Skilled hands separate the precious red stigma threads' },
+  { id:6, cat:'processing', title:'Traditional Drying', img:'photos/Gallery/processing/pho2.jpg', desc:'Saffron threads gently dried using time-honored methods' },
+  { id:7, cat:'packaging', title:'Premium Glass Jars', img:'photos/Gallery/packaging/pho1.jpg', desc:'Each jar carefully filled and sealed for freshness' },
+  { id:8, cat:'packaging', title:'Gift Box Collection', img:'photos/Gallery/packaging/pho2.jpg', desc:'Elegant presentation boxes for export markets' },
+  { id:11, cat:'fields', title:'Bloom Season Panorama', img:'photos/Gallery/fields/pho3.jpg', desc:'A sea of purple during peak flowering season' },
+  { id:12, cat:'harvesting', title:'Community Harvest Day', img:'photos/Gallery/harvesting/pho3.jpg', desc:'The whole village joins for the annual harvest' },
+  { id:13, cat:'processing', title:'Quality Inspection', img:'photos/Gallery/processing/pho3.jpg', desc:'Every batch tested for color, aroma, and purity' },
+  { id:15, cat:'packaging', title:'Export Ready Tins', img:'photos/Gallery/packaging/pho3.jpg', desc:'Hermetically sealed tins for international shipping' },
+  { id:16, cat:'fields', title:'Irrigation Channels', img:'photos/Gallery/fields/pho4.jpg', desc:'Ancient water systems feeding the saffron beds' },
 ];
 
 let currentCat = 'all';
@@ -160,12 +150,7 @@ function renderGallery() {
     div.style.animationDelay = `${idx * 0.05}s`;
     div.innerHTML = `
       <div class="relative w-full h-full" style="min-height:${tall ? '340px' : '240px'}">
-        <img src="${item.img}" alt="${item.title}" loading="lazy" class="w-full h-full object-cover" onerror="this.style.background='#C8963E'; this.alt='Image unavailable';">
-        <div class="overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-5">
-          <span class="text-saffron-gold text-xs tracking-widest uppercase font-semibold">${item.cat}</span>
-          <h3 class="font-display text-white text-xl font-bold mt-1">${item.title}</h3>
-          <p class="text-white/70 text-sm mt-1">${item.desc}</p>
-        </div>
+        <img src="${item.img}" alt="" loading="lazy" class="w-full h-full object-cover" onerror="this.style.background='#C8963E'; this.alt='Image unavailable';">
       </div>`;
     div.onclick = () => openLightbox(filteredItems.indexOf(item));
     grid.appendChild(div);
@@ -207,8 +192,7 @@ function updateLightbox() {
   const item = filteredItems[lightboxIdx];
   if (!item) return;
   const wrap = document.getElementById('lbImageWrap');
-  wrap.innerHTML = `<img src="${item.img}" alt="${item.title}" loading="lazy" class="w-full h-auto rounded-xl" onerror="this.style.background='#C8963E'; this.alt='Image unavailable';">`;
-  document.getElementById('lbCaption').textContent = item.title;
+  wrap.innerHTML = `<img src="${item.img}" alt="" loading="lazy" class="w-full h-auto rounded-xl" onerror="this.style.background='#C8963E'; this.alt='Image unavailable';">`;
 }
 
 document.getElementById('lbClose').onclick = closeLightbox;
