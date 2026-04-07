@@ -408,3 +408,27 @@
       }
     }
   
+/* Scrollbar theme (index-style saffron) */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #b8460f #120e0b;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #120e0b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d4932d, #b8460f);
+  border-radius: 999px;
+  border: 2px solid #120e0b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f4c563, #d4772c);
+}

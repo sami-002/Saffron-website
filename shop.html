@@ -3,9 +3,9 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zafran House - Premium Saffron</title>
+  <title>Marghob Heray - Saffron Shop</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&amp;family=DM+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,36 +14,22 @@
     }
 
     :root {
-      --bg: white;
-      --bg2: #FFF7ED;
-      --text: #1A0A00;
-      --primary: #8B1A1A;
-      --accent: #C8963E;
-      --card: #FFFFFF;
-      --card-border: #8b1a1a20;
-      --glass: rgba(255, 251, 245, 0.8);
-      --nav-glass: rgba(255, 251, 245, 0.85);
-      --shadow: 0 8px 32px rgba(139, 26, 26, 0.08);
-      --glow: 0 0 20px rgba(200, 150, 62, 0.2);
-    }
-
-    html.dark {
-      --bg: #0D0907;
-      --bg2: #1A1210;
-      --text: #F5E6D3;
-      --primary: #E84040;
-      --accent: #D4A853;
-      --card: #1A1210;
-      --card-border: rgba(212, 168, 83, 0.2);
-      --glass: rgba(13, 9, 7, 0.85);
-      --nav-glass: rgba(13, 9, 7, 0.9);
-      --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      --glow: 0 0 20px rgba(212, 168, 83, 0.15);
+      --bg: #0f0d0a;
+      --bg2: #1a140f;
+      --text: #e8dcc8;
+      --primary: #b8460f;
+      --accent: #d4932d;
+      --card: rgba(26, 20, 16, 0.82);
+      --card-border: rgba(212, 147, 45, 0.18);
+      --glass: rgba(20, 16, 12, 0.78);
+      --nav-glass: rgba(15, 13, 10, 0.82);
+      --shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+      --glow: 0 0 24px rgba(212, 147, 45, 0.12);
     }
 
     html, body {
       height: 100%;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
@@ -60,7 +46,7 @@
     }
 
     .font-display {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
     }
 
     .nav-bar {
@@ -70,6 +56,7 @@
       backdrop-filter: blur(20px);
       background: var(--nav-glass);
       border-bottom: 1px solid var(--card-border);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
       transition: all 0.3s;
     }
 
@@ -78,16 +65,22 @@
     }
 
     .navbar-brand {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       font-weight: bold;
-      color: var(--primary) !important;
+      background: linear-gradient(135deg, #d4932d 0%, #f4c563 50%, #d4932d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .hero-section {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, var(--bg), var(--bg2));
+      background:
+        radial-gradient(ellipse at 30% 40%, rgba(212, 147, 45, 0.16) 0%, transparent 48%),
+        radial-gradient(ellipse at 70% 75%, rgba(184, 70, 15, 0.14) 0%, transparent 42%),
+        linear-gradient(180deg, #120f0c 0%, #0f0d0a 100%);
       padding: 80px 0 60px;
       min-height: 100%;
       display: flex;
@@ -172,7 +165,7 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), #A02020);
+      background: linear-gradient(135deg, #b8460f, #d4932d);
       color: white !important;
       border: none;
       padding: 12px 32px;
@@ -188,7 +181,7 @@
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(139, 26, 26, 0.3);
+      box-shadow: 0 10px 24px rgba(212, 147, 45, 0.2);
       color: white;
     }
 
@@ -215,7 +208,7 @@
       position: relative;
       overflow: hidden;
       aspect-ratio: 1;
-      background: linear-gradient(135deg, var(--bg2), var(--bg));
+      background: linear-gradient(160deg, rgba(26, 20, 16, 0.95), rgba(38, 28, 18, 0.88));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -287,34 +280,6 @@
       border-color: var(--primary);
     }
 
-    .theme-toggle {
-      width: 48px;
-      height: 26px;
-      border-radius: 13px;
-      background: var(--card-border);
-      border: 1px solid var(--card-border);
-      cursor: pointer;
-      position: relative;
-      transition: all 0.3s;
-      padding: 0;
-    }
-
-    .theme-toggle::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: var(--accent);
-      top: 2px;
-      left: 2px;
-      transition: all 0.3s;
-    }
-
-    html.dark .theme-toggle::after {
-      left: 24px;
-    }
-
     .lang-btn {
       padding: 4px 12px;
       border-radius: 8px;
@@ -337,7 +302,7 @@
       position: absolute;
       top: -6px;
       right: -6px;
-      background: var(--primary);
+      background: linear-gradient(135deg, #b8460f, #d4932d);
       color: white;
       font-size: 0.6rem;
       font-weight: 700;
@@ -450,7 +415,7 @@
     }
 
     .footer-section {
-      background: var(--bg2);
+      background: rgba(26, 20, 16, 0.92);
       border-top: 1px solid var(--card-border);
       padding: 48px 0 24px;
       margin-top: 60px;
@@ -566,7 +531,7 @@
      <div class="d-flex align-items-center justify-content-between py-3">
       <a class="navbar-brand" href="#" onclick="goToShop()" style="cursor: pointer;">𝓩afran House</a>
       <div class="d-flex align-items-center gap-2" style="margin-left: auto;">
-       <button class="lang-btn active" id="langEn" onclick="setLang('en')">EN</button> <button class="lang-btn" id="langDa" onclick="setLang('da')">دری</button> <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme"></button> <button onclick="goToCart()" style="background: none; border: none; cursor: pointer; color: var(--text); position: relative; padding: 4px; margin-left: 12px;">
+       <button class="lang-btn active" id="langEn" onclick="setLang('en')">EN</button> <button class="lang-btn" id="langDa" onclick="setLang('da')">دری</button> <button onclick="goToCart()" style="background: none; border: none; cursor: pointer; color: var(--text); position: relative; padding: 4px; margin-left: 12px;">
         <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;">
          <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
         </svg><span class="cart-badge" id="cartBadge">0</span> </button>
@@ -585,9 +550,9 @@
       <div class="row justify-content-center align-items-center">
        <div class="col-lg-8 text-center position-relative z-1">
         <div class="reveal">
-         <p style="color: var(--accent); font-weight: 600; letter-spacing: 3px; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 12px;" data-i18n="hero_tag">Handpicked Excellence</p>
-         <h1 class="font-display hero-title" id="heroTitle">Premium Afghan<br><span>Saffron</span></h1>
-         <p class="hero-subtitle" id="heroSubtitle">The world's finest saffron, cultivated in the highlands of Herat with centuries of tradition.</p><button class="btn-primary" onclick="scrollToShop()"> <span data-i18n="shop_now">Shop Now</span>
+         <p style="color: var(--accent); font-weight: 600; letter-spacing: 3px; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 12px;" data-i18n="hero_tag">Women-Owned Since 2023</p>
+         <h1 class="font-display hero-title" id="heroTitle">Traceable Afghan<br><span>Saffron</span></h1>
+         <p class="hero-subtitle" id="heroSubtitle">Premium saffron from Herat, processed, dried, graded, cleaned, and packaged by Marghob Heray Agricultural and Livestock Company.</p><button class="btn-primary" onclick="scrollToShop()"> <span data-i18n="shop_now">Shop Now</span>
           <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
            <line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" />
           </svg></button>
@@ -625,14 +590,14 @@
      <div class="container-fluid">
       <div class="row justify-content-center mb-4">
        <div class="col-lg-8 text-center reveal">
-        <h2 class="font-display" style="font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem;" id="shopTitle">Our Collection</h2>
+        <h2 class="font-display" style="font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem;" id="shopTitle">Marghob Heray Collection</h2>
         <p style="opacity: 0.6; margin-bottom: 1.5rem;" data-i18n="shop_sub">Premium saffron from Marghob Heray Agricultural Company — women-owned, quality-driven, from Herat</p>
         <div style="display: inline-block; background: var(--bg2); border-radius: 12px; padding: 12px 20px; font-size: 0.85rem; opacity: 0.7;"><strong style="color: var(--accent);">✓ Women-Owned</strong> — <strong style="color: var(--accent);">✓ Lab-Tested</strong> — <strong style="color: var(--accent);">✓ Direct from Herat</strong>
         </div>
        </div>
       </div>
       <div class="mb-4 reveal" id="filterBar" style="display: flex; flex-wrap: wrap; gap: 10px; padding: 0 15px;">
-       <button class="filter-pill active" data-filter="all" data-i18n="filter_all">All</button> <button class="filter-pill" data-filter="super_negin">Super Negin</button> <button class="filter-pill" data-filter="negin">Negin</button> <button class="filter-pill" data-filter="pushal">Pushal</button> <button class="filter-pill" data-filter="sargol">Sargol</button> <button class="filter-pill" data-filter="powder" data-i18n="filter_powder">Powder</button> <button class="filter-pill" data-filter="gift" data-i18n="filter_gift">Gifts</button> <button class="filter-pill" data-filter="premium" data-i18n="filter_premium">Premium</button>
+       <button class="filter-pill active" data-filter="all" data-i18n="filter_all">All</button> <button class="filter-pill" data-filter="super_negin">Super Negin</button> <button class="filter-pill" data-filter="negin">Negin</button> <button class="filter-pill" data-filter="pushal">Pushal</button> <button class="filter-pill" data-filter="sargol">Pushal Grade A</button> <button class="filter-pill" data-filter="powder" data-i18n="filter_powder">Pushal Grade B</button>
       </div>
       <div class="d-flex justify-content-end mb-3">
        <select id="sortSelect" style="background: var(--card); border: 1px solid var(--card-border); border-radius: 8px; padding: 6px 12px; color: var(--text); font-size: 0.85rem; cursor: pointer;"> <option value="default">Sort: Featured</option> <option value="low">Price: Low to High</option> <option value="high">Price: High to Low</option> <option value="rating">Top Rated</option> </select>
@@ -673,14 +638,14 @@
          <div id="orderSummary" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--card-border);"></div>
          <div style="background: var(--bg2); border-radius: 12px; padding: 16px; margin-bottom: 24px;">
           <div class="d-flex justify-content-between mb-2">
-           <span style="opacity: 0.6;">Subtotal</span> <span id="summarySubtotal">$0.00</span>
+           <span style="opacity: 0.6;">Subtotal</span> <span id="summarySubtotal">0 AFS</span>
           </div>
           <div class="d-flex justify-content-between mb-3">
-           <span style="opacity: 0.6;">Shipping</span> <span id="summaryShipping">Free</span>
+           <span style="opacity: 0.6;">Shipping</span> <span id="summaryShipping">Negotiable</span>
           </div>
           <div style="border-top: 1px solid var(--card-border); padding-top: 12px;">
            <div class="d-flex justify-content-between" style="font-weight: 700; font-size: 1.1rem;">
-            <span>Total</span> <span id="summaryTotal">$0.00</span>
+            <span>Total</span> <span id="summaryTotal">0 AFS</span>
            </div>
           </div>
          </div>
@@ -689,7 +654,7 @@
            <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem;" id="fullNameLabel">Full Name</label> <input type="text" id="fullName" placeholder="John Doe" style="width: 100%; padding: 10px 14px; border: 1px solid var(--card-border); border-radius: 8px; background: var(--bg2); color: var(--text); font-size: 0.9rem;" required>
           </div>
           <div class="mb-3">
-           <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem;" id="phoneLabel">Phone Number</label> <input type="tel" id="phone" placeholder="+1 (555) 000-0000" style="width: 100%; padding: 10px 14px; border: 1px solid var(--card-border); border-radius: 8px; background: var(--bg2); color: var(--text); font-size: 0.9rem;" required>
+           <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem;" id="phoneLabel">Phone Number</label> <input type="tel" id="phone" placeholder="+9370000000" style="width: 100%; padding: 10px 14px; border: 1px solid var(--card-border); border-radius: 8px; background: var(--bg2); color: var(--text); font-size: 0.9rem;" required>
           </div>
           <div class="mb-3">
            <label style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem;" id="addressLabel">Delivery Address</label> <textarea id="address" placeholder="123 Main Street, City, Country" style="width: 100%; padding: 10px 14px; border: 1px solid var(--card-border); border-radius: 8px; background: var(--bg2); color: var(--text); font-size: 0.9rem; resize: vertical; min-height: 80px;" required></textarea>
@@ -717,14 +682,13 @@
      <div class="row mb-4">
       <div class="col-md-6 col-lg-3 footer-col">
        <h4 style="color: var(--primary);">𝓩afran House</h4>
-       <p style="font-size: 0.85rem; line-height: 1.6; opacity: 0.6;" data-i18n="footer_about">Bringing the finest Afghan saffron to the world since 2018. Our saffron is handpicked and lab-tested for purity.</p>
+       <p style="font-size: 0.85rem; line-height: 1.7; opacity: 0.75;" data-i18n="footer_about">Marghob Heray Agricultural and Livestock Company is a women-owned enterprise in Herat specializing in saffron processing, grading, cleaning, packaging, farmer support, and reliable project implementation.</p>
       </div>
       <div class="col-md-6 col-lg-3 footer-col">
        <h4 data-i18n="footer_shop">Shop</h4>
        <ul>
         <li data-i18n="ft_threads">Saffron Threads</li>
         <li data-i18n="ft_powder">Saffron Powder</li>
-        <li data-i18n="ft_gifts">Gift Sets</li>
         <li data-i18n="ft_bulk">Bulk Orders</li>
        </ul>
       </div>
@@ -794,9 +758,11 @@
     ];
 
     const i18n = {
-      en: {hero_tag:"Handpicked Excellence",shop_now:"Shop Now",shop_sub:"Explore our premium range of saffron products",filter_all:"All",filter_threads:"Threads",filter_powder:"Powder",filter_gift:"Gift Sets",filter_premium:"Premium",add_cart:"Add to Cart",quick_view:"Quick View",cart_title:"Your Cart",total:"Total",checkout:"Checkout",no_results:"No products found",footer_about:"Bringing the finest Afghan saffron to the world since 2018. Our saffron is handpicked and lab-tested for purity.",footer_shop:"Shop",footer_company:"Company",footer_connect:"Connect",ft_threads:"Saffron Threads",ft_powder:"Saffron Powder",ft_gifts:"Gift Sets",ft_bulk:"Bulk Orders",ft_about:"About Us",ft_story:"Our Story",ft_contact:"Contact",ft_faq:"FAQ",added:"Added to cart!",empty_cart:"Your cart is empty",sort_default:"Sort: Featured",sort_low:"Price: Low to High",sort_high:"Price: High to Low",sort_rating:"Top Rated",weight:"Weight",remove:"Remove",full_name:"Full Name",phone:"Phone Number",address:"Delivery Address",place_order:"Place Order"},
+      en: {hero_tag:"Women-Owned Since 2023",shop_now:"Shop Now",shop_sub:"Marghob Heray Agricultural and Livestock Company is a fully women-owned agribusiness in Herat, focused on hygienic saffron processing, quality control, traceability, and market-ready packaging.",filter_all:"All",filter_threads:"Threads",filter_powder:"Pushal Grade B",filter_gift:"Gift Sets",filter_premium:"Premium",add_cart:"Add to Cart",quick_view:"Quick View",cart_title:"Your Cart",total:"Total",checkout:"Checkout",no_results:"No products found",footer_about:"Marghob Heray Agricultural and Livestock Company is a women-owned enterprise in Herat specializing in saffron processing, grading, cleaning, packaging, farmer support, and reliable project implementation.",footer_shop:"Shop",footer_company:"Company",footer_connect:"Connect",ft_threads:"Saffron Threads",ft_powder:"Processed Saffron",ft_gifts:"Gift Sets",ft_bulk:"Bulk Orders",ft_about:"About Us",ft_story:"Our Story",ft_contact:"Contact",ft_faq:"FAQ",added:"Added to cart!",empty_cart:"Your cart is empty",sort_default:"Sort: Featured",sort_low:"Price: Low to High",sort_high:"Price: High to Low",sort_rating:"Top Rated",weight:"Weight",remove:"Remove",full_name:"Full Name",phone:"Phone Number",address:"Delivery Address",place_order:"Place Order"},
       da: {hero_tag:"برتری دست‌چین‌شده",shop_now:"خرید کنید",shop_sub:"مجموعه ممتاز زعفران ما را کاوش کنید",filter_all:"همه",filter_threads:"تار",filter_powder:"پودر",filter_gift:"ست هدیه",filter_premium:"ممتاز",add_cart:"افزودن به سبد",quick_view:"مشاهده سریع",cart_title:"سبد شما",total:"مجموع",checkout:"تسویه حساب",no_results:"محصولی یافت نشد",footer_about:"از سال ۲۰۱۸ بهترین زعفران افغانستان را به جهان عرضه می‌کنیم.",footer_shop:"فروشگاه",footer_company:"شرکت",footer_connect:"ارتباط",ft_threads:"تار زعفران",ft_powder:"پودر زعفران",ft_gifts:"ست هدیه",ft_bulk:"سفارش عمده",ft_about:"درباره ما",ft_story:"داستان ما",ft_contact:"تماس",ft_faq:"سوالات متداول",added:"به سبد اضافه شد!",empty_cart:"سبد شما خالی است",sort_default:"مرتب‌سازی: ویژه",sort_low:"قیمت: کم به زیاد",sort_high:"قیمت: زیاد به کم",sort_rating:"بالاترین امتیاز",weight:"وزن",remove:"حذف",full_name:"نام کامل",phone:"شماره تماس",address:"آدرس تحویل",place_order:"ثبت سفارش"}
     };
+
+    const hiddenCategories = ['gift', 'premium'];
 
     let currentLang = 'en', cart = [], currentFilter = 'all', searchQuery = '', currentPage = 'shop';
 
@@ -809,6 +775,10 @@
       try {
         const saved = localStorage.getItem('saffron-cart');
         cart = saved ? JSON.parse(saved) : [];
+        cart = cart.filter(item => {
+          const product = products.find(p => p.id === item.id);
+          return product && !hiddenCategories.includes(product.cat);
+        });
       } catch (e) {
         cart = [];
       }
@@ -837,7 +807,7 @@
       }
     }
 
-    // ===== LANGUAGE & THEME =====
+    // ===== LANGUAGE =====
     function setLang(lang) {
       currentLang = lang;
       document.documentElement.dir = lang === 'da' ? 'rtl' : 'ltr';
@@ -858,11 +828,10 @@
       document.getElementById('phoneLabel').textContent = i18n[currentLang].phone;
       document.getElementById('addressLabel').textContent = i18n[currentLang].address;
       document.getElementById('placeOrderBtn').textContent = i18n[currentLang].place_order;
-    }
-
-    function toggleTheme() {
-      document.documentElement.classList.toggle('dark');
-      try { localStorage.setItem('saffron-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); } catch (e) {}
+      const brand = document.querySelector('.navbar-brand');
+      if (brand) brand.textContent = 'Marghob Heray';
+      const footerBrand = document.querySelector('.footer-col h4');
+      if (footerBrand) footerBrand.textContent = 'Marghob Heray';
     }
 
     function showToast(msg) {
@@ -870,6 +839,10 @@
       document.getElementById('toastText').textContent = msg;
       t.classList.add('show');
       setTimeout(() => t.classList.remove('show'), 2200);
+    }
+
+    function formatPrice(amount) {
+      return `${amount.toFixed(0)} AFS`;
     }
 
     // ===== SVG GENERATION =====
@@ -900,7 +873,7 @@
 
     // ===== PRODUCTS =====
     function getFilteredProducts() {
-      let list = [...products];
+      let list = products.filter(p => !hiddenCategories.includes(p.cat));
       if (currentFilter !== 'all') list = list.filter(p => p.cat === currentFilter);
       const sort = document.getElementById('sortSelect').value;
       if (sort === 'low') list.sort((a, b) => a.price - b.price);
@@ -924,7 +897,7 @@
             <h3 class="card-title">${currentLang === 'da' ? p.nameDa : p.name}</h3>
             <div class="card-rating">${stars(p.rating)}</div>
             <div class="d-flex align-items-center justify-content-between">
-              <span class="card-price">$${p.price}</span>
+              <span class="card-price">${formatPrice(p.price)}</span>
               <button class="btn-primary" style="padding: 8px 14px; font-size: 0.8rem; gap: 4px;" onclick="addToCart(${p.id})">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;display:inline"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
                 <span>${i18n[currentLang].add_cart}</span>
@@ -955,7 +928,7 @@
           <div class="card-rating mb-2">${stars(p.rating)}<span style="opacity: 0.5; font-size: 0.8rem; margin-left: 8px;">(${p.rating})</span></div>
           <p style="opacity: 0.7; line-height: 1.7; margin-bottom: 1rem;">${currentLang === 'da' ? p.descDa : p.desc}</p>
           <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 1.25rem;">
-            <span style="font-size: 1.75rem; font-weight: 700; color: var(--primary);">$${p.price}</span>
+            <span style="font-size: 1.75rem; font-weight: 700; color: var(--primary);">${formatPrice(p.price)}</span>
             <span style="opacity: 0.5; font-size: 0.8rem;">${i18n[currentLang].weight}: ${p.weight}</span>
           </div>
           <button class="btn-primary w-100" style="padding: 12px 28px; font-size: 0.95rem;" onclick="addToCart(${p.id}); closeModal();">
@@ -1013,8 +986,8 @@
       if (!cart.length) {
         itemsList.innerHTML = `<p style="text-align: center; opacity: 0.5; padding: 40px; font-size: 0.9rem;">${i18n[currentLang].empty_cart}</p>`;
         summary.innerHTML = '';
-        document.getElementById('summarySubtotal').textContent = '$0.00';
-        document.getElementById('summaryTotal').textContent = '$0.00';
+        document.getElementById('summarySubtotal').textContent = formatPrice(0);
+        document.getElementById('summaryTotal').textContent = formatPrice(0);
         return;
       }
 
@@ -1044,19 +1017,21 @@
           </div>
         `;
       }).join('');
+      itemsList.innerHTML = itemsList.innerHTML.replace(/\$([0-9]+(?:\.[0-9]+)?)/g, '$1 AFS');
 
       summary.innerHTML = cart.map(c => {
         const p = products.find(x => x.id === c.id);
         return `
           <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; opacity: 0.7;">
             <span>${currentLang === 'da' ? p.nameDa : p.name} ×${c.qty}</span>
-            <span>$${(p.price * c.qty).toFixed(2)}</span>
+            <span>${formatPrice(p.price * c.qty)}</span>
           </div>
         `;
       }).join('');
+      summary.innerHTML = summary.innerHTML.replace(/\$([0-9]+(?:\.[0-9]+)?)/g, '$1 AFS');
 
-      document.getElementById('summarySubtotal').textContent = '$' + subtotal.toFixed(2);
-      document.getElementById('summaryTotal').textContent = '$' + subtotal.toFixed(2);
+      document.getElementById('summarySubtotal').textContent = formatPrice(subtotal);
+      document.getElementById('summaryTotal').textContent = formatPrice(subtotal);
     }
 
     // ===== CHECKOUT =====
@@ -1151,16 +1126,11 @@
     }
 
     // ===== INIT =====
-    try {
-      if (localStorage.getItem('saffron-theme') === 'dark')
-        document.documentElement.classList.add('dark');
-    } catch (e) {}
-
     loadCart();
     updateCartBadge();
     showSkeletons();
     createThreads();
-    updateLabels();
+    setLang(currentLang);
 
     setTimeout(() => {
       document.getElementById('skeletonGrid').style.display = 'none';
