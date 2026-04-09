@@ -150,7 +150,7 @@
       display: block; padding: 12px 28px; color: #e8dcc8;
       text-decoration: none; font-size: 0.7rem; letter-spacing: 1.5px;
       text-transform: uppercase; transition: all 0.3s ease;
-      position: relative;
+      position: relative; background: transparent; border: 0;
     }
     .dropdown-item::before {
       content: ''; position: absolute; left: 0; top: 50%;
@@ -159,9 +159,24 @@
       transition: width 0.3s ease;
     }
     .dropdown-item:hover {
-      color: #f4c563; padding-left: 36px;
+      color: #f4c563; padding-left: 36px; background: transparent;
     }
     .dropdown-item:hover::before { width: 20px; }
+
+    .saffron-nav .dropdown-item:focus,
+    .saffron-nav .dropdown-item:focus-visible,
+    .saffron-nav .dropdown-item:active,
+    .saffron-nav .dropdown-item.active {
+      color: #f4c563;
+      background: transparent;
+      padding-left: 36px;
+      outline: none;
+    }
+
+    .saffron-nav .dropdown-item:focus::before,
+    .saffron-nav .dropdown-item:focus-visible::before,
+    .saffron-nav .dropdown-item:active::before,
+    .saffron-nav .dropdown-item.active::before { width: 20px; }
 
     .chevron { width: 12px; height: 12px; transition: transform 0.3s ease; }
     .nav-item:hover .chevron { transform: rotate(180deg); }

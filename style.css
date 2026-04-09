@@ -215,6 +215,8 @@
   text-transform: uppercase;
   transition: all 0.3s ease;
   position: relative;
+  background: transparent;
+  border: 0;
 }
 
 .dropdown-item::before {
@@ -232,9 +234,27 @@
 .dropdown-item:hover {
   color: #f4c563;
   padding-left: 36px;
+  background: transparent;
 }
 
 .dropdown-item:hover::before {
+  width: 20px;
+}
+
+.saffron-nav .dropdown-item:focus,
+.saffron-nav .dropdown-item:focus-visible,
+.saffron-nav .dropdown-item:active,
+.saffron-nav .dropdown-item.active {
+  color: #f4c563;
+  background: transparent;
+  padding-left: 36px;
+  outline: none;
+}
+
+.saffron-nav .dropdown-item:focus::before,
+.saffron-nav .dropdown-item:focus-visible::before,
+.saffron-nav .dropdown-item:active::before,
+.saffron-nav .dropdown-item.active::before {
   width: 20px;
 }
 

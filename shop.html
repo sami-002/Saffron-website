@@ -211,12 +211,30 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      padding: 0;
     }
 
     .card-img-wrap svg {
       transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       max-width: 160px;
+    }
+
+    .product-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .modal-photo {
+      width: 100%;
+      max-height: 420px;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      margin: 0 auto;
+      border-radius: 12px;
     }
 
     .product-card:hover .card-img-wrap svg {
@@ -605,7 +623,7 @@
       <li class="nav-item"><button class="nav-link dropdown-toggle" onclick="event.preventDefault()"> Pages
         <svg class="chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" />
         </svg></button>
-       <div class="dropdown-menu"><a href="team.html" class="dropdown-item">Our Team</a> <a href="gallery.html" class="dropdown-item">Gallery</a> <a href="shop.html" class="dropdown-item">Shop</a>
+       <div class="dropdown-menu"><a href="team.html" class="dropdown-item">Our Team</a> <a href="gallery.html" class="dropdown-item">Gallery</a> <a href="shop.html" class="dropdown-item active">Shop</a>
        </div></li>
       <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
      </ul>
@@ -922,8 +940,8 @@
     // ===== GLOBALS =====
     const products = [
       // Super Negin Grade I
-      {id:1,name:"Super Negin Grade I",nameDa:"سوپر نگین درجه یک",cat:"super_negin",price:32,rating:5,badge:"Premium Quality",badgeDa:"کیفیت ممتاز",desc:"Grade I Super Negin threads from Marghob Heray. Highest purity, vibrant crimson color, authentic Herat aroma. Crocin level: 270+. Hand-sorted for excellence.",descDa:"تارهای سوپر نگین درجه یک از مرغوب هیرای. خالصترین، رنگ سرخ روشن، عطر اصیل هرات. سطح کروسین: ۲۷۰+.",weight:"1g",color1:"#8B1A1A",color2:"#C8963E",image:"https://images.unsplash.com/photo-1599599810694-b0c2e0bf0a32?w=400&h=400&fit=crop"},
-      {id:2,name:"Super Negin Grade II",nameDa:"سوپر نگین درجه دوم",cat:"super_negin",price:26,rating:4.5,badge:"Best Value",badgeDa:"بهترین قیمت",desc:"Grade II Super Negin with excellent quality standards. Premium color and aroma. Perfect for cooking and traditional use. Crocin level: 250+.",descDa:"سوپر نگین درجه دوم با استانداردهای کیفی عالی. رنگ و عطر ممتاز. برای آشپزی و استفاده سنتی مناسب. سطح کروسین: ۲۵۰+.",weight:"1g",color1:"#A02020",color2:"#D4A853",image:"https://images.unsplash.com/photo-1596040680447-fa3e7a9b8eb8?w=400&h=400&fit=crop"},
+      {id:1,name:"Super Negin Grade I",nameDa:"سوپر نگین درجه یک",cat:"super_negin",price:32,rating:5,badge:"Premium Quality",badgeDa:"کیفیت ممتاز",desc:"Grade I Super Negin threads from Marghob Heray. Highest purity, vibrant crimson color, authentic Herat aroma. Crocin level: 270+. Hand-sorted for excellence.",descDa:"تارهای سوپر نگین درجه یک از مرغوب هیرای. خالصترین، رنگ سرخ روشن، عطر اصیل هرات. سطح کروسین: ۲۷۰+.",weight:"1g",color1:"#8B1A1A",color2:"#C8963E",image:"photos/shop/pho1.jpg"},
+      {id:2,name:"Super Negin Grade II",nameDa:"سوپر نگین درجه دوم",cat:"super_negin",price:26,rating:4.5,badge:"Best Value",badgeDa:"بهترین قیمت",desc:"Grade II Super Negin with excellent quality standards. Premium color and aroma. Perfect for cooking and traditional use. Crocin level: 250+.",descDa:"سوپر نگین درجه دوم با استانداردهای کیفی عالی. رنگ و عطر ممتاز. برای آشپزی و استفاده سنتی مناسب. سطح کروسین: ۲۵۰+.",weight:"1g",color1:"#A02020",color2:"#D4A853",image:"photos/shop/pho2.jpg"},
       
       // Negin Standard
       {id:3,name:"Negin Saffron Select",nameDa:"زعفران نگین منتخب",cat:"negin",price:22,rating:4,badge:"Popular",badgeDa:"محبوب",desc:"Standard grade Negin saffron from women farmer cooperatives in Herat. Consistent quality, rich flavor. Ideal for daily cooking. Crocin level: 230+.",descDa:"زعفران نگین درجه معیار از تعاونی‌های کشاورزان زنان هرات. کیفیت ثابت، طعم غنی. برای آشپزی روزانه ایده‌آل. سطح کروسین: ۲۳۰+.",weight:"1g",color1:"#B82828",color2:"#D4A853",image:"https://images.unsplash.com/photo-1596119456514-46b6c82ebf8d?w=400&h=400&fit=crop"},
@@ -1055,6 +1073,34 @@
       </svg>`;
     }
 
+    function buildProductImage(p, variant = 'card') {
+      const alt = currentLang === 'da' ? p.nameDa : p.name;
+      if (variant === 'modal') {
+        return `<img src="${p.image}" alt="${alt}" loading="lazy" data-product-image="${p.id}" data-image-variant="modal" class="modal-photo">`;
+      }
+
+      return `<img src="${p.image}" alt="${alt}" loading="lazy" data-product-image="${p.id}" data-image-variant="card" class="product-photo">`;
+    }
+
+    function attachProductImageFallbacks(scope = document) {
+      scope.querySelectorAll('img[data-product-image]').forEach(img => {
+        if (img.dataset.fallbackBound === 'true') return;
+        img.dataset.fallbackBound = 'true';
+
+        img.addEventListener('error', function handleImageError() {
+          const productId = Number(this.dataset.productImage);
+          const product = products.find(item => item.id === productId);
+          if (!product || this.dataset.fallbackApplied === 'true') return;
+
+          this.dataset.fallbackApplied = 'true';
+          const size = this.dataset.imageVariant === 'modal' ? 200 : 160;
+          const fallbackMarkup = generateSVG(product, size);
+          this.insertAdjacentHTML('afterend', fallbackMarkup);
+          this.remove();
+        }, { once: true });
+      });
+    }
+
     function stars(r) {
       let s = '';
       for (let i = 1; i <= 5; i++) {
@@ -1088,7 +1134,7 @@
         <div class="product-card reveal${i < 8 ? ' visible' : ''}" style="animation-delay: ${i * 80}ms">
           <div class="card-img-wrap" style="cursor: pointer; background: linear-gradient(135deg, var(--bg2), var(--bg));" onclick="openModal(${p.id})">
             ${p.badge ? `<span class="card-badge">${currentLang === 'da' ? p.badgeDa : p.badge}</span>` : ''}
-            <img src="${p.image}" alt="${currentLang === 'da' ? p.nameDa : p.name}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="console.error('Image failed to load:', this.src); this.style.display='none'; this.parentElement.appendChild((() => { const d = document.createElement('div'); d.innerHTML = '${generateSVG(p)}'; return d.firstChild; })());">
+            ${buildProductImage(p)}
           </div>
           <div class="card-body">
             <h3 class="card-title">${currentLang === 'da' ? p.nameDa : p.name}</h3>
@@ -1103,6 +1149,7 @@
           </div>
         </div>
       `).join('');
+      attachProductImageFallbacks(grid);
       observeReveal();
     }
 
@@ -1117,7 +1164,7 @@
           </svg>
         </button>
         <div class="modal-img-section">
-          <img src="${p.image}" alt="${currentLang === 'da' ? p.nameDa : p.name}" loading="lazy" style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 12px;" onerror="console.error('Image failed to load:', this.src); this.style.display='none'; this.parentElement.innerHTML += '${generateSVG(p, 200)}';">
+          ${buildProductImage(p, 'modal')}
         </div>
         <div class="modal-body">
           ${p.badge ? `<span style="background: var(--primary); color: white; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 6px; display: inline-block; margin-bottom: 8px;">${currentLang === 'da' ? p.badgeDa : p.badge}</span>` : ''}
@@ -1134,6 +1181,7 @@
           </button>
         </div>
       `;
+      attachProductImageFallbacks(m);
       document.getElementById('productModal').classList.add('open');
     }
 
