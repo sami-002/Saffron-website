@@ -48,31 +48,6 @@
       font-family: 'Playfair Display', serif;
     }
 
-    .nav-bar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(20px);
-      background: var(--nav-glass);
-      border-bottom: 1px solid var(--card-border);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-      transition: all 0.3s;
-    }
-
-    .nav-scrolled {
-      box-shadow: var(--shadow);
-    }
-
-    .navbar-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: bold;
-      background: linear-gradient(135deg, #d4932d 0%, #f4c563 50%, #d4932d 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
     .hero-section {
       position: relative;
       overflow: hidden;
@@ -211,7 +186,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0;
+      padding: 12px;
     }
 
     .card-img-wrap svg {
@@ -222,14 +197,15 @@
     .product-photo {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
       display: block;
+      border-radius: 10px;
     }
 
     .modal-photo {
-      width: 100%;
-      max-height: 420px;
+      width: min(100%, 520px);
+      height: min(52vh, 420px);
       object-fit: contain;
       object-position: center;
       display: block;
@@ -297,23 +273,6 @@
       border-color: var(--primary);
     }
 
-    .legacy-lang-btn {
-      padding: 4px 12px;
-      border-radius: 8px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-      border: 1px solid var(--card-border);
-      background: transparent;
-      color: var(--text);
-    }
-
-    .legacy-lang-btn.active {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
 
     .cart-badge {
       position: absolute;
@@ -393,9 +352,13 @@
     }
 
     .modal-img-section {
-      padding: 40px;
+      padding: clamp(18px, 4vw, 40px);
       background: linear-gradient(135deg, var(--bg), var(--bg2));
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: min(56vh, 470px);
     }
 
     .modal-img-section svg {
@@ -429,52 +392,6 @@
     @keyframes shimmer {
       0% { background-position: 200% 0; }
       100% { background-position: -200% 0; }
-    }
-
-    .footer-section {
-      background: rgba(26, 20, 16, 0.92);
-      border-top: 1px solid var(--card-border);
-      padding: 48px 0 24px;
-      margin-top: 60px;
-    }
-
-    .footer-col h4 {
-      font-weight: 700;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-    }
-
-    .footer-col ul {
-      list-style: none;
-      font-size: 0.85rem;
-      opacity: 0.6;
-      line-height: 2;
-    }
-
-    .legacy-social-icons {
-      display: flex;
-      gap: 12px;
-      margin-top: 8px;
-    }
-
-    .legacy-social-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s;
-      color: var(--text);
-    }
-
-    .legacy-social-icon:hover {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
     }
 
     .toast {
@@ -574,16 +491,6 @@
       background: linear-gradient(180deg, #f4c563, #d4772c);
     }
 
-    [dir="rtl"] .card-badge {
-      right: auto;
-      left: 12px;
-    }
-
-    [dir="rtl"] .modal-close {
-      right: auto;
-      left: 16px;
-    }
-
     @media (max-width: 768px) {
       .hero-title {
         font-size: 2.5rem;
@@ -633,8 +540,7 @@
         <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
        </svg><span class="cart-badge" id="cartBadge">0</span>
       </button>
-      <div class="lang-group"><button class="lang-btn active" id="lang-en" onclick="setLang('en')">EN</button> <button class="lang-btn" id="lang-dr" onclick="setLang('da')">دری</button>
-      </div><button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu"> <span></span> <span></span> <span></span> </button>
+      <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu"> <span></span> <span></span> <span></span> </button>
      </div>
     </div>
    </nav>
@@ -672,19 +578,7 @@
     <div class="mobile-nav-item"><button class="mobile-cart-link" type="button" onclick="goToCart(); closeMobileMenu();">Cart <span class="cart-badge mobile-cart-badge" id="mobileCartBadge">0</span></button>
     </div>
    </div>
-   <nav class="TEST" id="legacyNavbar" style="display: none;">
-    <div class="container-fluid">
-     <div class="d-flex align-items-center justify-content-between py-3">
-      <a class="navbar-brand" href="#" onclick="goToShop()" style="cursor: pointer;">𝓩afran House</a>
-      <div class="d-flex align-items-center gap-2" style="margin-left: auto;">
-       <button class="lang-btn active" id="legacyLangEn" onclick="setLang('en')">EN</button> <button class="lang-btn" id="legacyLangDa" onclick="setLang('da')">دری</button> <button onclick="goToCart()" style="background: none; border: none; cursor: pointer; color: var(--text); position: relative; padding: 4px; margin-left: 12px;">
-        <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;">
-         <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-        </svg><span class="cart-badge" id="legacyCartBadge">0</span> </button>
-      </div>
-     </div>
-    </div>
-   </nav><!-- SHOP PAGE -->
+   <!-- SHOP PAGE -->
    <div id="shopPage">
     <!-- HERO -->
     <section class="hero-section" id="heroSection">
@@ -696,9 +590,9 @@
       <div class="row justify-content-center align-items-center">
        <div class="col-lg-8 text-center position-relative z-1">
         <div class="reveal">
-         <p style="color: var(--accent); font-weight: 600; letter-spacing: 3px; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 12px;" data-i18n="hero_tag">Women-Owned Since 2023</p>
+         <p style="color: var(--accent); font-weight: 600; letter-spacing: 3px; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 12px;">Women-Owned Since 2023</p>
          <h1 class="font-display hero-title" id="heroTitle">Traceable Afghan<br><span>Saffron</span></h1>
-         <p class="hero-subtitle" id="heroSubtitle">Premium saffron from Herat, processed, dried, graded, cleaned, and packaged by Marghob Heray Agricultural and Livestock Company.</p><button class="btn-primary" onclick="scrollToShop()"> <span data-i18n="shop_now">Shop Now</span>
+         <p class="hero-subtitle" id="heroSubtitle">Premium saffron from Herat, processed, dried, graded, cleaned, and packaged by Marghob Heray Agricultural and Livestock Company.</p><button class="btn-primary" onclick="scrollToShop()"> <span>Shop Now</span>
           <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
            <line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" />
           </svg></button>
@@ -737,20 +631,20 @@
       <div class="row justify-content-center mb-4">
        <div class="col-lg-8 text-center reveal">
         <h2 class="font-display" style="font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem;" id="shopTitle">Marghob Heray Collection</h2>
-        <p style="opacity: 0.6; margin-bottom: 1.5rem;" data-i18n="shop_sub">Premium saffron from Marghob Heray Agricultural Company — women-owned, quality-driven, from Herat</p>
+        <p style="opacity: 0.6; margin-bottom: 1.5rem;">Premium saffron from Marghob Heray Agricultural Company — women-owned, quality-driven, from Herat</p>
         <div style="display: inline-block; background: var(--bg2); border-radius: 12px; padding: 12px 20px; font-size: 0.85rem; opacity: 0.7;"><strong style="color: var(--accent);">✓ Women-Owned</strong> — <strong style="color: var(--accent);">✓ Lab-Tested</strong> — <strong style="color: var(--accent);">✓ Direct from Herat</strong>
         </div>
        </div>
       </div>
       <div class="mb-4 reveal" id="filterBar" style="display: flex; flex-wrap: wrap; gap: 10px; padding: 0 15px;">
-       <button class="filter-pill active" data-filter="all" data-i18n="filter_all">All</button> <button class="filter-pill" data-filter="super_negin">Super Negin</button> <button class="filter-pill" data-filter="negin">Negin</button> <button class="filter-pill" data-filter="pushal">Pushal</button> <button class="filter-pill" data-filter="sargol">Pushal Grade A</button> <button class="filter-pill" data-filter="powder" data-i18n="filter_powder">Pushal Grade B</button>
+       <button class="filter-pill active" data-filter="all">All</button> <button class="filter-pill" data-filter="super_negin">Super Negin</button> <button class="filter-pill" data-filter="negin">Negin</button> <button class="filter-pill" data-filter="pushal">Pushal</button> <button class="filter-pill" data-filter="pushal A">Pushal Grade A</button> <button class="filter-pill" data-filter="powder">Pushal Grade B</button>
       </div>
       <div class="d-flex justify-content-end mb-3">
        <select id="sortSelect" style="background: var(--card); border: 1px solid var(--card-border); border-radius: 8px; padding: 6px 12px; color: var(--text); font-size: 0.85rem; cursor: pointer;"> <option value="default">Sort: Featured</option> <option value="low">Price: Low to High</option> <option value="high">Price: High to Low</option> <option value="rating">Top Rated</option> </select>
       </div>
       <div id="skeletonGrid" class="row g-4" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;"></div>
       <div id="productGrid" class="row g-4" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;"></div>
-      <p id="noResults" class="text-center py-5" style="display: none; opacity: 0.5;" data-i18n="no_results">No products found</p>
+      <p id="noResults" class="text-center py-5" style="display: none; opacity: 0.5;">No products found</p>
      </div>
     </section><!-- MODAL -->
     <div class="modal-backdrop" id="productModal">
@@ -889,95 +783,37 @@
      </div>
     </div>
    </footer>
-   <footer class="footer-section" id="legacyFooter" style="display: none;">
-    <div class="container-fluid">
-     <div class="row mb-4">
-      <div class="col-md-6 col-lg-3 footer-col">
-       <h4 style="color: var(--primary);">𝓩afran House</h4>
-       <p style="font-size: 0.85rem; line-height: 1.7; opacity: 0.75;" data-i18n="footer_about">Marghob Heray Agricultural and Livestock Company is a women-owned enterprise in Herat specializing in saffron processing, grading, cleaning, packaging, farmer support, and reliable project implementation.</p>
-      </div>
-      <div class="col-md-6 col-lg-3 footer-col">
-       <h4 data-i18n="footer_shop">Shop</h4>
-       <ul>
-        <li data-i18n="ft_threads">Saffron Threads</li>
-        <li data-i18n="ft_powder">Saffron Powder</li>
-        <li data-i18n="ft_bulk">Bulk Orders</li>
-       </ul>
-      </div>
-      <div class="col-md-6 col-lg-3 footer-col">
-       <h4 data-i18n="footer_company">Company</h4>
-       <ul>
-        <li data-i18n="ft_about">About Us</li>
-        <li data-i18n="ft_story">Our Story</li>
-        <li data-i18n="ft_contact">Contact</li>
-        <li data-i18n="ft_faq">FAQ</li>
-       </ul>
-      </div>
-      <div class="col-md-6 col-lg-3 footer-col">
-       <h4 data-i18n="footer_connect">Connect</h4>
-       <div class="social-icons">
-        <span class="social-icon">
-         <svg viewbox="0 0 24 24" fill="currentColor" style="width: 16px; height: 16px;">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.05 1.37-.63 4.05-3.57 4.13-.6.02-1.08.27-1.44.74-.36-.47-.84-.72-1.44-.74-2.94-.08-3.52-2.76-3.57-4.13-.03-.55.43-1.01.97-.98.53.03.96.47.99 1.01.07 1.14.57 2.29 2.05 2.35 1.48-.06 1.98-1.21 2.05-2.35.03-.54.46-.98.99-1.01.54-.03.99.43.97.98zM10 13h4v2h-4z" />
-         </svg></span> <span class="social-icon">
-         <svg viewbox="0 0 24 24" fill="currentColor" style="width: 16px; height: 16px;">
-          <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2s9 5 20 5a9.5 9.5 0 0 0-9-5.5c4.75 2.25 7-7 7-7s1.08-7.81-2-11z" />
-         </svg></span> <span class="social-icon">
-         <svg viewbox="0 0 24 24" fill="currentColor" style="width: 16px; height: 16px;">
-          <path d="M18 2h-3a6 6 0 0 0-6 6v3H2v4h7v8h4v-8h3l1-4h-4V8a2 2 0 0 1 2-2h3z" />
-         </svg></span>
-       </div>
-      </div>
-     </div>
-     <div class="text-center pt-3" style="border-top: 1px solid var(--card-border); font-size: 0.8rem; opacity: 0.5;" id="footerText">
-      © 2024 Zafran House. All rights reserved.
-     </div>
-    </div>
-   </footer>
   </div>
   <script src="javascript.js"></script>
   <script>
     // ===== GLOBALS =====
     const products = [
-      // Super Negin Grade I
-      {id:1,name:"Super Negin Grade I",nameDa:"سوپر نگین درجه یک",cat:"super_negin",price:32,rating:5,badge:"Premium Quality",badgeDa:"کیفیت ممتاز",desc:"Grade I Super Negin threads from Marghob Heray. Highest purity, vibrant crimson color, authentic Herat aroma. Crocin level: 270+. Hand-sorted for excellence.",descDa:"تارهای سوپر نگین درجه یک از مرغوب هیرای. خالصترین، رنگ سرخ روشن، عطر اصیل هرات. سطح کروسین: ۲۷۰+.",weight:"1g",color1:"#8B1A1A",color2:"#C8963E",image:"photos/shop/pho1.jpg"},
-      {id:2,name:"Super Negin Grade II",nameDa:"سوپر نگین درجه دوم",cat:"super_negin",price:26,rating:4.5,badge:"Best Value",badgeDa:"بهترین قیمت",desc:"Grade II Super Negin with excellent quality standards. Premium color and aroma. Perfect for cooking and traditional use. Crocin level: 250+.",descDa:"سوپر نگین درجه دوم با استانداردهای کیفی عالی. رنگ و عطر ممتاز. برای آشپزی و استفاده سنتی مناسب. سطح کروسین: ۲۵۰+.",weight:"1g",color1:"#A02020",color2:"#D4A853",image:"photos/shop/pho2.jpg"},
+      // Super Negin Grade 
+      {id:1,name:"Super Negin",cat:"super_negin",price:1200,rating:5,badge:"Premium Quality",desc:" Super Negin Grade A threads from Marghob Heray. Highest purity, vibrant crimson color, authentic Herat aroma. Crocin level: 270+. Hand-sorted for excellence.",weight:"1g",color1:"#8B1A1A",color2:"#C8963E",image:"photos/shop/pho1.jpg"},
+      {id:2,name:"Super Negin ",cat:"super_negin",price:700,rating:4.5,badge:"Best Value",desc:" Super Negin Grade B with excellent quality standards. Premium color and aroma. Perfect for cooking and traditional use. Crocin level: 250+.",weight:"1g",color1:"#A02020",color2:"#D4A853",image:"photos/shop/pho2.jpg"},
       
       // Negin Standard
-      {id:3,name:"Negin Saffron Select",nameDa:"زعفران نگین منتخب",cat:"negin",price:22,rating:4,badge:"Popular",badgeDa:"محبوب",desc:"Standard grade Negin saffron from women farmer cooperatives in Herat. Consistent quality, rich flavor. Ideal for daily cooking. Crocin level: 230+.",descDa:"زعفران نگین درجه معیار از تعاونی‌های کشاورزان زنان هرات. کیفیت ثابت، طعم غنی. برای آشپزی روزانه ایده‌آل. سطح کروسین: ۲۳۰+.",weight:"1g",color1:"#B82828",color2:"#D4A853",image:"https://images.unsplash.com/photo-1596119456514-46b6c82ebf8d?w=400&h=400&fit=crop"},
-      {id:4,name:"Negin Bulk 5g",nameDa:"نگین فله ۵ گرمی",cat:"negin",price:95,rating:4.5,badge:"Value Pack",badgeDa:"بسته اقتصادی",desc:"5 grams of quality Negin saffron. Bulk pricing for restaurants, professional chefs, and commercial use. Consistent quality throughout.",descDa:"۵ گرم زعفران نگین با کیفیت. قیمت عمده برای رستوران‌ها و آشپزهای حرفه‌ای. کیفیت ثابت در تمام محصول.",weight:"5g",color1:"#8B1A1A",color2:"#C8963E",image:"https://images.unsplash.com/photo-1596119512641-5b6e6d1c5e5f?w=400&h=400&fit=crop"},
+      {id:3,name:"Negin Saffron Select",cat:"negin",price:550,rating:4,badge:"Popular",desc:"Standard grade Negin saffron from women farmer cooperatives in Herat. Consistent quality, rich flavor. Ideal for daily cooking. Crocin level: 230+.",weight:"1g",color1:"#B82828",color2:"#D4A853",image:"photos/shop/pho3.jpg"},
+      {id:4,name:"Negin Bulk 5g",cat:"negin",price:2750,rating:4.5,badge:"Value Pack",desc:"5 grams of quality Negin saffron. Bulk pricing for restaurants, professional chefs, and commercial use. Consistent quality throughout.",weight:"5g",color1:"#8B1A1A",color2:"#C8963E",image:"photos/shop/pho4.jpg"},
       
       // Pushal Grade
-      {id:5,name:"Pushal Threads Premium",nameDa:"پوشال تاری ممتاز",cat:"pushal",price:18,rating:4,badge:null,badgeDa:null,desc:"Pushal grade with longer threads and attached stigma style. Rich red color, authentic aroma. Great for visual presentation in dishes. Crocin: 200+.",descDa:"درجه پوشال با تارهای طولانی‌تر. رنگ قرمز غنی، عطر اصیل. برای ارائه بصری در غذاها عالی. کروسین: ۲۰۰+.",weight:"1g",color1:"#9B2C2C",color2:"#D4A853",image:"https://images.unsplash.com/photo-1596119812838-e0e8a9d0a7b4?w=400&h=400&fit=crop"},
-      {id:6,name:"Pushal Bulk 2.5kg",nameDa:"پوشال فله ۲۵۰۰ گرمی",cat:"pushal",price:380,rating:4.5,badge:"Commercial",badgeDa:"تجاری",desc:"2.5kg commercial grade Pushal saffron for food processors and large-scale food manufacturing. Direct from Marghob Heray production.",descDa:"۲۵۰۰ گرم زعفران پوشال درجه تجاری برای کارخانه‌های پردازش مواد غذایی. مستقیم از تولید مرغوب هیرای.",weight:"2.5kg",color1:"#8B1A1A",color2:"#C8963E",image:"https://images.unsplash.com/photo-1596119812854-f9e1d2f5e5f0?w=400&h=400&fit=crop"},
+      {id:5,name:"Pushal Threads Premium",cat:"pushal",price:300,rating:4,badge:null,desc:"Pushal Saffron has superior quality and a rich, authentic flavor. it also has excellent color retention.",weight:"1g",color1:"#9B2C2C",color2:"#D4A853",image:"photos/shop/pho5.jpg"},
+      {id:6,name:"Pushal Bulk 2.5kg",cat:"pushal",price:750,rating:4.5,badge:"Commercial",desc:"2.5kg of Pushal saffron for commercial use.",weight:"2.5kg",color1:"#8B1A1A",color2:"#C8963E",image:"photos/shop/pho6.jpg"},
       
-      // Sargol (Red Stigma)
-      {id:7,name:"Sargol Red Stigma Premium",nameDa:"سرگل پوشش قرمز ممتاز",cat:"sargol",price:28,rating:5,badge:"Finest Sargol",badgeDa:"بهترین سرگل",desc:"Pure red stigma (sargol) without white style. Highest color concentration. Premium quality for culinary excellence. Perfect for authentic Persian/Afghan cooking. Crocin: 280+.",descDa:"پوشش قرمز خالص بدون سفید. بیشترین تمرکز رنگ. کیفیت ممتاز برای آشپزی عالی. برای آشپزی فارسی/افغانی اصیل مناسب. کروسین: ۲۸۰+.",weight:"1g",color1:"#C41E3A",color2:"#8B1A1A",image:"https://images.unsplash.com/photo-1596040680447-fef9e9c0a5e1?w=400&h=400&fit=crop"},
-      {id:8,name:"Sargol Bulk 500g",nameDa:"سرگل فله ۵۰۰ گرمی",cat:"sargol",price:220,rating:4.5,badge:"Restaurant Grade",badgeDa:"درجه رستوران",desc:"500g of premium Sargol for professional kitchens. Intense color, maximum potency. Ideal for food coloring and premium preparations.",descDa:"۵۰۰ گرم سرگل ممتاز برای آشپزخانه‌های حرفه‌ای. رنگ شدید، قوت حداکثر. برای رنگدهی مواد غذایی و تهیه‌های بخصوص مناسب.",weight:"500g",color1:"#8B1A1A",color2:"#D4A853",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7b5?w=400&h=400&fit=crop"},
+      // Pushal grade A 
+      {id:7,name:"Pushal Premium",cat:"pushal A",price:300,rating:5,badge:"Finest pushal",desc:" Grade A saffron Pushal: The threads are thick,mostly red, clean, and long. They are very uniform, with few broken pieces,and give strong color and aroma.",weight:"1g",color1:"#C41E3A",color2:"#8B1A1A",image:"photos/shop/pho7.jpg"},
+      {id:8,name:"Pushal Grade A Bulk 500g",cat:"pushal A",price:150000,rating:4.5,badge:"Restaurant Grade",desc:"500g of Pushal Grade A saffron for professional kitchens.",weight:"500g",color1:"#8B1A1A",color2:"#D4A853",image:"photos/shop/pho8.jpg"},
       
-      // Powder & Extracts
-      {id:9,name:"Saffron Powder Pure",nameDa:"پودر زعفران خالص",cat:"powder",price:24,rating:4.5,badge:"Processed",badgeDa:"پردازش‌شده",desc:"100% pure saffron powder ground from high-grade threads. No additives. Easy to mix in drinks and dishes. Perfect for modern cooking convenience.",descDa:"۱۰۰٪ پودر زعفران خالص آسیاب‌شده از تارهای درجه بالا. بدون افزودنی‌ها. آسان برای مخلوط کردن در نوشیدنی‌ها و غذاها.",weight:"2g",color1:"#D4A853",color2:"#8B5E1A",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7b6?w=400&h=400&fit=crop"},
-      {id:10,name:"Saffron Extract Liquid",nameDa:"عصاره مایع زعفران",cat:"powder",price:35,rating:5,badge:"Easy Use",badgeDa:"استفاده آسان",desc:"Concentrated liquid saffron extract. Ready to use drops for instant flavor and color. Shelf-stable, convenient for modern cooking.",descDa:"عصاره مایع زعفران متمرکز. قطره‌های آماده برای طعم و رنگ فوری. قابل نگهداری طولانی‌مدت، برای آشپزی مدرن مناسب.",weight:"30ml",color1:"#A02020",color2:"#C8963E",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7b7?w=400&h=400&fit=crop"},
+      // pushal grade B
+      {id:9,name:"Pushal grade B",cat:"powder",price:300,rating:4.5,badge:"Processed",desc:"The threads are thinner and shorter,with more yellow or white parts.They are less potent but still offer good flavor.",weight:"2g",color1:"#D4A853",color2:"#8B5E1A",image:"photos/shop/pho9.jpg"},
+      {id:10,name:"Pushal Grade B Bulk 30g",cat:"powder",price:9000,rating:5,badge:"Easy Use",desc:"30g of Pushal Grade B saffron powder for convenient use in cooking and baking.",weight:"30g",color1:"#A02020",color2:"#C8963E",image:"photos/shop/pho10.jpg"},
       
-      // Gift & Premium Sets
-      {id:11,name:"Marghob Heray Gift Box",nameDa:"جعبه هدیه مرغوب هیرای",cat:"gift",price:72,rating:5,badge:"Premium Gift",badgeDa:"هدیه ممتاز",desc:"Luxury gift set featuring: 2g Super Negin Grade I, 1g Sargol, golden measuring spoon, premium packaging highlighting women's empowerment story. Perfect corporate & personal gifts.",descDa:"ست هدیه لوکس شامل: ۲ گرم سوپر نگین درجه یک، ۱ گرم سرگل، قاشق اندازه‌گیری طلایی، بسته‌بندی فاخر. هدایای کorporate و فردی مناسب.",weight:"3g Set",color1:"#C8963E",color2:"#8B1A1A",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7b8?w=400&h=400&fit=crop"},
-      {id:12,name:"Women's Empowerment Collection",nameDa:"مجموعه توانمندسازی زنان",cat:"gift",price:95,rating:5,badge:"Social Impact",badgeDa:"تاثیر اجتماعی",desc:"Premium 5g collection supporting women farmers. Includes Super Negin, Sargol, Pushal samples. Every purchase directly benefits smallholder women farmer cooperatives in Herat.",descDa:"مجموعه فاخر ۵ گرمی حمایت‌کننده کشاورزان زن. شامل نمونه‌های سوپر نگین، سرگل، پوشال. هر خریدی مستقیم به منفعت تعاونی‌های کشاورزان زن هرات.",weight:"5g Collection",color1:"#8B1A1A",color2:"#D4A853",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7b9?w=400&h=400&fit=crop"},
-      
-      // Specialty
-      {id:13,name:"Organic Certified Saffron",nameDa:"زعفران دارای گواهی ارگانیک",cat:"premium",price:52,rating:5,badge:"Certified Organic",badgeDa:"گواهی‌شده ارگانیک",desc:"Marghob Heray organic saffron with international certifications. Grown without synthetic pesticides. Lab-tested for purity and safety. Premium Grade I quality. Crocin: 275+.",descDa:"زعفران ارگانیک مرغوب هیرای با گواهی‌های بین‌المللی. بدون حشره‌کش‌های مصنوعی. آزمایش‌شده برای خالصیت و ایمنی. درجه یک ممتاز. کروسین: ۲۷۵+.",weight:"1g",color1:"#5B8C3E",color2:"#C8963E",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7ba?w=400&h=400&fit=crop"},
-      {id:14,name:"Heritage Blend Selection",nameDa:"انتخاب مخلوط میراث",cat:"premium",price:65,rating:4.5,badge:"Tasting Set",badgeDa:"ست چشایی",desc:"Curated sampler featuring different saffron grades: Super Negin, Sargol, Pushal. Educational package for connoisseurs and cooking enthusiasts. Traditional Herat varieties.",descDa:"نمونه منتخب با درجات مختلف زعفران: سوپر نگین، سرگل، پوشال. بسته آموزشی برای شناسندگان و علاقه‌مندان آشپزی. اقسام سنتی هرات.",weight:"3g Total",color1:"#8B1A1A",color2:"#D4A853",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7bb?w=400&h=400&fit=crop"},
-      {id:15,name:"Tea & Wellness Blend",nameDa:"دمنوش و سلامتی",cat:"gift",price:28,rating:4.5,badge:"Wellness",badgeDa:"سلامتی",desc:"Saffron blended with rose petals, cardamom, and dried fruits. Traditional wellness tea. 12 brew bags. Supports women farmers' cooperatives.",descDa:"زعفران مخلوط با گلبرگ رز، هل و میوه‌های خشک‌شده. چای سنتی سلامتی. ۱۲ بسته دم‌کنی. از تعاونی‌های کشاورزان زن حمایت می‌کند.",weight:"60g / 12 Bags",color1:"#D4A853",color2:"#8B1A1A",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7bc?w=400&h=400&fit=crop"},
-      {id:16,name:"Royal Kitchen Bundle",nameDa:"بسته پخت شاهی",cat:"gift",price:110,rating:5,badge:"Complete Kit",badgeDa:"بسته کامل",desc:"Complete saffron cooking kit: 2g Super Negin, 1g Sargol, measuring spoon, recipe card (EN/DA), premium gift box. Professional quality for home chefs. Direct from Marghob Heray.",descDa:"بسته کامل آشپزی زعفران: ۲ گرم سوپر نگین، ۱ گرم سرگل، قاشق اندازه‌گیری، کارت دستور (EN/DA)، جعبه هدیه فاخر. کیفیت حرفه‌ای برای آشپزهای خانه‌ای.",weight:"3g Kit",color1:"#C8963E",color2:"#8B1A1A",image:"https://images.unsplash.com/photo-1596119812854-e0e8a9d0a7bd?w=400&h=400&fit=crop"}
+  
     ];
-
-    const i18n = {
-      en: {hero_tag:"Women-Owned Since 2023",shop_now:"Shop Now",shop_sub:"Marghob Heray Agricultural and Livestock Company is a fully women-owned agribusiness in Herat, focused on hygienic saffron processing, quality control, traceability, and market-ready packaging.",filter_all:"All",filter_threads:"Threads",filter_powder:"Pushal Grade B",filter_gift:"Gift Sets",filter_premium:"Premium",add_cart:"Add to Cart",quick_view:"Quick View",cart_title:"Your Cart",total:"Total",checkout:"Checkout",no_results:"No products found",footer_about:"Marghob Heray Agricultural and Livestock Company is a women-owned enterprise in Herat specializing in saffron processing, grading, cleaning, packaging, farmer support, and reliable project implementation.",footer_shop:"Shop",footer_company:"Company",footer_connect:"Connect",ft_threads:"Saffron Threads",ft_powder:"Processed Saffron",ft_gifts:"Gift Sets",ft_bulk:"Bulk Orders",ft_about:"About Us",ft_story:"Our Story",ft_contact:"Contact",ft_faq:"FAQ",added:"Added to cart!",empty_cart:"Your cart is empty",sort_default:"Sort: Featured",sort_low:"Price: Low to High",sort_high:"Price: High to Low",sort_rating:"Top Rated",weight:"Weight",remove:"Remove",full_name:"Full Name",phone:"Phone Number",address:"Delivery Address",place_order:"Place Order"},
-      da: {hero_tag:"برتری دست‌چین‌شده",shop_now:"خرید کنید",shop_sub:"مجموعه ممتاز زعفران ما را کاوش کنید",filter_all:"همه",filter_threads:"تار",filter_powder:"پودر",filter_gift:"ست هدیه",filter_premium:"ممتاز",add_cart:"افزودن به سبد",quick_view:"مشاهده سریع",cart_title:"سبد شما",total:"مجموع",checkout:"تسویه حساب",no_results:"محصولی یافت نشد",footer_about:"از سال ۲۰۱۸ بهترین زعفران افغانستان را به جهان عرضه می‌کنیم.",footer_shop:"فروشگاه",footer_company:"شرکت",footer_connect:"ارتباط",ft_threads:"تار زعفران",ft_powder:"پودر زعفران",ft_gifts:"ست هدیه",ft_bulk:"سفارش عمده",ft_about:"درباره ما",ft_story:"داستان ما",ft_contact:"تماس",ft_faq:"سوالات متداول",added:"به سبد اضافه شد!",empty_cart:"سبد شما خالی است",sort_default:"مرتب‌سازی: ویژه",sort_low:"قیمت: کم به زیاد",sort_high:"قیمت: زیاد به کم",sort_rating:"بالاترین امتیاز",weight:"وزن",remove:"حذف",full_name:"نام کامل",phone:"شماره تماس",address:"آدرس تحویل",place_order:"ثبت سفارش"}
-    };
 
     const hiddenCategories = ['gift', 'premium'];
 
-    let currentLang = 'en', cart = [], currentFilter = 'all', searchQuery = '', currentPage = 'shop';
+    let cart = [], currentFilter = 'all', currentPage = 'shop';
 
     // ===== STORAGE =====
     function saveCart() {
@@ -1020,35 +856,6 @@
       }
     }
 
-    // ===== LANGUAGE =====
-    function setLang(lang) {
-      currentLang = lang;
-      document.documentElement.dir = lang === 'da' ? 'rtl' : 'ltr';
-      document.documentElement.lang = lang === 'da' ? 'fa' : 'en';
-      const enBtn = document.getElementById('lang-en');
-      const daBtn = document.getElementById('lang-dr');
-      if (enBtn) enBtn.classList.toggle('active', lang === 'en');
-      if (daBtn) daBtn.classList.toggle('active', lang === 'da');
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const k = el.getAttribute('data-i18n');
-        if (i18n[lang][k]) el.textContent = i18n[lang][k];
-      });
-      updateLabels();
-      if (currentPage === 'shop') renderProducts();
-      else renderCartPage();
-    }
-
-    function updateLabels() {
-      document.getElementById('fullNameLabel').textContent = i18n[currentLang].full_name;
-      document.getElementById('phoneLabel').textContent = i18n[currentLang].phone;
-      document.getElementById('addressLabel').textContent = i18n[currentLang].address;
-      document.getElementById('placeOrderBtn').textContent = i18n[currentLang].place_order;
-      const brand = document.getElementById('brandName');
-      if (brand) brand.textContent = 'Zafran';
-      const footerBrand = document.getElementById('brand-name');
-      if (footerBrand) footerBrand.textContent = 'Zafran';
-    }
-
     function showToast(msg) {
       const t = document.getElementById('toast');
       document.getElementById('toastText').textContent = msg;
@@ -1074,7 +881,7 @@
     }
 
     function buildProductImage(p, variant = 'card') {
-      const alt = currentLang === 'da' ? p.nameDa : p.name;
+      const alt = p.name;
       if (variant === 'modal') {
         return `<img src="${p.image}" alt="${alt}" loading="lazy" data-product-image="${p.id}" data-image-variant="modal" class="modal-photo">`;
       }
@@ -1133,17 +940,17 @@
       grid.innerHTML = filtered.map((p, i) => `
         <div class="product-card reveal${i < 8 ? ' visible' : ''}" style="animation-delay: ${i * 80}ms">
           <div class="card-img-wrap" style="cursor: pointer; background: linear-gradient(135deg, var(--bg2), var(--bg));" onclick="openModal(${p.id})">
-            ${p.badge ? `<span class="card-badge">${currentLang === 'da' ? p.badgeDa : p.badge}</span>` : ''}
+            ${p.badge ? `<span class="card-badge">${p.badge}</span>` : ''}
             ${buildProductImage(p)}
           </div>
           <div class="card-body">
-            <h3 class="card-title">${currentLang === 'da' ? p.nameDa : p.name}</h3>
+            <h3 class="card-title">${p.name}</h3>
             <div class="card-rating">${stars(p.rating)}</div>
             <div class="d-flex align-items-center justify-content-between">
               <span class="card-price">${formatPrice(p.price)}</span>
               <button class="btn-primary" style="padding: 8px 14px; font-size: 0.8rem; gap: 4px;" onclick="addToCart(${p.id})">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;display:inline"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-                <span>${i18n[currentLang].add_cart}</span>
+                <span>Add to Cart</span>
               </button>
             </div>
           </div>
@@ -1167,17 +974,17 @@
           ${buildProductImage(p, 'modal')}
         </div>
         <div class="modal-body">
-          ${p.badge ? `<span style="background: var(--primary); color: white; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 6px; display: inline-block; margin-bottom: 8px;">${currentLang === 'da' ? p.badgeDa : p.badge}</span>` : ''}
-          <h2 class="font-display" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">${currentLang === 'da' ? p.nameDa : p.name}</h2>
+          ${p.badge ? `<span style="background: var(--primary); color: white; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 6px; display: inline-block; margin-bottom: 8px;">${p.badge}</span>` : ''}
+          <h2 class="font-display" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">${p.name}</h2>
           <div class="card-rating mb-2">${stars(p.rating)}<span style="opacity: 0.5; font-size: 0.8rem; margin-left: 8px;">(${p.rating})</span></div>
-          <p style="opacity: 0.7; line-height: 1.7; margin-bottom: 1rem;">${currentLang === 'da' ? p.descDa : p.desc}</p>
+          <p style="opacity: 0.7; line-height: 1.7; margin-bottom: 1rem;">${p.desc}</p>
           <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 1.25rem;">
             <span style="font-size: 1.75rem; font-weight: 700; color: var(--primary);">${formatPrice(p.price)}</span>
-            <span style="opacity: 0.5; font-size: 0.8rem;">${i18n[currentLang].weight}: ${p.weight}</span>
+            <span style="opacity: 0.5; font-size: 0.8rem;">Weight: ${p.weight}</span>
           </div>
           <button class="btn-primary w-100" style="padding: 12px 28px; font-size: 0.95rem;" onclick="addToCart(${p.id}); closeModal();">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;display:inline"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-            <span>${i18n[currentLang].add_cart}</span>
+            <span>Add to Cart</span>
           </button>
         </div>
       `;
@@ -1196,7 +1003,7 @@
       else cart.push({ id, qty: 1 });
       saveCart();
       updateCartBadge();
-      showToast(i18n[currentLang].added);
+      showToast('Added to cart!');
     }
 
     function updateCartBadge() {
@@ -1232,7 +1039,7 @@
       const summary = document.getElementById('orderSummary');
       
       if (!cart.length) {
-        itemsList.innerHTML = `<p style="text-align: center; opacity: 0.5; padding: 40px; font-size: 0.9rem;">${i18n[currentLang].empty_cart}</p>`;
+        itemsList.innerHTML = `<p style="text-align: center; opacity: 0.5; padding: 40px; font-size: 0.9rem;">Your cart is empty</p>`;
         summary.innerHTML = '';
         document.getElementById('summarySubtotal').textContent = formatPrice(0);
         document.getElementById('summaryTotal').textContent = formatPrice(0);
@@ -1247,10 +1054,10 @@
         return `
           <div style="display: flex; gap: 16px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--card-border);">
             <div style="width: 100px; height: 100px; border-radius: 12px; background: var(--bg2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <img src="${p.image}" alt="${currentLang === 'da' ? p.nameDa : p.name}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;" onerror="console.error('Image failed to load:', this.src); this.style.display='none';">
+              <img src="${p.image}" alt="${p.name}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;" onerror="console.error('Image failed to load:', this.src); this.style.display='none';">
             </div>
             <div style="flex: 1;">
-              <h4 style="font-weight: 700; margin-bottom: 4px; font-size: 0.95rem;">${currentLang === 'da' ? p.nameDa : p.name}</h4>
+              <h4 style="font-weight: 700; margin-bottom: 4px; font-size: 0.95rem;">${p.name}</h4>
               <p style="opacity: 0.6; font-size: 0.85rem; margin-bottom: 8px;">$${p.price} × ${c.qty}</p>
               <div style="display: flex; gap: 8px; align-items: center;">
                 <button onclick="updateQty(${p.id}, ${c.qty - 1})" style="width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--bg2); cursor: pointer; color: var(--text); font-weight: 600;">−</button>
@@ -1260,7 +1067,7 @@
             </div>
             <div style="text-align: right;">
               <p style="font-weight: 700; font-size: 1rem; color: var(--primary); margin-bottom: 12px;">$${itemTotal.toFixed(2)}</p>
-              <button onclick="removeFromCart(${p.id})" style="background: transparent; border: none; color: var(--accent); cursor: pointer; text-decoration: underline; font-size: 0.85rem; font-weight: 500;">${i18n[currentLang].remove}</button>
+              <button onclick="removeFromCart(${p.id})" style="background: transparent; border: none; color: var(--accent); cursor: pointer; text-decoration: underline; font-size: 0.85rem; font-weight: 500;">Remove</button>
             </div>
           </div>
         `;
@@ -1271,7 +1078,7 @@
         const p = products.find(x => x.id === c.id);
         return `
           <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; opacity: 0.7;">
-            <span>${currentLang === 'da' ? p.nameDa : p.name} ×${c.qty}</span>
+            <span>${p.name} ×${c.qty}</span>
             <span>${formatPrice(p.price * c.qty)}</span>
           </div>
         `;
@@ -1378,7 +1185,7 @@
     updateCartBadge();
     showSkeletons();
     createThreads();
-    setLang(currentLang);
+    renderProducts();
 
     setTimeout(() => {
       document.getElementById('skeletonGrid').style.display = 'none';
@@ -1389,3 +1196,7 @@
   </script>
  </body>
 </html>
+
+
+
+
