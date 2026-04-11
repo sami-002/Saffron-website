@@ -1,546 +1,1268 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marghob Heray - About Us</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-  <script src="/_sdk/element_sdk.js"></script>
-  <link rel="stylesheet" href="Css/about.css">
-  <link rel="stylesheet" href="style.css">
- 
-  <script src="/_sdk/data_sdk.js"></script>
-  <style>body { box-sizing: border-box; }</style>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
- </head>
- <body>
-    <!-- Navbar -->
-  <nav class="saffron-nav" id="mainNav">
-   <div class="nav-container"><!-- Logo --> <a href="index.html" class="brand-logo">
-     <div class="logo-wrapper">
-      <div class="logo-glow"></div>
-       <img src="Screenshot 2026-02-24 193737.png" alt="">
-     </div>
-     <div class="brand-info"><span class="brand-name" id="brandName">Zafran</span> <span class="brand-tagline" id="brand-tagline">Premium Saffron</span>
-     </div></a> <!-- Desktop Menu -->
-    <ul class="nav-menu">
-     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-     <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
-     <li class="nav-item"><a href="service.html" class="nav-link">Service</a></li>
-     <li class="nav-item"><a href="our saffron.html" class="nav-link">Our Saffron</a></li>
-     <li class="nav-item"><button class="nav-link dropdown-toggle" onclick="event.preventDefault()"> Pages 
-       <svg class="chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" />
-       </svg></button>
-      <div class="dropdown-menu"><a href="team.html" class="dropdown-item">Our Team</a> <a href="gallery.html" class="dropdown-item">Gallery</a> <a href="shop.html" class="dropdown-item">Shop</a>
-      </div></li>
-     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-    </ul><!-- Right Actions -->
-    <!-- RIGHT CONTROLS -->
-    <div class="nav-controls">
-     <div class="lang-group"><button class="lang-btn active" id="lang-en" onclick="setLang('en')">EN</button> <button class="lang-btn" id="lang-dr" onclick="setLang('dr')">دری</button>
-     </div><button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu"> <span></span> <span></span> <span></span> </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marghob Heray - About Us</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="/_sdk/element_sdk.js"></script>
+    <link rel="stylesheet" href="Css/about.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="/_sdk/data_sdk.js"></script>
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+    </style>
+    <script
+      src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdn.tailwindcss.com/3.4.17"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+     <!-- Navbar -->
+    <nav class="saffron-nav fade-section" id="mainNav">
+      <div class="nav-container">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo">
+          <div class="logo-wrapper">
+            <div class="logo-glow"></div>
+            <img src="Photos/logo/logo-no-bc.png" alt="" />
+          </div>
+          <div class="brand-info">
+            <span class="brand-name" id="brandName">Merghob</span>
+            <span class="brand-tagline" id="brand-tagline">Heray Saffron</span>
+          </div></a
+        >
+        <!-- Desktop Menu -->
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="service.html" class="nav-link">Service</a>
+          </li>
+          <li class="nav-item">
+            <a href="our saffron.html" class="nav-link">Our Saffron</a>
+          </li>
+          <li class="nav-item">
+            <button
+              class="nav-link dropdown-toggle"
+              onclick="event.preventDefault()"
+            >
+              Pages
+              <svg
+                class="chevron"
+                viewbox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="dropdown-menu">
+              <a href="team.html" class="dropdown-item">Our Team</a>
+              <a href="gallery.html" class="dropdown-item">Gallery</a>
+              <a href="shop.html" class="dropdown-item">Shop</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+       
+        <!-- RIGHT CONTROLS -->
+        <div class="nav-controls">
+          <div class="lang-group">
+            <button
+              class="lang-btn active"
+              id="lang-en"
+              onclick="setLang('en')"
+            >
+              EN
+            </button>
+            <button class="lang-btn" id="lang-dr" onclick="setLang('dr')">
+              دری
+            </button>
+          </div>
+          <button
+            class="hamburger"
+            id="hamburgerBtn"
+            onclick="toggleMobileMenu()"
+            aria-label="Toggle menu"
+          >
+            <span></span> <span></span> <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()">
+      <div class="mobile-nav-item">
+        <a href="index.html" class="mobile-link" onclick="closeMobileMenu()"
+          >Home</a
+        >
+      </div>
+      <div class="mobile-nav-item">
+        <a href="about.html" class="mobile-link" onclick="closeMobileMenu()"
+          >About</a
+        >
+      </div>
+      <div class="mobile-nav-item">
+        <a href="service.html" class="mobile-link" onclick="closeMobileMenu()"
+          >Services</a
+        >
+      </div>
+      <div class="mobile-nav-item">
+        <a
+          href="our saffron.html"
+          class="mobile-link"
+          onclick="closeMobileMenu()"
+          >Our Saffron</a
+        >
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-link" onclick="toggleMobileSubmenu()">
+          Pages
+          <svg
+            style="
+              width: 14px;
+              height: 14px;
+              float: right;
+              margin-top: 4px;
+              transition: transform 0.3s;
+            "
+            id="mobileChevron"
+            viewbox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+        <div class="mobile-submenu" id="mobileSubmenu">
+          <div class="mobile-submenu-item">
+            <a
+              href="team.html"
+              class="mobile-submenu-link"
+              onclick="closeMobileMenu()"
+              >Our Team</a
+            >
+          </div>
+          <div class="mobile-submenu-item">
+            <a
+              href="gallery.html"
+              class="mobile-submenu-link"
+              onclick="closeMobileMenu()"
+              >Gallery</a
+            >
+          </div>
+          <div class="mobile-submenu-item">
+            <a
+              href="shop.html"
+              class="mobile-submenu-link"
+              onclick="closeMobileMenu()"
+              >Shop</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <a href="contact.html" class="mobile-link" onclick="closeMobileMenu()"
+          >Contact</a
+        >
+      </div>
+      <div class="mobile-cta-section">
+        <button
+          class="premium-btn"
+          id="ctaBtnMobile"
+          onclick="closeMobileMenu()"
+        >
+          Explore Products
+        </button>
+      </div>
     </div>
-   </div>
-  </nav><!-- Mobile Menu Overlay -->
-  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()">
-   <div class="mobile-nav-item">
-    <a href="index.html" class="mobile-link" onclick="closeMobileMenu()">Home</a>
-   </div>
-   <div class="mobile-nav-item">
-    <a href="about.html" class="mobile-link" onclick="closeMobileMenu()">Story</a>
-   </div>
-   <div class="mobile-nav-item">
-    <a href="service.html" class="mobile-link" onclick="closeMobileMenu()">Products</a>
-   </div>
-   <div class="mobile-nav-item">
-    <a href="our saffron.html" class="mobile-link" onclick="closeMobileMenu()">Quality</a>
-   </div>
-   <div class="mobile-nav-item"><button class="mobile-link" onclick="toggleMobileSubmenu()"> Pages 
-     <svg style="width:14px;height:14px;float:right;margin-top:4px;transition:transform 0.3s" id="mobileChevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" />
-     </svg></button>
-    <div class="mobile-submenu" id="mobileSubmenu">
-     <div class="mobile-submenu-item">
-      <a href="team.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Our Team</a>
-     </div>
-     <div class="mobile-submenu-item">
-      <a href="gallery.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Gallery</a>
-     </div>
-     <div class="mobile-submenu-item">
-      <a href="shop.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Shop</a>
-     </div>
-    </div>
-   </div>
-   <div class="mobile-nav-item">
-    <a href="contact.html" class="mobile-link" onclick="closeMobileMenu()">Contact</a>
-   </div>
-   <div class="mobile-cta-section"><button class="premium-btn" id="ctaBtnMobile" onclick="closeMobileMenu()">Explore Products</button>
-   </div>
-  </div>
-  <!-- Floating petals --> <!-- Header -->
-  <header class="header-section">
-   <div class="reveal">
-    <p class="subtitle-accent" id="subtitle-el">Women-Owned Saffron Excellence</p>
-    <h1 class="display-font" id="title-el">Marghob Heray</h1>
-    <p>Leading the saffron value chain with quality assurance, sustainable farming, and women's economic empowerment in Afghanistan.</p>
-   </div>
-  </header>
-  <main class="main-container"><!-- Desktop Two-Column Timeline -->
-   <div class="timeline-wrapper"><!-- LEFT COLUMN -->
-    <div class="timeline-left">
-     <div class="timeline-line-left"></div><!-- Company Overview -->
-     <div class="card-container reveal-left" style="transition-delay: 0.1s">
-      <div class="glass-card flex-grow-1">
-       <div class="d-flex align-items-center gap-3 mb-3">
-        <div class="icon-box"><i class="fas fa-leaf"></i>
-        </div>
-        <h2 class="display-font text-light-cream mb-0">Company Overview</h2>
-       </div>
-       <div class="divider-gold"></div>
-       <p class="mb-3" style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">Marghob Heray is a fully women-owned agribusiness established in 2023 in Herat Province, Afghanistan, with a strong commitment to women's economic empowerment and sustainable agriculture.</p>
-       <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">Specializing in processing, drying, grading, cleaning, and packaging premium-quality saffron with improved hygienic standards and structured quality control systems.</p>
-       <div style="margin-top: 16px;"><span class="tag-pill">Women-Led</span> <span class="tag-pill">Est. 2023</span> <span class="tag-pill">Herat Province</span>
-       </div>
+    <!-- Floating petals -->
+    <!-- Header -->
+    <header class="header-section">
+      <div class="reveal">
+        <p class="subtitle-accent" id="subtitle-el">
+          Women-Owned Saffron Excellence
+        </p>
+        <h1 class="display-font" id="title-el">Marghob Heray</h1>
+        <p>
+          Leading the saffron value chain with quality assurance, sustainable
+          farming, and women's economic empowerment in Afghanistan.
+        </p>
       </div>
-      <div class="timeline-dot" style="flex-shrink: 0; margin-top: 24px;"></div>
-     </div><!-- Saffron Value Chain Involvement -->
-     <div class="card-container reveal-left" style="transition-delay: 0.25s">
-      <div class="glass-card flex-grow-1">
-       <div class="d-flex align-items-center gap-3 mb-3">
-        <div class="icon-box"><i class="fas fa-chain"></i>
-        </div>
-        <h2 class="display-font text-light-cream mb-0">Value Chain Expertise</h2>
-       </div>
-       <div class="divider-gold"></div>
-       <div class="mb-4">
-        <div class="timeline-entry-title d-flex justify-content-between mb-1"><span>Full Value Chain Operations</span> <small style="color: #f59e0b; font-weight: 600;">All Stages</small>
-        </div>
-        <p style="color: #94a3b8; font-size: 0.85rem; font-style: italic; margin-bottom: 8px;">Cultivation to Export Preparation</p>
-        <p style="color: #cbd5e1; font-size: 0.9rem;">Active across cultivation, harvesting, stigma separation, drying, cleaning, primary processing, and market distribution with full traceability.</p>
-       </div>
-       <div class="timeline-entry-divider"></div>
-       <div class="mb-4">
-        <div class="timeline-entry-title d-flex justify-content-between mb-1"><span>Quality Control Systems</span> <small style="color: #f59e0b; font-weight: 600;">Advanced</small>
-        </div>
-        <p style="color: #cbd5e1; font-size: 0.9rem;">Standardized post-harvest handling, hygienic standards, and structured QC to ensure consistent product excellence and international compliance.</p>
-       </div>
-       <div class="timeline-entry-divider"></div>
-       <div>
-        <div class="timeline-entry-title d-flex justify-content-between mb-1"><span>Market Orientation</span> <small style="color: #f59e0b; font-weight: 600;">Export-Ready</small>
-        </div>
-        <p style="color: #cbd5e1; font-size: 0.9rem;">Compliance with national and international food safety standards to strengthen competitiveness and market access.</p>
-       </div>
-      </div>
-      <div class="timeline-dot" style="flex-shrink: 0; margin-top: 24px;"></div>
-     </div><!-- Farmer Partnerships & Support -->
-     <div class="card-container reveal-left" style="transition-delay: 0.4s">
-      <div class="glass-card flex-grow-1">
-       <div class="d-flex align-items-center gap-3 mb-3">
-        <div class="icon-box"><i class="fas fa-handshake"></i>
-        </div>
-        <h2 class="display-font text-light-cream mb-0">Farmer Partnerships</h2>
-       </div>
-       <div class="divider-gold"></div>
-       <p class="mb-4" style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">Works closely with smallholder farmers—particularly <strong>women farmers</strong>—providing technical guidance, quality improvement support, and structured market linkages.</p>
-       <div class="stats-grid">
-        <div class="stat-box">
-         <div class="stat-number">
-          100+
-         </div>
-         <div class="stat-label">
-          Smallholder Farmers
-         </div>
-        </div>
-        <div class="stat-box">
-         <div class="stat-number">
-          Fair
-         </div>
-         <div class="stat-label">
-          Pricing System
-         </div>
-        </div>
-        <div class="stat-box">
-         <div class="stat-number">
-          Guaranteed
-         </div>
-         <div class="stat-label">
-          Purchase Mechanisms
-         </div>
-        </div>
-       </div>
-       <div style="margin-top: 16px;"><span class="tag-pill">Women Farmers</span> <span class="tag-pill">Fair Trade</span> <span class="tag-pill">Income Stability</span>
-       </div>
-      </div>
-      <div class="timeline-dot" style="flex-shrink: 0; margin-top: 24px;"></div>
-     </div><!-- Institutional Capacity -->
-     <div class="card-container reveal-left" style="transition-delay: 0.55s">
-      <div class="glass-card flex-grow-1">
-       <div class="d-flex align-items-center gap-3 mb-3">
-        <div class="icon-box"><i class="fas fa-building"></i>
-        </div>
-        <h2 class="display-font text-light-cream mb-0">Institutional Capacity</h2>
-       </div>
-       <div class="divider-gold"></div>
-       <p class="mb-4" style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">Demonstrated strong operational and managerial capacity through collaboration with reputable national and international humanitarian organizations.</p>
-       <div class="stats-grid">
-        <div class="stat-box">
-         <div class="stat-number">
-          ~10
-         </div>
-         <div class="stat-label">
-          Project Contracts
-         </div>
-        </div>
-        <div class="stat-box">
-         <div class="stat-number">
-          WVI
-         </div>
-         <div class="stat-label">
-          World Vision
-         </div>
-        </div>
-        <div class="stat-box">
-         <div class="stat-number">
-          RSDO
-         </div>
-         <div class="stat-label">
-          Partner NGO
-         </div>
-        </div>
-       </div>
-       <div style="margin-top: 16px;"><span class="tag-pill">Procurement</span> <span class="tag-pill">Supply Chain</span> <span class="tag-pill">Implementation Partner</span>
-       </div>
-      </div>
-      <div class="timeline-dot" style="flex-shrink: 0; margin-top: 24px;"></div>
-     </div>
-    </div><!-- RIGHT COLUMN -->
-    <div class="timeline-right">
-     <div class="timeline-line-right"></div><!-- Mission & Vision -->
-     <div class="card-container reveal-right" style="transition-delay: 0.15s">
-      <div class="timeline-dot" style="flex-shrink: 0; margin-top: 24px;"></div>
-      <div class="glass-card flex-grow-1">
-       <div class="d-flex align-items-center gap-3 mb-3">
-        <div class="icon-box"><i class="fas fa-bullseye"></i>
-        </div>
-        <h2 class="display-font text-light-cream mb-0" id="mission-title-el">Our Mission</h2>
-       </div>
-       <div class="divider-gold"></div>
-       <p class="mb-3" style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">To enhance value addition, strengthen competitiveness, and ensure compliance with international food safety and export standards while promoting women's economic empowerment and sustainable agriculture.</p>
-       <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">Contributing to increased income generation for producers and improved market access for premium Afghan saffron globally.</p>
-       <ul style="margin-top: 16px; list-style: none; padding: 0;">
-        <li class="mb-2" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: #cbd5e1;"><i class="fas fa-check-circle" style="color: #d4af37;"></i> Standardized quality control &amp; traceability</li>
-        <li class="mb-2" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: #cbd5e1;"><i class="fas fa-check-circle" style="color: #d4af37;"></i> International export compliance</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: #cbd5e1;"><i class="fas fa-check-circle" style="color: #d4af37;"></i> Women-centered income opportunities</li>
-       </ul>
-      </div>
-     </div><!-- Project Implementation Experience -->
-     <div class="card-container reveal-right" style="transition-delay: 0.3s">
-      <div class="timeline-dot" style="flex-shrink: 0; margin-top: 24px;"></div>
-      <div class="glass-card flex-grow-1">
-       <div class="d-flex align-items-center gap-3 mb-3">
-        <div class="icon-box"><i class="fas fa-tasks"></i>
-        </div>
-        <h2 class="display-font text-light-cream mb-0">Project Implementation</h2>
-       </div>
-       <div class="divider-gold"></div>
-       <div class="mb-4">
-        <div class="timeline-entry-title d-flex justify-content-between mb-1"><span>Procurement &amp; Supply Chain</span> <small style="color: #f59e0b; font-weight: 600;">Supplier</small>
-        </div>
-        <p style="color: #94a3b8; font-size: 0.85rem; font-style: italic; margin-bottom: 8px;">Agricultural &amp; Livestock Inputs Distribution</p>
-        <p style="color: #cbd5e1; font-size: 0.9rem;">Successfully procured and distributed mung bean straw, wheat straw, veterinary medicines, and chemical fertilizers across multiple districts of Herat Province.</p>
-       </div>
-       <div class="timeline-entry-divider"></div>
-       <div class="mb-4">
-        <div class="timeline-entry-title d-flex justify-content-between mb-1"><span>Logistics &amp; Coordination</span> <small style="color: #f59e0b; font-weight: 600;">Manager</small>
-        </div>
-        <p style="color: #cbd5e1; font-size: 0.9rem;">Managed warehousing, transportation, and last-mile distribution with quality compliance, timely delivery, and accurate financial reporting.</p>
-       </div>
-       <div class="timeline-entry-divider"></div>
-       <div>
-        <div class="timeline-entry-title d-flex justify-content-between mb-1"><span>Donor Compliance</span> <small style="color: #f59e0b; font-weight: 600;">Standard</small>
-        </div>
-        <p style="color: #cbd5e1; font-size: 0.9rem;">Full adherence to international procurement standards, operational risk management, and donor-aligned reporting for World Vision International and RSDO.</p>
-       </div>
-      </div>
-     </div><!-- Quality Assurance Protocols -->
-     <div class="card-container reveal-right" style="transition-delay: 0.45s">
-      <div class="timeline-dot" style="flex-shrink: 0; margin-top: 24px;"></div>
-      <div class="glass-card flex-grow-1">
-       <div class="d-flex align-items-center gap-3 mb-3">
-        <div class="icon-box"><i class="fas fa-shield-alt"></i>
-        </div>
-        <h2 class="display-font text-light-cream mb-0">Quality Assurance</h2>
-       </div>
-       <div class="divider-gold"></div>
-       <p class="mb-4" style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">Every batch undergoes rigorous quality protocols with improved hygienic standards and structured control systems ensuring consistent excellence.</p>
-       <div style="display: flex; flex-direction: column; gap: 12px;">
-        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 10px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(245, 158, 11, 0.05)); border: 1px solid rgba(212, 175, 55, 0.2);">
-         <div style="width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(to bottom right, #f59e0b, #d4af37); display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: bold; flex-shrink: 0;">
-          01
-         </div>
-         <div>
-          <div style="font-size: 0.9rem; font-weight: 600; color: #f5f3ff;">
-           Post-Harvest Handling
+    </header>
+    <main class="main-container">
+      <!-- Desktop Two-Column Timeline -->
+      <div class="timeline-wrapper">
+        <!-- LEFT COLUMN -->
+        <div class="timeline-left">
+          <div class="timeline-line-left"></div>
+          <!-- Company Overview -->
+          <div
+            class="card-container reveal-left"
+            style="transition-delay: 0.1s"
+          >
+            <div class="glass-card flex-grow-1">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box"><i class="fas fa-leaf"></i></div>
+                <h2 class="display-font text-light-cream mb-0">
+                  Company Overview
+                </h2>
+              </div>
+              <div class="divider-gold"></div>
+              <p
+                class="mb-3"
+                style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6"
+              >
+                Marghob Heray is a fully women-owned agribusiness established in
+                2023 in Herat Province, Afghanistan, with a strong commitment to
+                women's economic empowerment and sustainable agriculture.
+              </p>
+              <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6">
+                Specializing in processing, drying, grading, cleaning, and
+                packaging premium-quality saffron with improved hygienic
+                standards and structured quality control systems.
+              </p>
+              <div style="margin-top: 16px">
+                <span class="tag-pill">Women-Led</span>
+                <span class="tag-pill">Est. 2023</span>
+                <span class="tag-pill">Herat Province</span>
+              </div>
+            </div>
+            <div
+              class="timeline-dot"
+              style="flex-shrink: 0; margin-top: 24px"
+            ></div>
           </div>
-          <div style="font-size: 0.8rem; color: #94a3b8;">
-           Standardized &amp; hygienic
+          <!-- Saffron Value Chain Involvement -->
+          <div
+            class="card-container reveal-left"
+            style="transition-delay: 0.25s"
+          >
+            <div class="glass-card flex-grow-1">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box"><i class="fas fa-chain"></i></div>
+                <h2 class="display-font text-light-cream mb-0">
+                  Value Chain Expertise
+                </h2>
+              </div>
+              <div class="divider-gold"></div>
+              <div class="mb-4">
+                <div
+                  class="timeline-entry-title d-flex justify-content-between mb-1"
+                >
+                  <span>Full Value Chain Operations</span>
+                  <small style="color: #f59e0b; font-weight: 600"
+                    >All Stages</small
+                  >
+                </div>
+                <p
+                  style="
+                    color: #94a3b8;
+                    font-size: 0.85rem;
+                    font-style: italic;
+                    margin-bottom: 8px;
+                  "
+                >
+                  Cultivation to Export Preparation
+                </p>
+                <p style="color: #cbd5e1; font-size: 0.9rem">
+                  Active across cultivation, harvesting, stigma separation,
+                  drying, cleaning, primary processing, and market distribution
+                  with full traceability.
+                </p>
+              </div>
+              <div class="timeline-entry-divider"></div>
+              <div class="mb-4">
+                <div
+                  class="timeline-entry-title d-flex justify-content-between mb-1"
+                >
+                  <span>Quality Control Systems</span>
+                  <small style="color: #f59e0b; font-weight: 600"
+                    >Advanced</small
+                  >
+                </div>
+                <p style="color: #cbd5e1; font-size: 0.9rem">
+                  Standardized post-harvest handling, hygienic standards, and
+                  structured QC to ensure consistent product excellence and
+                  international compliance.
+                </p>
+              </div>
+              <div class="timeline-entry-divider"></div>
+              <div>
+                <div
+                  class="timeline-entry-title d-flex justify-content-between mb-1"
+                >
+                  <span>Market Orientation</span>
+                  <small style="color: #f59e0b; font-weight: 600"
+                    >Export-Ready</small
+                  >
+                </div>
+                <p style="color: #cbd5e1; font-size: 0.9rem">
+                  Compliance with national and international food safety
+                  standards to strengthen competitiveness and market access.
+                </p>
+              </div>
+            </div>
+            <div
+              class="timeline-dot"
+              style="flex-shrink: 0; margin-top: 24px"
+            ></div>
           </div>
-         </div>
-        </div>
-        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 10px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(245, 158, 11, 0.05)); border: 1px solid rgba(212, 175, 55, 0.2);">
-         <div style="width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(to bottom right, #f59e0b, #d4af37); display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: bold; flex-shrink: 0;">
-          02
-         </div>
-         <div>
-          <div style="font-size: 0.9rem; font-weight: 600; color: #f5f3ff;">
-           Drying &amp; Processing
+          <!-- Farmer Partnerships & Support -->
+          <div
+            class="card-container reveal-left"
+            style="transition-delay: 0.4s"
+          >
+            <div class="glass-card flex-grow-1">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box"><i class="fas fa-handshake"></i></div>
+                <h2 class="display-font text-light-cream mb-0">
+                  Farmer Partnerships
+                </h2>
+              </div>
+              <div class="divider-gold"></div>
+              <p
+                class="mb-4"
+                style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6"
+              >
+                Works closely with smallholder farmers—particularly
+                <strong>women farmers</strong>—providing technical guidance,
+                quality improvement support, and structured market linkages.
+              </p>
+              <div class="stats-grid">
+                <div class="stat-box">
+                  <div class="stat-number">100+</div>
+                  <div class="stat-label">Smallholder Farmers</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">Fair</div>
+                  <div class="stat-label">Pricing System</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">Guaranteed</div>
+                  <div class="stat-label">Purchase Mechanisms</div>
+                </div>
+              </div>
+              <div style="margin-top: 16px">
+                <span class="tag-pill">Women Farmers</span>
+                <span class="tag-pill">Fair Trade</span>
+                <span class="tag-pill">Income Stability</span>
+              </div>
+            </div>
+            <div
+              class="timeline-dot"
+              style="flex-shrink: 0; margin-top: 24px"
+            ></div>
           </div>
-          <div style="font-size: 0.8rem; color: #94a3b8;">
-           Controlled environment
+          <!-- Institutional Capacity -->
+          <div
+            class="card-container reveal-left"
+            style="transition-delay: 0.55s"
+          >
+            <div class="glass-card flex-grow-1">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box"><i class="fas fa-building"></i></div>
+                <h2 class="display-font text-light-cream mb-0">
+                  Institutional Capacity
+                </h2>
+              </div>
+              <div class="divider-gold"></div>
+              <p
+                class="mb-4"
+                style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6"
+              >
+                Demonstrated strong operational and managerial capacity through
+                collaboration with reputable national and international
+                humanitarian organizations.
+              </p>
+              <div class="stats-grid">
+                <div class="stat-box">
+                  <div class="stat-number">~10</div>
+                  <div class="stat-label">Project Contracts</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">WVI</div>
+                  <div class="stat-label">World Vision</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">RSDO</div>
+                  <div class="stat-label">Partner NGO</div>
+                </div>
+              </div>
+              <div style="margin-top: 16px">
+                <span class="tag-pill">Procurement</span>
+                <span class="tag-pill">Supply Chain</span>
+                <span class="tag-pill">Implementation Partner</span>
+              </div>
+            </div>
+            <div
+              class="timeline-dot"
+              style="flex-shrink: 0; margin-top: 24px"
+            ></div>
           </div>
-         </div>
         </div>
-        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 10px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(245, 158, 11, 0.05)); border: 1px solid rgba(212, 175, 55, 0.2);">
-         <div style="width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(to bottom right, #f59e0b, #d4af37); display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: bold; flex-shrink: 0;">
-          03
-         </div>
-         <div>
-          <div style="font-size: 0.9rem; font-weight: 600; color: #f5f3ff;">
-           Grading &amp; Cleaning
+        <!-- RIGHT COLUMN -->
+        <div class="timeline-right">
+          <div class="timeline-line-right"></div>
+          <!-- Mission & Vision -->
+          <div
+            class="card-container reveal-right"
+            style="transition-delay: 0.15s"
+          >
+            <div
+              class="timeline-dot"
+              style="flex-shrink: 0; margin-top: 24px"
+            ></div>
+            <div class="glass-card flex-grow-1">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box"><i class="fas fa-bullseye"></i></div>
+                <h2
+                  class="display-font text-light-cream mb-0"
+                  id="mission-title-el"
+                >
+                  Our Mission
+                </h2>
+              </div>
+              <div class="divider-gold"></div>
+              <p
+                class="mb-3"
+                style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6"
+              >
+                To enhance value addition, strengthen competitiveness, and
+                ensure compliance with international food safety and export
+                standards while promoting women's economic empowerment and
+                sustainable agriculture.
+              </p>
+              <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6">
+                Contributing to increased income generation for producers and
+                improved market access for premium Afghan saffron globally.
+              </p>
+              <ul style="margin-top: 16px; list-style: none; padding: 0">
+                <li
+                  class="mb-2"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 0.9rem;
+                    color: #cbd5e1;
+                  "
+                >
+                  <i class="fas fa-check-circle" style="color: #d4af37"></i>
+                  Standardized quality control &amp; traceability
+                </li>
+                <li
+                  class="mb-2"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 0.9rem;
+                    color: #cbd5e1;
+                  "
+                >
+                  <i class="fas fa-check-circle" style="color: #d4af37"></i>
+                  International export compliance
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 0.9rem;
+                    color: #cbd5e1;
+                  "
+                >
+                  <i class="fas fa-check-circle" style="color: #d4af37"></i>
+                  Women-centered income opportunities
+                </li>
+              </ul>
+            </div>
           </div>
-          <div style="font-size: 0.8rem; color: #94a3b8;">
-           Premium standards met
+          <!-- Project Implementation Experience -->
+          <div
+            class="card-container reveal-right"
+            style="transition-delay: 0.3s"
+          >
+            <div
+              class="timeline-dot"
+              style="flex-shrink: 0; margin-top: 24px"
+            ></div>
+            <div class="glass-card flex-grow-1">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box"><i class="fas fa-tasks"></i></div>
+                <h2 class="display-font text-light-cream mb-0">
+                  Project Implementation
+                </h2>
+              </div>
+              <div class="divider-gold"></div>
+              <div class="mb-4">
+                <div
+                  class="timeline-entry-title d-flex justify-content-between mb-1"
+                >
+                  <span>Procurement &amp; Supply Chain</span>
+                  <small style="color: #f59e0b; font-weight: 600"
+                    >Supplier</small
+                  >
+                </div>
+                <p
+                  style="
+                    color: #94a3b8;
+                    font-size: 0.85rem;
+                    font-style: italic;
+                    margin-bottom: 8px;
+                  "
+                >
+                  Agricultural &amp; Livestock Inputs Distribution
+                </p>
+                <p style="color: #cbd5e1; font-size: 0.9rem">
+                  Successfully procured and distributed mung bean straw, wheat
+                  straw, veterinary medicines, and chemical fertilizers across
+                  multiple districts of Herat Province.
+                </p>
+              </div>
+              <div class="timeline-entry-divider"></div>
+              <div class="mb-4">
+                <div
+                  class="timeline-entry-title d-flex justify-content-between mb-1"
+                >
+                  <span>Logistics &amp; Coordination</span>
+                  <small style="color: #f59e0b; font-weight: 600"
+                    >Manager</small
+                  >
+                </div>
+                <p style="color: #cbd5e1; font-size: 0.9rem">
+                  Managed warehousing, transportation, and last-mile
+                  distribution with quality compliance, timely delivery, and
+                  accurate financial reporting.
+                </p>
+              </div>
+              <div class="timeline-entry-divider"></div>
+              <div>
+                <div
+                  class="timeline-entry-title d-flex justify-content-between mb-1"
+                >
+                  <span>Donor Compliance</span>
+                  <small style="color: #f59e0b; font-weight: 600"
+                    >Standard</small
+                  >
+                </div>
+                <p style="color: #cbd5e1; font-size: 0.9rem">
+                  Full adherence to international procurement standards,
+                  operational risk management, and donor-aligned reporting for
+                  World Vision International and RSDO.
+                </p>
+              </div>
+            </div>
           </div>
-         </div>
+          <!-- Quality Assurance Protocols -->
+          <div
+            class="card-container reveal-right"
+            style="transition-delay: 0.45s"
+          >
+            <div
+              class="timeline-dot"
+              style="flex-shrink: 0; margin-top: 24px"
+            ></div>
+            <div class="glass-card flex-grow-1">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                <h2 class="display-font text-light-cream mb-0">
+                  Quality Assurance
+                </h2>
+              </div>
+              <div class="divider-gold"></div>
+              <p
+                class="mb-4"
+                style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6"
+              >
+                Every batch undergoes rigorous quality protocols with improved
+                hygienic standards and structured control systems ensuring
+                consistent excellence.
+              </p>
+              <div style="display: flex; flex-direction: column; gap: 12px">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    padding: 12px;
+                    border-radius: 10px;
+                    background: linear-gradient(
+                      135deg,
+                      rgba(212, 175, 55, 0.1),
+                      rgba(245, 158, 11, 0.05)
+                    );
+                    border: 1px solid rgba(212, 175, 55, 0.2);
+                  "
+                >
+                  <div
+                    style="
+                      width: 32px;
+                      height: 32px;
+                      border-radius: 8px;
+                      background: linear-gradient(
+                        to bottom right,
+                        #f59e0b,
+                        #d4af37
+                      );
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: 12px;
+                      font-weight: bold;
+                      flex-shrink: 0;
+                    "
+                  >
+                    01
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        color: #f5f3ff;
+                      "
+                    >
+                      Post-Harvest Handling
+                    </div>
+                    <div style="font-size: 0.8rem; color: #94a3b8">
+                      Standardized &amp; hygienic
+                    </div>
+                  </div>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    padding: 12px;
+                    border-radius: 10px;
+                    background: linear-gradient(
+                      135deg,
+                      rgba(212, 175, 55, 0.1),
+                      rgba(245, 158, 11, 0.05)
+                    );
+                    border: 1px solid rgba(212, 175, 55, 0.2);
+                  "
+                >
+                  <div
+                    style="
+                      width: 32px;
+                      height: 32px;
+                      border-radius: 8px;
+                      background: linear-gradient(
+                        to bottom right,
+                        #f59e0b,
+                        #d4af37
+                      );
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: 12px;
+                      font-weight: bold;
+                      flex-shrink: 0;
+                    "
+                  >
+                    02
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        color: #f5f3ff;
+                      "
+                    >
+                      Drying &amp; Processing
+                    </div>
+                    <div style="font-size: 0.8rem; color: #94a3b8">
+                      Controlled environment
+                    </div>
+                  </div>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    padding: 12px;
+                    border-radius: 10px;
+                    background: linear-gradient(
+                      135deg,
+                      rgba(212, 175, 55, 0.1),
+                      rgba(245, 158, 11, 0.05)
+                    );
+                    border: 1px solid rgba(212, 175, 55, 0.2);
+                  "
+                >
+                  <div
+                    style="
+                      width: 32px;
+                      height: 32px;
+                      border-radius: 8px;
+                      background: linear-gradient(
+                        to bottom right,
+                        #f59e0b,
+                        #d4af37
+                      );
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      font-size: 12px;
+                      font-weight: bold;
+                      flex-shrink: 0;
+                    "
+                  >
+                    03
+                  </div>
+                  <div>
+                    <div
+                      style="
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        color: #f5f3ff;
+                      "
+                    >
+                      Grading &amp; Cleaning
+                    </div>
+                    <div style="font-size: 0.8rem; color: #94a3b8">
+                      Premium standards met
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Core Values & Commitment -->
+          <div
+            class="card-container reveal-right"
+            style="transition-delay: 0.6s"
+          >
+            <div
+              class="timeline-dot"
+              style="flex-shrink: 0; margin-top: 24px"
+            ></div>
+            <div class="glass-card flex-grow-1">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box"><i class="fas fa-heart"></i></div>
+                <h2 class="display-font text-light-cream mb-0">Core Values</h2>
+              </div>
+              <div class="divider-gold"></div>
+              <div class="values-grid">
+                <div class="value-card">
+                  <div style="font-size: 28px; margin-bottom: 10px">♀️</div>
+                  <div class="value-title">Women Empowerment</div>
+                  <div class="value-desc">
+                    Economic opportunities &amp; leadership
+                  </div>
+                </div>
+                <div class="value-card">
+                  <div style="font-size: 28px; margin-bottom: 10px">🌱</div>
+                  <div class="value-title">Sustainability</div>
+                  <div class="value-desc">Eco-friendly farming practices</div>
+                </div>
+                <div class="value-card">
+                  <div style="font-size: 28px; margin-bottom: 10px">✨</div>
+                  <div class="value-title">Excellence</div>
+                  <div class="value-desc">Premium quality standards</div>
+                </div>
+                <div class="value-card">
+                  <div style="font-size: 28px; margin-bottom: 10px">🤝</div>
+                  <div class="value-title">Partnership</div>
+                  <div class="value-desc">Fair &amp; transparent practices</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-       </div>
       </div>
-     </div><!-- Core Values & Commitment -->
-     <div class="card-container reveal-right" style="transition-delay: 0.6s">
-      <div class="timeline-dot" style="flex-shrink: 0; margin-top: 24px;"></div>
-      <div class="glass-card flex-grow-1">
-       <div class="d-flex align-items-center gap-3 mb-3">
-        <div class="icon-box"><i class="fas fa-heart"></i>
+    </main>
+    <!-- footer -->
+    <footer
+      class="footer-wrap w-full h-full overflow-auto relative fade-section"
+      id="footer-root"
+    >
+      <!-- Decorative background threads -->
+      <svg
+        class="saffron-thread"
+        style="top: 10%; right: 5%; width: 120px"
+        viewbox="0 0 60 200"
+      >
+        <path
+          d="M30 0 Q35 50 25 100 Q15 150 30 200"
+          stroke="#d4a020"
+          fill="none"
+          stroke-width="1.5"
+        />
+      </svg>
+      <svg
+        class="saffron-thread"
+        style="bottom: 20%; left: 8%; width: 80px"
+        viewbox="0 0 60 200"
+      >
+        <path
+          d="M30 0 Q20 60 35 120 Q45 170 30 200"
+          stroke="#d4a020"
+          fill="none"
+          stroke-width="1.2"
+        />
+      </svg>
+      <div class="max-w-7xl mx-auto px-6 py-14 relative z-10">
+        <!-- Main Grid -->
+        <div
+          class="fade-section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12"
+        >
+          <!-- Brand -->
+          <div class="lg:col-span-1">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="rounded-full flex items-center justify-center"
+                style="min-width: 60px; height: 60px"
+              >
+                <img
+                  class="footer-brand-logo"
+                  src="Photos/logo/logo-no-bc.png"
+                  alt="Zafran logo"
+                />
+              </div>
+              <h2
+                class="brand-font text-2xl font-bold"
+                style="color: #ffc13b"
+                id="brand-name"
+              >
+                Merghob Saffron
+              </h2>
+            </div>
+            <p
+              class="text-sm leading-relaxed mb-5"
+              style="color: rgba(232, 220, 200, 0.65)"
+              id="tagline"
+            >
+              Pure Afghan Saffron harvested with care, delivered with trust. The
+              essence of authenticity in every thread.
+            </p>
+            <div class="flex items-center gap-2">
+              <div class="glow-dot"></div>
+              <span
+                class="text-xs tracking-widest uppercase"
+                style="color: rgba(212, 160, 32, 0.6)"
+                >Premium Quality</span
+              >
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h3
+              class="brand-font text-lg font-semibold mb-5"
+              style="color: #ffc13b"
+            >
+              Quick Links
+            </h3>
+            <nav class="flex flex-col gap-3">
+              <a
+                href="index.html"
+                class="nav-link text-sm"
+                onclick="event.preventDefault()"
+                >Home</a
+              >
+              <a
+                href="about.html"
+                class="nav-link text-sm"
+                onclick="event.preventDefault()"
+                >About Us</a
+              >
+              <a
+                href="service.html"
+                class="nav-link text-sm"
+                onclick="event.preventDefault()"
+                >Services</a
+              >
+              <a
+                href="gallery.html"
+                class="nav-link text-sm"
+                onclick="event.preventDefault()"
+                >Gallery</a
+              >
+              <a
+                href="contact.html"
+                class="nav-link text-sm"
+                onclick="event.preventDefault()"
+                >Contact</a
+              >
+            </nav>
+          </div>
+          <!-- Contact -->
+          <div>
+            <h3
+              class="brand-font text-lg font-semibold mb-5"
+              style="color: #ffc13b"
+            >
+              Get in Touch
+            </h3>
+            <div class="flex flex-col gap-4">
+              <div class="flex items-start gap-3">
+                <i
+                  class="fas fa-envelope"
+                  style="
+                    width: 18px;
+                    height: 18px;
+                    color: #d4a020;
+                    margin-top: 2px;
+                    flex-shrink: 0;
+                  "
+                ></i>
+                <span class="text-sm" style="color: #e8dcc8" id="email-text"
+                  >marghobheray@gmail.com</span
+                >
+              </div>
+              <div class="flex items-start gap-3">
+                <i
+                  class="fas fa-phone"
+                  style="
+                    width: 18px;
+                    height: 18px;
+                    color: #d4a020;
+                    margin-top: 2px;
+                    flex-shrink: 0;
+                  "
+                ></i>
+                <span class="text-sm" style="color: #e8dcc8" id="phone-text"
+                  >+93 795 808 155</span
+                >
+              </div>
+              <div class="flex items-start gap-3">
+                <i
+                  class="fas fa-map-marker-alt"
+                  style="
+                    width: 18px;
+                    height: 18px;
+                    color: #d4a020;
+                    margin-top: 2px;
+                    flex-shrink: 0;
+                  "
+                ></i>
+                <span class="text-sm" style="color: #e8dcc8" id="location-text"
+                  >Herat, Afghanistan</span
+                >
+              </div>
+            </div>
+            <!-- Social -->
+            <div class="flex gap-3 mt-6 items-center">
+              <a
+                href="https://instagram.com/marghob_heray_co"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="social-icon">
+                  <i
+                    class="fab fa-instagram text-center align-middle"
+                    style="width: 18px; height: 18px"
+                  ></i>
+                </div>
+              </a>
+              <a
+                href="https://facebook.com/marghobherayco"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="social-icon text-center align-middle">
+                  <i
+                    class="fab fa-facebook-f"
+                    style="width: 18px; height: 18px"
+                  ></i>
+                </div>
+              </a>
+              <a
+                href="https://wa.me/message/567LQQQKVJ7UB1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="social-icon text-center align-middle">
+                  <i
+                    class="fab fa-whatsapp"
+                    style="width: 18px; height: 18px"
+                  ></i>
+                </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/marghob-heray-agricultural-and-livestock-co/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="social-icon text-center align-middle">
+                  <i
+                    class="fab fa-linkedin"
+                    style="width: 18px; height: 18px"
+                  ></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Newsletter -->
+          <div>
+            <h3
+              class="brand-font text-lg font-semibold mb-5"
+              style="color: #ffc13b"
+            >
+              Stay Connected
+            </h3>
+            <p class="text-sm mb-4" style="color: rgba(232, 220, 200, 0.6)">
+              Get updates on new harvests, exclusive offers, and saffron
+              stories.
+            </p>
+            <form
+              id="subscribe-form"
+              class="flex"
+              onsubmit="event.preventDefault()"
+            >
+              <input
+                type="email"
+                class="subscribe-input"
+                placeholder="Your email address"
+                aria-label="Email for newsletter"
+              />
+              <button type="submit" class="subscribe-btn" id="sub-btn">
+                Subscribe
+              </button>
+            </form>
+            <p
+              class="text-xs mt-3 hidden"
+              id="sub-success"
+              style="color: #d4a020"
+            >
+              Thank you for subscribing!
+            </p>
+          </div>
         </div>
-        <h2 class="display-font text-light-cream mb-0">Core Values</h2>
-       </div>
-       <div class="divider-gold"></div>
-       <div class="values-grid">
-        <div class="value-card">
-         <div style="font-size: 28px; margin-bottom: 10px;">
-          ♀️
-         </div>
-         <div class="value-title">
-          Women Empowerment
-         </div>
-         <div class="value-desc">
-          Economic opportunities &amp; leadership
-         </div>
+        <!-- Divider -->
+        <div class="divider-line mb-6 fade-section"></div>
+        <!-- Bottom Bar -->
+        <div
+          class="fade-section flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
+          style="color: rgba(232, 220, 200, 0.4)"
+        >
+          <span id="copyright-text">Â© 2025 Zafran. All rights reserved.</span>
+          <div class="flex gap-5">
+            <a
+              href="#"
+              class="nav-link text-xs"
+              onclick="event.preventDefault()"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="nav-link text-xs"
+              onclick="event.preventDefault()"
+              >Terms of Service</a
+            >
+          </div>
         </div>
-        <div class="value-card">
-         <div style="font-size: 28px; margin-bottom: 10px;">
-          🌱
-         </div>
-         <div class="value-title">
-          Sustainability
-         </div>
-         <div class="value-desc">
-          Eco-friendly farming practices
-         </div>
-        </div>
-        <div class="value-card">
-         <div style="font-size: 28px; margin-bottom: 10px;">
-          ✨
-         </div>
-         <div class="value-title">
-          Excellence
-         </div>
-         <div class="value-desc">
-          Premium quality standards
-         </div>
-        </div>
-        <div class="value-card">
-         <div style="font-size: 28px; margin-bottom: 10px;">
-          🤝
-         </div>
-         <div class="value-title">
-          Partnership
-         </div>
-         <div class="value-desc">
-          Fair &amp; transparent practices
-         </div>
-        </div>
-       </div>
       </div>
-     </div>
-    </div>
-  </div>
-  </main>
-  <!-- footer -->
-  <footer class="footer-wrap w-full h-full overflow-auto relative" id="footer-root"><!-- Decorative background threads -->
-   <svg class="saffron-thread" style="top:10%;right:5%;width:120px" viewbox="0 0 60 200"><path d="M30 0 Q35 50 25 100 Q15 150 30 200" stroke="#d4a020" fill="none" stroke-width="1.5" />
-   </svg>
-   <svg class="saffron-thread" style="bottom:20%;left:8%;width:80px" viewbox="0 0 60 200"><path d="M30 0 Q20 60 35 120 Q45 170 30 200" stroke="#d4a020" fill="none" stroke-width="1.2" />
-   </svg>
-   <div class="max-w-7xl mx-auto px-6 py-14 relative z-10"><!-- Main Grid -->
-    <div class="fade-section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12"><!-- Brand -->
-     <div class="lg:col-span-1">
-      <div class="flex items-center gap-3 mb-4">
-       <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg,#d4a020,#e8b530);">
-        <svg width="22" height="22" viewbox="0 0 24 24" fill="none" stroke="#1a1209" stroke-width="2" stroke-linecap="round">
-         <path d="M12 2 C12 2 8 8 8 13 C8 17 10 20 12 22 C14 20 16 17 16 13 C16 8 12 2 12 2Z" /><line x1="12" y1="8" x2="12" y2="16" />
-        </svg>
-       </div>
-       <h2 class="brand-font text-2xl font-bold" style="color:#ffc13b;" id="brand-name">Zafran</h2>
-      </div>
-      <p class="text-sm leading-relaxed mb-5" style="color:rgba(232,220,200,0.65);" id="tagline">Pure Afghan Saffron Ã¢â‚¬â€ harvested with care, delivered with trust. The essence of authenticity in every thread.</p>
-      <div class="flex items-center gap-2">
-       <div class="glow-dot"></div><span class="text-xs tracking-widest uppercase" style="color:rgba(212,160,32,0.6);">Premium Quality</span>
-      </div>
-     </div><!-- Quick Links -->
-     <div>
-      <h3 class="brand-font text-lg font-semibold mb-5" style="color:#ffc13b;">Quick Links</h3>
-      <nav class="flex flex-col gap-3"><a href="#" class="nav-link text-sm" onclick="event.preventDefault()">Home</a> <a href="#" class="nav-link text-sm" onclick="event.preventDefault()">About Us</a> <a href="#" class="nav-link text-sm" onclick="event.preventDefault()">Products</a> <a href="#" class="nav-link text-sm" onclick="event.preventDefault()">Gallery</a> <a href="#" class="nav-link text-sm" onclick="event.preventDefault()">Contact</a>
-      </nav>
-     </div><!-- Contact -->
-     <div>
-      <h3 class="brand-font text-lg font-semibold mb-5" style="color:#ffc13b;">Get in Touch</h3>
-      <div class="flex flex-col gap-4">
-       <div class="flex items-start gap-3"><i data-lucide="mail" style="width:18px;height:18px;color:#d4a020;margin-top:2px;flex-shrink:0;"></i> <span class="text-sm" style="color:#e8dcc8;" id="email-text">info@zafran.com</span>
-       </div>
-       <div class="flex items-start gap-3"><i data-lucide="phone" style="width:18px;height:18px;color:#d4a020;margin-top:2px;flex-shrink:0;"></i> <span class="text-sm" style="color:#e8dcc8;" id="phone-text">+93 700 123 456</span>
-       </div>
-       <div class="flex items-start gap-3"><i data-lucide="map-pin" style="width:18px;height:18px;color:#d4a020;margin-top:2px;flex-shrink:0;"></i> <span class="text-sm" style="color:#e8dcc8;" id="location-text">Herat, Afghanistan</span>
-       </div>
-      </div><!-- Social -->
-      <div class="flex gap-3 mt-6">
-       <div class="social-icon">
-        <i data-lucide="instagram" style="width:18px;height:18px;"></i>
-       </div>
-       <div class="social-icon">
-        <i data-lucide="facebook" style="width:18px;height:18px;"></i>
-       </div>
-       <div class="social-icon">
-        <i data-lucide="twitter" style="width:18px;height:18px;"></i>
-       </div>
-       <div class="social-icon">
-        <i data-lucide="youtube" style="width:18px;height:18px;"></i>
-       </div>
-      </div>
-     </div><!-- Newsletter -->
-     <div>
-      <h3 class="brand-font text-lg font-semibold mb-5" style="color:#ffc13b;">Stay Connected</h3>
-      <p class="text-sm mb-4" style="color:rgba(232,220,200,0.6);">Get updates on new harvests, exclusive offers, and saffron stories.</p>
-      <form id="subscribe-form" class="flex" onsubmit="event.preventDefault();"><input type="email" class="subscribe-input" placeholder="Your email address" aria-label="Email for newsletter"> <button type="submit" class="subscribe-btn" id="sub-btn">Subscribe</button>
-      </form>
-      <p class="text-xs mt-3 hidden" id="sub-success" style="color:#d4a020;">Ã¢Å“â€œ Thank you for subscribing!</p>
-     </div>
-    </div><!-- Divider -->
-    <div class="divider-line mb-6 fade-section"></div><!-- Bottom Bar -->
-    <div class="fade-section flex flex-col sm:flex-row items-center justify-between gap-3 text-xs" style="color:rgba(232,220,200,0.4);"><span id="copyright-text">Ã‚Â© 2025 Zafran. All rights reserved.</span>
-     <div class="flex gap-5"><a href="#" class="nav-link text-xs" onclick="event.preventDefault()">Privacy Policy</a> <a href="#" class="nav-link text-xs" onclick="event.preventDefault()">Terms of Service</a>
-     </div>
-    </div>
-   </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Scroll reveal animation
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Element SDK Integration
-    const defaultConfig = {
-      page_title: 'Marghob Heray',
-      page_subtitle: 'Women-Owned Saffron Excellence',
-      company_name: 'Marghob Heray',
-      mission_title: 'Our Mission',
-      background_color: '#0f0d0a',
-      surface_color: '#0f0d0a',
-      text_color: '#e8dcc8',
-      primary_action_color: '#d4af37',
-      secondary_action_color: '#f59e0b',
-      font_family: 'Playfair Display',
-      font_size: 16
-    };
-
-    function applyConfig(config) {
-      const el = (id) => document.getElementById(id);
-      const c = (k) => config[k] || defaultConfig[k];
-
-      if (el('title-el')) el('title-el').textContent = c('page_title');
-      if (el('subtitle-el')) el('subtitle-el').textContent = c('page_subtitle');
-      if (el('mission-title-el')) el('mission-title-el').textContent = c('mission_title');
-
-      const bgGradient = `linear-gradient(135deg, ${c('background_color')} 0%, ${c('surface_color')} 50%, ${c('background_color')} 100%)`;
-      document.body.style.background = bgGradient;
-
-      const font = c('font_family');
-      const baseSize = c('font_size');
-      
-      document.querySelectorAll('.display-font').forEach(el => {
-        el.style.fontFamily = `${font}, serif`;
-      });
-    }
-
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange: async (config) => applyConfig(config),
-        mapToCapabilities: (config) => ({
-          recolorables: [
-            {
-              get: () => config.background_color || defaultConfig.background_color,
-              set: v => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); }
-            },
-            {
-              get: () => config.surface_color || defaultConfig.surface_color,
-              set: v => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); }
-            },
-            {
-              get: () => config.text_color || defaultConfig.text_color,
-              set: v => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); }
-            },
-            {
-              get: () => config.primary_action_color || defaultConfig.primary_action_color,
-              set: v => { config.primary_action_color = v; window.elementSdk.setConfig({ primary_action_color: v }); }
-            },
-            {
-              get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
-              set: v => { config.secondary_action_color = v; window.elementSdk.setConfig({ secondary_action_color: v }); }
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Scroll reveal animation
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
             }
-          ],
-          borderables: [],
-          fontEditable: {
-            get: () => config.font_family || defaultConfig.font_family,
-            set: v => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); }
-          },
-          fontSizeable: {
-            get: () => config.font_size || defaultConfig.font_size,
-            set: v => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); }
-          }
-        }),
-        mapToEditPanelValues: (config) => new Map([
-          ['page_title', config.page_title || defaultConfig.page_title],
-          ['page_subtitle', config.page_subtitle || defaultConfig.page_subtitle],
-          ['company_name', config.company_name || defaultConfig.company_name],
-          ['mission_title', config.mission_title || defaultConfig.mission_title]
-        ])
-      });
-    }
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e80c07b1341292c',t:'MTc3NTQ3ODA4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
- <script src="javascript.js"></script></body>
-</html>
+          });
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
+      );
 
+      document
+        .querySelectorAll(".reveal, .reveal-left, .reveal-right")
+        .forEach((el) => {
+          observer.observe(el);
+        });
+
+      // Element SDK Integration
+      const defaultConfig = {
+        page_title: "Marghob Heray",
+        page_subtitle: "Women-Owned Saffron Excellence",
+        company_name: "Marghob Heray",
+        mission_title: "Our Mission",
+        background_color: "#0f0d0a",
+        surface_color: "#0f0d0a",
+        text_color: "#e8dcc8",
+        primary_action_color: "#d4af37",
+        secondary_action_color: "#f59e0b",
+        font_family: "Playfair Display",
+        font_size: 16,
+      };
+
+      function applyConfig(config) {
+        const el = (id) => document.getElementById(id);
+        const c = (k) => config[k] || defaultConfig[k];
+
+        if (el("title-el")) el("title-el").textContent = c("page_title");
+        if (el("subtitle-el"))
+          el("subtitle-el").textContent = c("page_subtitle");
+        if (el("mission-title-el"))
+          el("mission-title-el").textContent = c("mission_title");
+
+        const bgGradient = `linear-gradient(135deg, ${c("background_color")} 0%, ${c("surface_color")} 50%, ${c("background_color")} 100%)`;
+        document.body.style.background = bgGradient;
+
+        const font = c("font_family");
+        const baseSize = c("font_size");
+
+        document.querySelectorAll(".display-font").forEach((el) => {
+          el.style.fontFamily = `${font}, serif`;
+        });
+      }
+
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange: async (config) => applyConfig(config),
+          mapToCapabilities: (config) => ({
+            recolorables: [
+              {
+                get: () =>
+                  config.background_color || defaultConfig.background_color,
+                set: (v) => {
+                  config.background_color = v;
+                  window.elementSdk.setConfig({ background_color: v });
+                },
+              },
+              {
+                get: () => config.surface_color || defaultConfig.surface_color,
+                set: (v) => {
+                  config.surface_color = v;
+                  window.elementSdk.setConfig({ surface_color: v });
+                },
+              },
+              {
+                get: () => config.text_color || defaultConfig.text_color,
+                set: (v) => {
+                  config.text_color = v;
+                  window.elementSdk.setConfig({ text_color: v });
+                },
+              },
+              {
+                get: () =>
+                  config.primary_action_color ||
+                  defaultConfig.primary_action_color,
+                set: (v) => {
+                  config.primary_action_color = v;
+                  window.elementSdk.setConfig({ primary_action_color: v });
+                },
+              },
+              {
+                get: () =>
+                  config.secondary_action_color ||
+                  defaultConfig.secondary_action_color,
+                set: (v) => {
+                  config.secondary_action_color = v;
+                  window.elementSdk.setConfig({ secondary_action_color: v });
+                },
+              },
+            ],
+            borderables: [],
+            fontEditable: {
+              get: () => config.font_family || defaultConfig.font_family,
+              set: (v) => {
+                config.font_family = v;
+                window.elementSdk.setConfig({ font_family: v });
+              },
+            },
+            fontSizeable: {
+              get: () => config.font_size || defaultConfig.font_size,
+              set: (v) => {
+                config.font_size = v;
+                window.elementSdk.setConfig({ font_size: v });
+              },
+            },
+          }),
+          mapToEditPanelValues: (config) =>
+            new Map([
+              ["page_title", config.page_title || defaultConfig.page_title],
+              [
+                "page_subtitle",
+                config.page_subtitle || defaultConfig.page_subtitle,
+              ],
+              [
+                "company_name",
+                config.company_name || defaultConfig.company_name,
+              ],
+              [
+                "mission_title",
+                config.mission_title || defaultConfig.mission_title,
+              ],
+            ]),
+        });
+      }
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'9e80c07b1341292c',t:'MTc3NTQ3ODA4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+    <script src="javascript.js"></script>
+  </body>
+</html>
