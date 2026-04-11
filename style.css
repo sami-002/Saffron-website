@@ -417,11 +417,37 @@
   text-align: center;
 }
 
-/* =========================
-   FOOTER STYLES
-   ========================= */
-
-/* footer */
+/* Responsive Nav */
+@media (max-width: 1024px) {
+  .saffron-nav {
+    padding: 1rem;
+  }
+  .nav-container {
+    gap: 1rem;
+  }
+  .nav-menu {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .lang-group {
+    gap: 0.25rem;
+    padding: 0.25rem;
+  }
+  .lang-btn {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.68rem;
+  }
+}
+@media (min-width: 1025px) {
+  .hamburger {
+    display: none;
+  }
+  .mobile-overlay {
+    display: none !important;
+  }
+}
 
 html,
 body {
