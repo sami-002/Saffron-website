@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marghob Heray - Gallery</title>
+     <link rel="icon" href="Photos/logo/logo-tag.png" type="image/jpeg" sizes="16x16" />
+    <link rel="icon" href="Photos/logo/logo-tag.png" type="image/jpeg" sizes="32x32" />
+    <link rel="icon" href="Photos/logo/logo-tag.png" type="image/jpeg" sizes="64x64" />
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
   <script src="/_sdk/element_sdk.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="Css/gallery.css">
+   <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   <script>
 tailwind.config = {
   theme: {
@@ -26,205 +34,178 @@ tailwind.config = {
   }
 }
 </script>
-  <style>
-html, body {
-  height: 100%;
-  margin: 0;
-}
+ 
 
-html {
-  scrollbar-width: thin;
-  scrollbar-color: #b8460f #120e0b;
-}
-
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #120e0b;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #d4932d, #b8460f);
-  border-radius: 999px;
-  border: 2px solid #120e0b;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #f4c563, #d4772c);
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-  background:
-    radial-gradient(circle at top, rgba(212, 147, 45, 0.08), transparent 30%),
-    linear-gradient(180deg, #120e0b 0%, #17120d 40%, #120e0b 100%);
-  color: #e8dcc8;
-}
-
-.font-display {
-  font-family: "Playfair Display", serif;
-}
-
-.page-shell {
-  min-height: 100%;
-  background: transparent;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-up {
-  animation: fadeUp 0.7s ease forwards;
-  opacity: 0;
-}
-
-.fade-up-d1 { animation-delay: 0.1s; }
-.fade-up-d2 { animation-delay: 0.2s; }
-.fade-up-d3 { animation-delay: 0.3s; }
-
-.gallery-main {
-  padding-top: 0;
-}
-
-.hero-pattern {
-  background:
-    radial-gradient(ellipse at 30% 40%, rgba(212, 147, 45, 0.18) 0%, transparent 48%),
-    radial-gradient(ellipse at 70% 70%, rgba(184, 70, 15, 0.18) 0%, transparent 40%),
-    linear-gradient(160deg, #1a1209 0%, #2a1b10 55%, #1a1209 100%);
-  border-bottom: 1px solid rgba(212, 147, 45, 0.12);
-  min-height: 520px;
-  padding-bottom: 72px;
-}
-
-.gallery-intro {
-  background: linear-gradient(180deg, rgba(26, 18, 9, 0.98), rgba(22, 16, 12, 0.96));
-}
-
-.gallery-item {
-  background: rgba(28, 21, 15, 0.9);
-  border: 1px solid rgba(212, 147, 45, 0.14);
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.28);
-}
-
-.gallery-item img {
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.gallery-item:hover img {
-  transform: scale(1.08);
-}
-
-.filter-btn {
-  transition: all 0.3s ease;
-  position: relative;
-  color: rgba(232, 220, 200, 0.7);
-}
-
-.filter-btn::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #d4932d, transparent);
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.filter-btn.active::after {
-  width: 100%;
-}
-
-.filter-btn.active {
-  color: #f4c563 !important;
-}
-
-.gallery-filter-wrap {
-  background: rgba(18, 14, 11, 0.65);
-  border: 1px solid rgba(212, 147, 45, 0.12);
-  border-radius: 999px;
-  padding: 0.4rem;
-}
-
-.gallery-filter-wrap .filter-btn:hover {
-  color: #f4c563;
-}
-
-.lightbox {
-  transition: opacity 0.3s ease;
-}
-
-.gallery-wave {
-  color: #17120d;
-}
-  </style>
-  <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body>
-  <nav class="saffron-nav" id="mainNav">
-   <div class="nav-container"><a href="index.html" class="brand-logo">
-     <div class="logo-wrapper">
-      <div class="logo-glow"></div>
-      <img src="Screenshot 2026-02-24 193737.png" alt="">
-     </div>
-     <div class="brand-info"><span class="brand-name" id="brandName">Zafran</span> <span class="brand-tagline" id="brand-tagline">Premium Saffron</span>
-     </div></a>
-    <ul class="nav-menu">
-     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-     <li class="nav-item"><a href="service.html" class="nav-link">Service</a></li>
-     <li class="nav-item"><a href="our saffron.html" class="nav-link">Our Saffron</a></li>
-     <li class="nav-item"><button class="nav-link dropdown-toggle " onclick="event.preventDefault()"> Pages
-       <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" /></svg></button>
-      <div class="dropdown-menu"><a href="team.html" class="dropdown-item">Our Team</a> <a href="gallery.html" class="dropdown-item active">Gallery</a> <a href="shop.html" class="dropdown-item">Shop</a>
-      </div></li>
-     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-    </ul>
-    <div class="nav-controls">
-     <div class="lang-group"><button class="lang-btn active" id="lang-en" onclick="setLang('en')">EN</button> <button class="lang-btn" id="lang-dr" onclick="setLang('dr')">دری</button>
-     </div><button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu"> <span></span> <span></span> <span></span> </button>
+   <!-- Navbar -->
+    <nav class="saffron-nav fade-section" id="mainNav">
+      <div class="nav-container">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo">
+          <div class="logo-wrapper">
+            <div class="logo-glow"></div>
+            <img src="Photos/logo/logo-no-bc.png" alt="" />
+          </div>
+          <div class="brand-info">
+            <span class="brand-name" id="brandName">Merghob</span>
+            <span class="brand-tagline" id="brand-tagline">Heray Saffron</span>
+          </div></a
+        >
+        <!-- Desktop Menu -->
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link ">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="service.html" class="nav-link">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="our saffron.html" class="nav-link">Our Saffron</a>
+          </li>
+          <li class="nav-item">
+            <button
+              class="nav-link dropdown-toggle"
+              onclick="event.preventDefault()"
+            >
+              Pages
+              <svg
+                class="chevron"
+                viewbox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="dropdown-menu">
+              <a href="team.html" class="dropdown-item">Our Team</a>
+              <a href="gallery.html" class="dropdown-item active">Gallery</a>
+              <a href="shop.html" class="dropdown-item">Shop</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+       
+        <!-- RIGHT CONTROLS -->
+        <div class="nav-controls">
+          <div class="lang-group">
+            <button
+              class="lang-btn active"
+              id="lang-en"
+              onclick="setLang('en')"
+            >
+              EN
+            </button>
+            <button class="lang-btn" id="lang-dr" onclick="setLang('dr')">
+              دری
+            </button>
+          </div>
+          <button
+            class="hamburger"
+            id="hamburgerBtn"
+            onclick="toggleMobileMenu()"
+            aria-label="Toggle menu"
+          >
+            <span></span> <span></span> <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()">
+      <div class="mobile-nav-item">
+        <a href="index.html" class="mobile-link" onclick="closeMobileMenu()"
+          >Home</a
+        >
+      </div>
+      <div class="mobile-nav-item">
+        <a href="about.html" class="mobile-link" onclick="closeMobileMenu()"
+          >About</a
+        >
+      </div>
+      <div class="mobile-nav-item">
+        <a href="service.html" class="mobile-link" onclick="closeMobileMenu()"
+          >Services</a
+        >
+      </div>
+      <div class="mobile-nav-item">
+        <a
+          href="our saffron.html"
+          class="mobile-link"
+          onclick="closeMobileMenu()"
+          >Our Saffron</a
+        >
+      </div>
+      <div class="mobile-nav-item">
+        <button class="mobile-link" onclick="toggleMobileSubmenu()">
+          Pages
+          <svg
+            style="
+              width: 14px;
+              height: 14px;
+              float: right;
+              margin-top: 4px;
+              transition: transform 0.3s;
+            "
+            id="mobileChevron"
+            viewbox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+        <div class="mobile-submenu" id="mobileSubmenu">
+          <div class="mobile-submenu-item">
+            <a
+              href="team.html"
+              class="mobile-submenu-link"
+              onclick="closeMobileMenu()"
+              >Our Team</a
+            >
+          </div>
+          <div class="mobile-submenu-item">
+            <a
+              href="gallery.html"
+              class="mobile-submenu-link"
+              onclick="closeMobileMenu()"
+              >Gallery</a
+            >
+          </div>
+          <div class="mobile-submenu-item">
+            <a
+              href="shop.html"
+              class="mobile-submenu-link"
+              onclick="closeMobileMenu()"
+              >Shop</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav-item">
+        <a href="contact.html" class="mobile-link" onclick="closeMobileMenu()"
+          >Contact</a
+        >
+      </div>
+      <div class="mobile-cta-section">
+        <button
+          class="premium-btn"
+          id="ctaBtnMobile"
+          onclick="closeMobileMenu()"
+        >
+          Explore Products
+        </button>
+      </div>
     </div>
-   </div>
-  </nav>
-  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()">
-   <div class="mobile-nav-item">
-    <a href="index.html" class="mobile-link" onclick="closeMobileMenu()">Home</a>
-   </div>
-   <div class="mobile-nav-item">
-    <a href="about.html" class="mobile-link" onclick="closeMobileMenu()">Story</a>
-   </div>
-   <div class="mobile-nav-item">
-    <a href="service.html" class="mobile-link" onclick="closeMobileMenu()">Products</a>
-   </div>
-   <div class="mobile-nav-item">
-    <a href="our saffron.html" class="mobile-link" onclick="closeMobileMenu()">Quality</a>
-   </div>
-   <div class="mobile-nav-item"><button class="mobile-link" onclick="toggleMobileSubmenu()"> Pages
-     <svg style="width:14px;height:14px;float:right;margin-top:4px;transition:transform 0.3s" id="mobileChevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9" /></svg></button>
-    <div class="mobile-submenu" id="mobileSubmenu">
-     <div class="mobile-submenu-item">
-      <a href="team.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Our Team</a>
-     </div>
-     <div class="mobile-submenu-item">
-      <a href="gallery.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Gallery</a>
-     </div>
-     <div class="mobile-submenu-item">
-      <a href="shop.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Shop</a>
-     </div>
-    </div>
-   </div>
-   <div class="mobile-nav-item">
-    <a href="contact.html" class="mobile-link" onclick="closeMobileMenu()">Contact</a>
-   </div>
-   <div class="mobile-cta-section"><button class="premium-btn" id="ctaBtnMobile" onclick="closeMobileMenu()">Explore Products</button>
-   </div>
-  </div>
   <div id="app" class="page-shell">
    <main class="gallery-main">
     <section class="hero-pattern relative w-full">
@@ -270,236 +251,291 @@ body {
      </div>
     </div>
    </div>
-   <footer class="footer-wrap w-full h-full overflow-auto relative" id="footer-root">
-    <svg class="saffron-thread" style="top:10%;right:5%;width:120px" viewBox="0 0 60 200"><path d="M30 0 Q35 50 25 100 Q15 150 30 200" stroke="#d4a020" fill="none" stroke-width="1.5" />
-    </svg>
-    <svg class="saffron-thread" style="bottom:20%;left:8%;width:80px" viewBox="0 0 60 200"><path d="M30 0 Q20 60 35 120 Q45 170 30 200" stroke="#d4a020" fill="none" stroke-width="1.2" />
-    </svg>
-    <div class="max-w-7xl mx-auto px-6 py-14 relative z-10">
-     <div class="fade-section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
-      <div class="lg:col-span-1">
-       <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg,#d4a020,#e8b530);">
-         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1209" stroke-width="2" stroke-linecap="round">
-          <path d="M12 2 C12 2 8 8 8 13 C8 17 10 20 12 22 C14 20 16 17 16 13 C16 8 12 2 12 2Z" /><line x1="12" y1="8" x2="12" y2="16" />
-         </svg>
+   <!-- footer -->
+    <footer
+      class="footer-wrap w-full h-full overflow-auto relative fade-section"
+      id="footer-root"
+    >
+      <!-- Decorative background threads -->
+      <svg
+        class="saffron-thread"
+        style="top: 10%; right: 5%; width: 120px"
+        viewbox="0 0 60 200"
+      >
+        <path
+          d="M30 0 Q35 50 25 100 Q15 150 30 200"
+          stroke="#d4a020"
+          fill="none"
+          stroke-width="1.5"
+        />
+      </svg>
+      <svg
+        class="saffron-thread"
+        style="bottom: 20%; left: 8%; width: 80px"
+        viewbox="0 0 60 200"
+      >
+        <path
+          d="M30 0 Q20 60 35 120 Q45 170 30 200"
+          stroke="#d4a020"
+          fill="none"
+          stroke-width="1.2"
+        />
+      </svg>
+      <div class="max-w-7xl mx-auto px-6 py-14 relative z-10">
+        <!-- Main Grid -->
+        <div
+          class="fade-section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12"
+        >
+          <!-- Brand -->
+          <div class="lg:col-span-1">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="rounded-full flex items-center justify-center"
+                style="min-width: 60px; height: 60px"
+              >
+                <img
+                  class="footer-brand-logo"
+                  src="Photos/logo/logo-no-bc.png"
+                  alt="Zafran logo"
+                />
+              </div>
+              <h2
+                class="brand-font text-2xl font-bold"
+                style="color: #ffc13b"
+                id="brand-name"
+              >
+                Merghob Saffron
+              </h2>
+            </div>
+            <p
+              class="text-sm leading-relaxed mb-5"
+              style="color: rgba(232, 220, 200, 0.65)"
+              id="tagline"
+            >
+              Pure Afghan Saffron harvested with care, delivered with trust. The
+              essence of authenticity in every thread.
+            </p>
+            <div class="flex items-center gap-2">
+              <div class="glow-dot"></div>
+              <span
+                class="text-xs tracking-widest uppercase"
+                style="color: rgba(212, 160, 32, 0.6)"
+                >Premium Quality</span
+              >
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h3
+              class="brand-font text-lg font-semibold mb-5"
+              style="color: #ffc13b"
+            >
+              Quick Links
+            </h3>
+            <nav class="flex flex-col gap-3">
+              <a
+                href="index.html"
+                class="nav-link text-sm"
+                onclick="event.preventDefault()"
+                >Home</a
+              >
+              <a
+                href="about.html"
+                class="nav-link text-sm"
+                onclick="event.preventDefault()"
+                >About Us</a
+              >
+              <a
+                href="service.html"
+                class="nav-link text-sm"
+                onclick="event.preventDefault()"
+                >Services</a
+              >
+              <a
+                href="gallery.html"
+                class="nav-link text-sm"
+                onclick="event.preventDefault()"
+                >Gallery</a
+              >
+              <a
+                href="contact.html"
+                class="nav-link text-sm"
+                onclick="event.preventDefault()"
+                >Contact</a
+              >
+            </nav>
+          </div>
+          <!-- Contact -->
+          <div>
+            <h3
+              class="brand-font text-lg font-semibold mb-5"
+              style="color: #ffc13b"
+            >
+              Get in Touch
+            </h3>
+            <div class="flex flex-col gap-4">
+              <div class="flex items-start gap-3">
+                <i
+                  class="fas fa-envelope"
+                  style="
+                    width: 18px;
+                    height: 18px;
+                    color: #d4a020;
+                    margin-top: 2px;
+                    flex-shrink: 0;
+                  "
+                ></i>
+                <span class="text-sm" style="color: #e8dcc8" id="email-text"
+                  >marghobheray@gmail.com</span
+                >
+              </div>
+              <div class="flex items-start gap-3">
+                <i
+                  class="fas fa-phone"
+                  style="
+                    width: 18px;
+                    height: 18px;
+                    color: #d4a020;
+                    margin-top: 2px;
+                    flex-shrink: 0;
+                  "
+                ></i>
+                <span class="text-sm" style="color: #e8dcc8" id="phone-text"
+                  >+93 795 808 155</span
+                >
+              </div>
+              <div class="flex items-start gap-3">
+                <i
+                  class="fas fa-map-marker-alt"
+                  style="
+                    width: 18px;
+                    height: 18px;
+                    color: #d4a020;
+                    margin-top: 2px;
+                    flex-shrink: 0;
+                  "
+                ></i>
+                <span class="text-sm" style="color: #e8dcc8" id="location-text"
+                  >Herat, Afghanistan</span
+                >
+              </div>
+            </div>
+            <!-- Social -->
+            <div class="flex gap-3 mt-6 items-center">
+              <a
+                href="https://instagram.com/marghob_heray_co"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="social-icon">
+                  <i
+                    class="fab fa-instagram text-center align-middle"
+                    style="width: 18px; height: 18px"
+                  ></i>
+                </div>
+              </a>
+              <a
+                href="https://facebook.com/marghobherayco"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="social-icon text-center align-middle">
+                  <i
+                    class="fab fa-facebook-f"
+                    style="width: 18px; height: 18px"
+                  ></i>
+                </div>
+              </a>
+              <a
+                href="https://wa.me/message/567LQQQKVJ7UB1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="social-icon text-center align-middle">
+                  <i
+                    class="fab fa-whatsapp"
+                    style="width: 18px; height: 18px"
+                  ></i>
+                </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/marghob-heray-agricultural-and-livestock-co/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="social-icon text-center align-middle">
+                  <i
+                    class="fab fa-linkedin"
+                    style="width: 18px; height: 18px"
+                  ></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Newsletter -->
+          <div>
+            <h3
+              class="brand-font text-lg font-semibold mb-5"
+              style="color: #ffc13b"
+            >
+              Stay Connected
+            </h3>
+            <p class="text-sm mb-4" style="color: rgba(232, 220, 200, 0.6)">
+              Get updates on new harvests, exclusive offers, and saffron
+              stories.
+            </p>
+            <form
+              id="subscribe-form"
+              class="flex"
+              onsubmit="event.preventDefault()"
+            >
+              <input
+                type="email"
+                class="subscribe-input"
+                placeholder="Your email address"
+                aria-label="Email for newsletter"
+              />
+              <button type="submit" class="subscribe-btn" id="sub-btn">
+                Subscribe
+              </button>
+            </form>
+            <p
+              class="text-xs mt-3 hidden"
+              id="sub-success"
+              style="color: #d4a020"
+            >
+              Thank you for subscribing!
+            </p>
+          </div>
         </div>
-        <h2 class="brand-font text-2xl font-bold" style="color:#ffc13b;" id="brand-name">Zafran</h2>
-       </div>
-       <p class="text-sm leading-relaxed mb-5" style="color:rgba(232,220,200,0.65);" id="tagline">Pure Afghan Saffron harvested with care, delivered with trust. The essence of authenticity in every thread.</p>
-       <div class="flex items-center gap-2">
-        <div class="glow-dot"></div><span class="text-xs tracking-widest uppercase" style="color:rgba(212,160,32,0.6);">Premium Quality</span>
-       </div>
+        <!-- Divider -->
+        <div class="divider-line mb-6 fade-section"></div>
+        <!-- Bottom Bar -->
+        <div
+          class="fade-section flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
+          style="color: rgba(232, 220, 200, 0.4)"
+        >
+          <span id="copyright-text">Â© 2025 Zafran. All rights reserved.</span>
+          <div class="flex gap-5">
+            <a
+              href="#"
+              class="nav-link text-xs"
+              onclick="event.preventDefault()"
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              class="nav-link text-xs"
+              onclick="event.preventDefault()"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
       </div>
-      <div>
-       <h3 class="brand-font text-lg font-semibold mb-5" style="color:#ffc13b;">Quick Links</h3>
-       <nav class="flex flex-col gap-3"><a href="index.html" class="nav-link text-sm">Home</a> <a href="about.html" class="nav-link text-sm">About Us</a> <a href="service.html" class="nav-link text-sm">Products</a> <a href="gallery.html" class="nav-link text-sm">Gallery</a> <a href="contact.html" class="nav-link text-sm">Contact</a>
-       </nav>
-      </div>
-      <div>
-       <h3 class="brand-font text-lg font-semibold mb-5" style="color:#ffc13b;">Get in Touch</h3>
-       <div class="flex flex-col gap-4">
-        <div class="flex items-start gap-3"><i data-lucide="mail" style="width:18px;height:18px;color:#d4a020;margin-top:2px;flex-shrink:0;"></i> <span class="text-sm" style="color:#e8dcc8;" id="email-text">info@zafran.com</span>
-        </div>
-        <div class="flex items-start gap-3"><i data-lucide="phone" style="width:18px;height:18px;color:#d4a020;margin-top:2px;flex-shrink:0;"></i> <span class="text-sm" style="color:#e8dcc8;" id="phone-text">+93 700 123 456</span>
-        </div>
-        <div class="flex items-start gap-3"><i data-lucide="map-pin" style="width:18px;height:18px;color:#d4a020;margin-top:2px;flex-shrink:0;"></i> <span class="text-sm" style="color:#e8dcc8;" id="location-text">Herat, Afghanistan</span>
-        </div>
-       </div>
-       <div class="flex gap-3 mt-6">
-        <div class="social-icon">
-         <i data-lucide="instagram" style="width:18px;height:18px;"></i>
-        </div>
-        <div class="social-icon">
-         <i data-lucide="facebook" style="width:18px;height:18px;"></i>
-        </div>
-        <div class="social-icon">
-         <i data-lucide="twitter" style="width:18px;height:18px;"></i>
-        </div>
-        <div class="social-icon">
-         <i data-lucide="youtube" style="width:18px;height:18px;"></i>
-        </div>
-       </div>
-      </div>
-      <div>
-       <h3 class="brand-font text-lg font-semibold mb-5" style="color:#ffc13b;">Stay Connected</h3>
-       <p class="text-sm mb-4" style="color:rgba(232,220,200,0.6);">Get updates on new harvests, exclusive offers, and saffron stories.</p>
-       <form id="subscribe-form" class="flex" onsubmit="event.preventDefault();"><input type="email" class="subscribe-input" placeholder="Your email address" aria-label="Email for newsletter"> <button type="submit" class="subscribe-btn" id="sub-btn">Subscribe</button>
-       </form>
-       <p class="text-xs mt-3 hidden" id="sub-success" style="color:#d4a020;">Thank you for subscribing!</p>
-      </div>
-     </div>
-     <div class="divider-line mb-6 fade-section"></div>
-     <div class="fade-section flex flex-col sm:flex-row items-center justify-between gap-3 text-xs" style="color:rgba(232,220,200,0.4);"><span id="copyright-text">© 2025 Zafran. All rights reserved.</span>
-      <div class="flex gap-5"><a href="#" class="nav-link text-xs" onclick="event.preventDefault()">Privacy Policy</a> <a href="#" class="nav-link text-xs" onclick="event.preventDefault()">Terms of Service</a>
-      </div>
-     </div>
-    </div>
-   </footer>
+    </footer>
   </div>
   <script src="javascript.js"></script>
-  <script>
-const galleryData = [
-  { id:1, cat:'fields', title:'Purple Fields at Dawn', img:'photos/Gallery/fields/pho1.jpg', desc:'Rows of crocus flowers stretch across the Herat highlands' },
-  { id:2, cat:'fields', title:'Mountain Terraces', img:'photos/Gallery/fields/pho2.jpg', desc:'Terraced saffron fields against the Hindu Kush backdrop' },
-  { id:3, cat:'harvesting', title:'Hand-Picking at Sunrise', img:'photos/Gallery/harvesting/pho1.jpg', desc:'Workers carefully harvest each delicate flower by hand' },
-  { id:4, cat:'harvesting', title:'Morning Harvest Baskets', img:'photos/Gallery/harvesting/pho2.jpg', desc:'Woven baskets overflow with freshly picked crocus blooms' },
-  { id:5, cat:'processing', title:'Separating the Stigma', img:'photos/Gallery/processing/pho1.jpg', desc:'Skilled hands separate the precious red stigma threads' },
-  { id:6, cat:'processing', title:'Traditional Drying', img:'photos/Gallery/processing/pho2.jpg', desc:'Saffron threads gently dried using time-honored methods' },
-  { id:7, cat:'packaging', title:'Premium Glass Jars', img:'photos/Gallery/packaging/pho1.jpg', desc:'Each jar carefully filled and sealed for freshness' },
-  { id:8, cat:'packaging', title:'Gift Box Collection', img:'photos/Gallery/packaging/pho2.jpg', desc:'Elegant presentation boxes for export markets' },
-  { id:11, cat:'fields', title:'Bloom Season Panorama', img:'photos/Gallery/fields/pho3.jpg', desc:'A sea of purple during peak flowering season' },
-  { id:12, cat:'harvesting', title:'Community Harvest Day', img:'photos/Gallery/harvesting/pho3.jpg', desc:'The whole village joins for the annual harvest' },
-  { id:13, cat:'processing', title:'Quality Inspection', img:'photos/Gallery/processing/pho3.jpg', desc:'Every batch tested for color, aroma, and purity' },
-  { id:15, cat:'packaging', title:'Export Ready Tins', img:'photos/Gallery/packaging/pho3.jpg', desc:'Hermetically sealed tins for international shipping' },
-  { id:16, cat:'fields', title:'Irrigation Channels', img:'photos/Gallery/fields/pho4.jpg', desc:'Ancient water systems feeding the saffron beds' },
-];
 
-let currentCat = 'all';
-let visibleCount = 8;
-let filteredItems = [];
-let lightboxIdx = 0;
-
-function getFiltered() {
-  return currentCat === 'all' ? galleryData : galleryData.filter(i => i.cat === currentCat);
-}
-
-function renderGallery() {
-  filteredItems = getFiltered();
-  const grid = document.getElementById('galleryGrid');
-  const showing = filteredItems.slice(0, visibleCount);
-  grid.innerHTML = '';
-
-  showing.forEach((item, idx) => {
-    const div = document.createElement('div');
-    const tall = idx % 5 === 0 || idx % 5 === 3;
-    div.className = `gallery-item rounded-xl overflow-hidden shadow-md cursor-pointer fade-up ${tall ? 'sm:row-span-2' : ''}`;
-    div.style.animationDelay = `${idx * 0.05}s`;
-    div.innerHTML = `
-      <div class="relative w-full h-full" style="min-height:${tall ? '340px' : '240px'}">
-        <img src="${item.img}" alt="" loading="lazy" class="w-full h-full object-cover" onerror="this.style.background='#C8963E'; this.alt='Image unavailable';">
-      </div>`;
-    div.onclick = () => openLightbox(filteredItems.indexOf(item));
-    grid.appendChild(div);
-  });
-
-  document.getElementById('loadMoreWrap').style.display = visibleCount >= filteredItems.length ? 'none' : 'block';
-  lucide.createIcons();
-}
-
-document.getElementById('filters').addEventListener('click', e => {
-  const btn = e.target.closest('.filter-btn');
-  if (!btn) return;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active', 'font-semibold', 'text-[#f4c563]', 'text-saffron-deep'));
-  document.querySelectorAll('.filter-btn').forEach(b => { b.classList.add('text-gray-500', 'font-medium'); b.classList.remove('font-semibold'); });
-  btn.classList.add('active', 'font-semibold', 'text-[#f4c563]');
-  btn.classList.remove('text-gray-500', 'font-medium');
-  currentCat = btn.dataset.cat;
-  visibleCount = 8;
-  renderGallery();
-});
-
-document.getElementById('loadMoreBtn').addEventListener('click', () => { visibleCount += 8; renderGallery(); });
-
-function openLightbox(idx) {
-  lightboxIdx = idx;
-  const lb = document.getElementById('lightbox');
-  lb.style.display = 'flex';
-  requestAnimationFrame(() => { lb.classList.remove('opacity-0', 'pointer-events-none'); lb.classList.add('opacity-100'); });
-  updateLightbox();
-}
-
-function closeLightbox() {
-  const lb = document.getElementById('lightbox');
-  lb.classList.remove('opacity-100');
-  lb.classList.add('opacity-0', 'pointer-events-none');
-  setTimeout(() => lb.style.display = 'none', 300);
-}
-
-function updateLightbox() {
-  const item = filteredItems[lightboxIdx];
-  if (!item) return;
-  const wrap = document.getElementById('lbImageWrap');
-  wrap.innerHTML = `<img src="${item.img}" alt="" loading="lazy" class="w-full h-auto rounded-xl" onerror="this.style.background='#C8963E'; this.alt='Image unavailable';">`;
-}
-
-document.getElementById('lbClose').onclick = closeLightbox;
-document.getElementById('lightbox').onclick = e => { if (e.target === document.getElementById('lightbox')) closeLightbox(); };
-document.getElementById('lbPrev').onclick = e => { e.stopPropagation(); lightboxIdx = (lightboxIdx - 1 + filteredItems.length) % filteredItems.length; updateLightbox(); };
-document.getElementById('lbNext').onclick = e => { e.stopPropagation(); lightboxIdx = (lightboxIdx + 1) % filteredItems.length; updateLightbox(); };
-document.addEventListener('keydown', e => {
-  if (document.getElementById('lightbox').style.display === 'none') return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowLeft') { lightboxIdx = (lightboxIdx - 1 + filteredItems.length) % filteredItems.length; updateLightbox(); }
-  if (e.key === 'ArrowRight') { lightboxIdx = (lightboxIdx + 1) % filteredItems.length; updateLightbox(); }
-});
-
-const defaultConfig = {
-  hero_title: 'Our Gallery',
-  hero_subtitle: 'From farm to final product.',
-  intro_heading: 'The Journey of Saffron',
-  intro_text: 'From the fertile fields of Herat province, our saffron undergoes a meticulous journey â€” hand-picked at dawn, carefully dried, and precisely packaged to preserve its extraordinary aroma, flavor, and color for markets around the world.',
-  background_color: '#120e0b',
-  surface_color: '#1a1209',
-  text_color: '#e8dcc8',
-  primary_action_color: '#b8460f',
-  accent_color: '#d4932d',
-  font_family: 'Montserrat',
-  font_size: 16
-};
-
-function applyConfig(config) {
-  const c = { ...defaultConfig, ...config };
-  document.getElementById('heroTitle').textContent = c.hero_title;
-  document.getElementById('heroSubtitle').textContent = c.hero_subtitle;
-  document.getElementById('introHeading').textContent = c.intro_heading;
-  document.getElementById('introText').textContent = c.intro_text;
-
-  document.body.style.fontFamily = `${c.font_family}, Montserrat, sans-serif`;
-  document.querySelectorAll('.font-display').forEach(el => el.style.fontFamily = 'Playfair Display, serif');
-
-  const base = c.font_size || 16;
-  document.getElementById('heroTitle').style.fontSize = '';
-  document.getElementById('introText').style.fontSize = `${base}px`;
-  document.getElementById('introHeading').style.fontSize = `${base * 2}px`;
-
-  document.getElementById('app').style.backgroundColor = 'transparent';
-  document.querySelectorAll('.filter-btn.active').forEach(b => b.style.color = '#f4c563');
-  document.getElementById('loadMoreBtn').style.borderColor = c.accent_color;
-  document.getElementById('loadMoreBtn').style.color = c.text_color;
-}
-
-window.elementSdk.init({
-  defaultConfig,
-  onConfigChange: async (config) => applyConfig(config),
-  mapToCapabilities: (config) => ({
-    recolorables: [
-      { get: () => config.background_color || defaultConfig.background_color, set: v => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); }},
-      { get: () => config.surface_color || defaultConfig.surface_color, set: v => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); }},
-      { get: () => config.text_color || defaultConfig.text_color, set: v => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); }},
-      { get: () => config.primary_action_color || defaultConfig.primary_action_color, set: v => { config.primary_action_color = v; window.elementSdk.setConfig({ primary_action_color: v }); }},
-      { get: () => config.accent_color || defaultConfig.accent_color, set: v => { config.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); }},
-    ],
-    borderables: [],
-    fontEditable: {
-      get: () => config.font_family || defaultConfig.font_family,
-      set: v => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); }
-    },
-    fontSizeable: {
-      get: () => config.font_size || defaultConfig.font_size,
-      set: v => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); }
-    }
-  }),
-  mapToEditPanelValues: (config) => new Map([
-    ['hero_title', config.hero_title || defaultConfig.hero_title],
-    ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
-    ['intro_heading', config.intro_heading || defaultConfig.intro_heading],
-    ['intro_text', config.intro_text || defaultConfig.intro_text],
-  ])
-});
-
-renderGallery();
-lucide.createIcons();
-</script>
+<script src="JavaScript/gallery.js"></script>
  </body>
 </html>
