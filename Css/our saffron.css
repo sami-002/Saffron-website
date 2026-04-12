@@ -416,14 +416,15 @@ input:checked + .cardo > .card-img {
 /* The Main White Card */
 .quality-card {
   background: rgba(26, 20, 16, 0.78);
-  padding: 30px 20px;
+  padding: 30px 20px 34px;
   border-radius: 12px;
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 130px; /* Smaller height for compact look */
+  gap: 1rem;
+  min-height: 170px;
   text-decoration: none;
   color: inherit;
   border: 1px solid rgba(212, 175, 55, 0.16);
@@ -446,7 +447,7 @@ input:checked + .cardo > .card-img {
 .card-icon {
   font-size: 40px;
   color: #d4af37;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   opacity: 0.8;
 }
 
@@ -456,7 +457,9 @@ input:checked + .cardo > .card-img {
   line-height: 1.4;
   color: #f5e6d0;
   margin: 0;
-  max-width: 85%;
+  max-width: calc(100% - 64px);
+  padding-inline-end: 0.25rem;
+  text-wrap: balance;
 }
 
 /* Circular Arrow Button */
@@ -485,6 +488,25 @@ input:checked + .cardo > .card-img {
 }
 .card-wrapper:hover .card-title {
   color: #f4c563;
+}
+
+html[dir="rtl"] .quality-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .card-icon {
+  align-self: flex-start;
+}
+
+html[dir="rtl"] .arrow-btn {
+  right: auto;
+  left: 15px;
+}
+
+html[dir="rtl"] .card-title {
+  max-width: calc(100% - 72px);
+  padding-inline-end: 0;
+  padding-inline-start: 0.25rem;
 }
 
 /* Responsive: Stack only on small tablets/mobiles */

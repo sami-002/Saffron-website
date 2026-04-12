@@ -110,7 +110,7 @@
                 EN
               </button>
               <button class="lang-btn" id="lang-dr" onclick="setLang('dr')">
-                دری
+                &#1583;&#1585;&#1740;
               </button>
             </div>
             <button
@@ -233,7 +233,7 @@
               closeMobileMenu();
             "
           >
-            Cart
+            <span data-i18n="cartLabel">Cart</span>
             <span class="cart-badge mobile-cart-badge" id="mobileCartBadge"
               >0</span
             >
@@ -262,18 +262,18 @@
                       margin-bottom: 12px;
                     "
                   >
-                    Women-Owned Since 2023
+                    <span data-i18n="shopHeroEyebrow">Women-Owned Since 2023</span>
                   </p>
                   <h1 class="font-display hero-title" id="heroTitle">
-                    Traceable Afghan<br /><span>Saffron</span>
+                    <span data-i18n="shopHeroTitleLine1">Traceable Afghan</span><br /><span data-i18n="shopHeroTitleLine2">Saffron</span>
                   </h1>
-                  <p class="hero-subtitle" id="heroSubtitle">
+                  <p class="hero-subtitle" id="heroSubtitle" data-i18n="shopHeroSubtitle">
                     Premium saffron from Herat, processed, dried, graded,
                     cleaned, and packaged by Marghob Heray Agricultural and
                     Livestock Company.
                   </p>
                   <button class="btn-primary" onclick="scrollToShop()">
-                    <span>Shop Now</span>
+                    <span data-i18n="shopNowButton">Shop Now</span>
                     <!-- <svg
                       viewbox="0 0 24 24"
                       fill="none"
@@ -381,14 +381,16 @@
                     margin-bottom: 0.5rem;
                   "
                   id="shopTitle"
+                  data-i18n="shopCollectionTitle"
                 >
                   Marghob Heray Collection
                 </h2>
-                <p style="opacity: 0.6; margin-bottom: 1.5rem">
+                <p style="opacity: 0.6; margin-bottom: 1.5rem" data-i18n="shopCollectionSubtitle">
                   Premium saffron from Marghob Heray Agricultural Company —
                   women-owned, quality-driven, from Herat
                 </p>
                 <div
+                  id="shopTrustLine"
                   style="
                     display: inline-block;
                     background: var(--bg2);
@@ -411,16 +413,16 @@
               id="filterBar"
               style="display: flex; flex-wrap: wrap; gap: 10px; padding: 0 15px"
             >
-              <button class="filter-pill active" data-filter="all">All</button>
-              <button class="filter-pill" data-filter="super_negin">
+              <button class="filter-pill active" data-filter="all" data-i18n="galleryFilterAll">All</button>
+              <button class="filter-pill" data-filter="super_negin" data-i18n="superNeginLabel">
                 Super Negin
               </button>
-              <button class="filter-pill" data-filter="negin">Negin</button>
-              <button class="filter-pill" data-filter="pushal">Pushal</button>
-              <button class="filter-pill" data-filter="pushal A">
+              <button class="filter-pill" data-filter="negin" data-i18n="neginLabel">Negin</button>
+              <button class="filter-pill" data-filter="pushal" data-i18n="pushalLabel">Pushal</button>
+              <button class="filter-pill" data-filter="pushal A" data-i18n="pushalGradeA">
                 Pushal Grade A
               </button>
-              <button class="filter-pill" data-filter="powder">
+              <button class="filter-pill" data-filter="powder" data-i18n="pushalGradeB">
                 Pushal Grade B
               </button>
             </div>
@@ -437,10 +439,10 @@
                   cursor: pointer;
                 "
               >
-                <option value="default">Sort: Featured</option>
-                <option value="low">Price: Low to High</option>
-                <option value="high">Price: High to Low</option>
-                <option value="rating">Top Rated</option>
+                <option value="default" data-i18n="sortFeatured">Sort: Featured</option>
+                <option value="low" data-i18n="sortLowHigh">Price: Low to High</option>
+                <option value="high" data-i18n="sortHighLow">Price: High to Low</option>
+                <option value="rating" data-i18n="sortTopRated">Top Rated</option>
               </select>
             </div>
             <div
@@ -466,7 +468,7 @@
               class="text-center py-5"
               style="display: none; opacity: 0.5"
             >
-              No products found
+              <span data-i18n="noProductsFound">No products found</span>
             </p>
           </div>
         </section>
@@ -510,7 +512,7 @@
                     <line x1="19" y1="12" x2="5" y2="12" />
                     <polyline points="12 19 5 12 12 5" />
                   </svg>
-                  Back to Shop
+                  <span data-i18n="backToShop">Back to Shop</span>
                 </button>
               </div>
             </div>
@@ -533,7 +535,7 @@
                       margin-bottom: 24px;
                     "
                   >
-                    Your Cart
+                    <span data-i18n="yourCartTitle">Your Cart</span>
                   </h2>
                   <div id="cartItemsList"></div>
                 </div>
@@ -558,7 +560,7 @@
                       margin-bottom: 20px;
                     "
                   >
-                    Order Summary
+                    <span data-i18n="orderSummaryTitle">Order Summary</span>
                   </h3>
                   <div
                     id="orderSummary"
@@ -577,12 +579,12 @@
                     "
                   >
                     <div class="d-flex justify-content-between mb-2">
-                      <span style="opacity: 0.6">Subtotal</span>
+                      <span style="opacity: 0.6" data-i18n="subtotalLabel">Subtotal</span>
                       <span id="summarySubtotal">0 AFS</span>
                     </div>
                     <div class="d-flex justify-content-between mb-3">
-                      <span style="opacity: 0.6">Shipping</span>
-                      <span id="summaryShipping">Negotiable</span>
+                      <span style="opacity: 0.6" data-i18n="shippingLabel">Shipping</span>
+                      <span id="summaryShipping" data-i18n="negotiableLabel">Negotiable</span>
                     </div>
                     <div
                       style="
@@ -594,7 +596,7 @@
                         class="d-flex justify-content-between"
                         style="font-weight: 700; font-size: 1.1rem"
                       >
-                        <span>Total</span> <span id="summaryTotal">0 AFS</span>
+                        <span data-i18n="totalLabel">Total</span> <span id="summaryTotal">0 AFS</span>
                       </div>
                     </div>
                   </div>
@@ -608,11 +610,13 @@
                           font-size: 0.9rem;
                         "
                         id="fullNameLabel"
+                        data-i18n="fullNameLabel"
                         >Full Name</label
                       >
                       <input
                         type="text"
                         id="fullName"
+                        data-i18n="fullNamePlaceholder"
                         placeholder="John Doe"
                         style="
                           width: 100%;
@@ -635,11 +639,13 @@
                           font-size: 0.9rem;
                         "
                         id="phoneLabel"
+                        data-i18n="phoneNumberLabel"
                         >Phone Number</label
                       >
                       <input
                         type="tel"
                         id="phone"
+                        data-i18n="phonePlaceholder"
                         placeholder="+9370000000"
                         style="
                           width: 100%;
@@ -662,10 +668,12 @@
                           font-size: 0.9rem;
                         "
                         id="addressLabel"
+                        data-i18n="deliveryAddressLabel"
                         >Delivery Address</label
                       >
                       <textarea
                         id="address"
+                        data-i18n="addressPlaceholder"
                         placeholder="123 Main Street, City, Country"
                         style="
                           width: 100%;
@@ -692,7 +700,7 @@
                       "
                       id="placeOrderBtn"
                     >
-                      <span>Place Order</span>
+                      <span data-i18n="placeOrderButton">Place Order</span>
                     </button>
                   </form>
                   <!-- Success Message -->
@@ -724,7 +732,7 @@
                       />
                     </svg>
                     <p style="margin: 0; font-weight: 600">
-                      Order Placed Successfully!
+                      <span data-i18n="orderPlacedSuccess">Order Placed Successfully!</span>
                     </p>
                   </div>
                 </div>
@@ -744,7 +752,7 @@
             d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
           />
         </svg>
-        <span id="toastText">Added to cart!</span>
+        <span id="toastText" data-i18n="addedToCartToast">Added to cart!</span>
       </div>
       <!-- footer -->
       <footer
@@ -798,6 +806,7 @@
                   class="brand-font text-2xl font-bold"
                   style="color: #ffc13b"
                   id="brand-name"
+                  data-i18n="footerBrandName"
                 >
                   Merghob Saffron
                 </h2>
@@ -806,6 +815,7 @@
                 class="text-sm leading-relaxed mb-5"
                 style="color: rgba(232, 220, 200, 0.65)"
                 id="tagline"
+                data-i18n="footerTagline"
               >
                 Pure Afghan Saffron harvested with care, delivered with trust.
                 The essence of authenticity in every thread.
@@ -815,6 +825,7 @@
                 <span
                   class="text-xs tracking-widest uppercase"
                   style="color: rgba(212, 160, 32, 0.6)"
+                  data-i18n="premiumQuality"
                   >Premium Quality</span
                 >
               </div>
@@ -824,6 +835,7 @@
               <h3
                 class="brand-font text-lg font-semibold mb-5"
                 style="color: #ffc13b"
+                data-i18n="quickLinks"
               >
                 Quick Links
               </h3>
@@ -865,6 +877,7 @@
               <h3
                 class="brand-font text-lg font-semibold mb-5"
                 style="color: #ffc13b"
+                data-i18n="getInTouch"
               >
                 Get in Touch
               </h3>
@@ -914,6 +927,7 @@
                     class="text-sm"
                     style="color: #e8dcc8"
                     id="location-text"
+                    data-i18n="locationText"
                     >Herat, Afghanistan</span
                   >
                 </div>
@@ -975,10 +989,11 @@
               <h3
                 class="brand-font text-lg font-semibold mb-5"
                 style="color: #ffc13b"
+                data-i18n="stayConnected"
               >
                 Stay Connected
               </h3>
-              <p class="text-sm mb-4" style="color: rgba(232, 220, 200, 0.6)">
+              <p class="text-sm mb-4" style="color: rgba(232, 220, 200, 0.6)" data-i18n="newsletterText">
                 Get updates on new harvests, exclusive offers, and saffron
                 stories.
               </p>
@@ -990,10 +1005,11 @@
                 <input
                   type="email"
                   class="subscribe-input"
+                  data-i18n="newsletterPlaceholder"
                   placeholder="Your email address"
                   aria-label="Email for newsletter"
                 />
-                <button type="submit" class="subscribe-btn" id="sub-btn">
+                <button type="submit" class="subscribe-btn" id="sub-btn" data-i18n="subscribe">
                   Subscribe
                 </button>
               </form>
@@ -1001,6 +1017,7 @@
                 class="text-xs mt-3 hidden"
                 id="sub-success"
                 style="color: #d4a020"
+                data-i18n="subscribeSuccess"
               >
                 Thank you for subscribing!
               </p>
@@ -1013,7 +1030,7 @@
             class="fade-section flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
             style="color: rgba(232, 220, 200, 0.4)"
           >
-            <span id="copyright-text"
+            <span id="copyright-text" data-i18n="copyrightText"
               >Â© 2025 Zafran. All rights reserved.</span
             >
             <div class="flex gap-5">
@@ -1021,12 +1038,14 @@
                 href="#"
                 class="nav-link text-xs"
                 onclick="event.preventDefault()"
+                data-i18n="privacyPolicy"
                 >Privacy Policy</a
               >
               <a
                 href="#"
                 class="nav-link text-xs"
                 onclick="event.preventDefault()"
+                data-i18n="termsOfService"
                 >Terms of Service</a
               >
             </div>

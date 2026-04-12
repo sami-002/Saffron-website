@@ -98,7 +98,7 @@ const defaultConfig = {
   hero_title: 'Our Gallery',
   hero_subtitle: 'From farm to final product.',
   intro_heading: 'The Journey of Saffron',
-  intro_text: 'From the fertile fields of Herat province, our saffron undergoes a meticulous journey â€” hand-picked at dawn, carefully dried, and precisely packaged to preserve its extraordinary aroma, flavor, and color for markets around the world.',
+  intro_text: 'From the fertile fields of Herat province, our saffron undergoes a meticulous journey — hand-picked at dawn, carefully dried, and precisely packaged to preserve its extraordinary aroma, flavor, and color for markets around the world.',
   background_color: '#120e0b',
   surface_color: '#1a1209',
   text_color: '#e8dcc8',

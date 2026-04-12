@@ -86,7 +86,7 @@
               EN
             </button>
             <button class="lang-btn" id="lang-dr" onclick="setLang('dr')">
-              دری
+              &#1583;&#1585;&#1740;
             </button>
           </div>
           <button
@@ -191,7 +191,7 @@
    
   <section class="team-section my-5">
     <div class="container text-center">
-      <h2 class="team-title my-3">MEET OUR TEAM</h2>
+      <h2 class="team-title my-3" data-i18n="teamTitle">MEET OUR TEAM</h2>
       <div class="title-underline mx-auto" aria-hidden="true"></div>
 
       <div class="team-row mt-4">
@@ -200,7 +200,7 @@
           <img class="avatar float" src="Photos/Team/pho2.jpg" alt="Arik Smith">
           <div class="card-body">
             <div class="name">Merghoba Taimori</div>
-            <div class="desc">Founder & CEO of Merghob Heray Saffron</div>
+            <div class="desc" data-i18n="founderCeo">Founder & CEO of Merghob Heray Saffron</div>
             <div class="socials">
               <a class="social-btn" href="#" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
@@ -220,7 +220,7 @@
           <img class="avatar float" src="Photos/Team/pho1.jpg" alt="Arik Smith">
           <div class="card-body">
             <div class="name">Master Ahmad Salehi</div>
-            <div class="desc">Vice Manager</div>
+            <div class="desc" data-i18n="viceManager">Vice Manager</div>
             <div class="socials">
               <a class="social-btn" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
               <a class="social-btn" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -234,7 +234,7 @@
           <img class="avatar float" src="Photos/Team/pho3.jpg" alt="Arik Smith">
           <div class="card-body">
             <div class="name">Yasin Noori</div>
-            <div class="desc">Financial Manager</div>
+            <div class="desc" data-i18n="financialManager">Financial Manager</div>
             <div class="socials">
               <a class="social-btn" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
               <a class="social-btn" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -248,7 +248,7 @@
           <img class="avatar float" src="Photos/Team/pho4.jpg" alt="Arik Smith">
           <div class="card-body">
             <div class="name">Sheima Salehi</div>
-            <div class="desc">Office Manager</div>
+            <div class="desc" data-i18n="officeManager">Office Manager</div>
             <div class="socials">
               <a class="social-btn" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
               <a class="social-btn" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -313,6 +313,7 @@
                 class="brand-font text-2xl font-bold"
                 style="color: #ffc13b"
                 id="brand-name"
+                data-i18n="footerBrandName"
               >
                 Merghob Saffron
               </h2>
@@ -321,6 +322,7 @@
               class="text-sm leading-relaxed mb-5"
               style="color: rgba(232, 220, 200, 0.65)"
               id="tagline"
+              data-i18n="footerTagline"
             >
               Pure Afghan Saffron harvested with care, delivered with trust. The
               essence of authenticity in every thread.
@@ -330,6 +332,7 @@
               <span
                 class="text-xs tracking-widest uppercase"
                 style="color: rgba(212, 160, 32, 0.6)"
+                data-i18n="premiumQuality"
                 >Premium Quality</span
               >
             </div>
@@ -339,6 +342,7 @@
             <h3
               class="brand-font text-lg font-semibold mb-5"
               style="color: #ffc13b"
+              data-i18n="quickLinks"
             >
               Quick Links
             </h3>
@@ -380,6 +384,7 @@
             <h3
               class="brand-font text-lg font-semibold mb-5"
               style="color: #ffc13b"
+              data-i18n="getInTouch"
             >
               Get in Touch
             </h3>
@@ -425,7 +430,7 @@
                     flex-shrink: 0;
                   "
                 ></i>
-                <span class="text-sm" style="color: #e8dcc8" id="location-text"
+                <span class="text-sm" style="color: #e8dcc8" id="location-text" data-i18n="locationText"
                   >Herat, Afghanistan</span
                 >
               </div>
@@ -487,10 +492,11 @@
             <h3
               class="brand-font text-lg font-semibold mb-5"
               style="color: #ffc13b"
+              data-i18n="stayConnected"
             >
               Stay Connected
             </h3>
-            <p class="text-sm mb-4" style="color: rgba(232, 220, 200, 0.6)">
+            <p class="text-sm mb-4" style="color: rgba(232, 220, 200, 0.6)" data-i18n="newsletterText">
               Get updates on new harvests, exclusive offers, and saffron
               stories.
             </p>
@@ -502,10 +508,11 @@
               <input
                 type="email"
                 class="subscribe-input"
+                data-i18n="newsletterPlaceholder"
                 placeholder="Your email address"
                 aria-label="Email for newsletter"
               />
-              <button type="submit" class="subscribe-btn" id="sub-btn">
+              <button type="submit" class="subscribe-btn" id="sub-btn" data-i18n="subscribe">
                 Subscribe
               </button>
             </form>
@@ -513,6 +520,7 @@
               class="text-xs mt-3 hidden"
               id="sub-success"
               style="color: #d4a020"
+              data-i18n="subscribeSuccess"
             >
               Thank you for subscribing!
             </p>
@@ -525,18 +533,20 @@
           class="fade-section flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
           style="color: rgba(232, 220, 200, 0.4)"
         >
-          <span id="copyright-text">Â© 2025 Zafran. All rights reserved.</span>
+          <span id="copyright-text" data-i18n="copyrightText">Â© 2025 Zafran. All rights reserved.</span>
           <div class="flex gap-5">
             <a
               href="#"
               class="nav-link text-xs"
               onclick="event.preventDefault()"
+              data-i18n="privacyPolicy"
               >Privacy Policy</a
             >
             <a
               href="#"
               class="nav-link text-xs"
               onclick="event.preventDefault()"
+              data-i18n="termsOfService"
               >Terms of Service</a
             >
           </div>

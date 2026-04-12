@@ -123,6 +123,7 @@
   margin: 0;
   padding: 0;
   flex: 1;
+  flex-wrap: nowrap;
   justify-content: center;
 }
 .nav-item {
@@ -144,6 +145,7 @@
   cursor: pointer;
   background: none;
   border: none;
+  white-space: nowrap;
   transition: color 0.3s ease;
   font-family: "Montserrat", sans-serif;
 }

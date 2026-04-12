@@ -123,7 +123,7 @@
               EN
             </button>
             <button class="lang-btn" id="lang-dr" onclick="setLang('dr')">
-              دری
+              &#1583;&#1585;&#1740;
             </button>
           </div>
           <button
@@ -228,8 +228,8 @@
     <!-- Header -->
     <section class="py-5 mt-5 text-center fade-in-section">
       <div class="container pt-5">
-        <h1 class="display-4 fw-bold">Get in Touch</h1>
-        <p class="lead">
+        <h1 class="display-4 fw-bold" data-i18n="contactHeaderTitle">Get in Touch</h1>
+        <p class="lead" data-i18n="contactHeaderText">
           We reply within 24 hours. Have a question about our saffron or an
           order? We're here to help.
         </p>
@@ -242,10 +242,10 @@
         <div class="row g-5">
           <!-- Left: Form -->
           <div class="col-lg-6">
-            <h2 class="mb-4">Send Us a Message</h2>
+            <h2 class="mb-4" data-i18n="sendUsMessage">Send Us a Message</h2>
             <form id="contactForm" class="needs-validation" novalidate>
               <div class="mb-3">
-                <label for="name" class="form-label"
+                <label for="name" class="form-label" data-i18n="nameLabel"
                   >Name <span class="text-danger">*</span></label
                 >
                 <input
@@ -255,10 +255,10 @@
                   required
                   aria-required="true"
                 />
-                <div class="invalid-feedback">Please enter your name.</div>
+                <div class="invalid-feedback" data-i18n="nameFeedback">Please enter your name.</div>
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label"
+                <label for="email" class="form-label" data-i18n="email"
                   >Email <span class="text-danger">*</span></label
                 >
                 <input
@@ -271,7 +271,7 @@
                 <div class="invalid-feedback">Please enter a valid email.</div>
               </div>
               <div class="mb-3">
-                <label for="message" class="form-label"
+                <label for="message" class="form-label" data-i18n="message"
                   >Message <span class="text-danger">*</span></label
                 >
                 <textarea
@@ -289,14 +289,14 @@
                   id="progress"
                   role="status"
                 >
-                  <span class="visually-hidden">Sending...</span>
+                  <span class="visually-hidden" data-i18n="sendingLabel">Sending...</span>
                 </div>
                 <button
                   type="submit"
                   class="btn btn-saffron btn-lg px-5"
                   id="submitBtn"
                 >
-                  Send Message
+                  <span data-i18n="sendMessage">Send Message</span>
                 </button>
               </div>
               <div
@@ -304,15 +304,15 @@
                 class="alert success-msg mt-3 d-none"
                 role="alert"
               >
-                <i class="bi bi-check-circle-fill me-2"></i> Thank you! Your
-                message has been sent. We'll reply within 24 hours.
+                <i class="bi bi-check-circle-fill me-2"></i> <span data-i18n="contactSuccessMessage">Thank you! Your
+                message has been sent. We'll reply within 24 hours.</span>
               </div>
             </form>
           </div>
 
           <!-- Right: Contact Info + Map -->
           <div class="col-lg-6">
-            <h2 class="mb-4">Our Details</h2>
+            <h2 class="mb-4" data-i18n="ourDetailsTitle">Our Details</h2>
             <p class="lead mb-4">Marghob Heray<br />Herat, Afghanistan</p>
             <ul class="list-unstyled mb-5">
               <li class="mb-3 contact-method">
@@ -339,7 +339,7 @@
               </li>
             </ul>
 
-            <h3 class="mb-3">Find Us</h3>
+            <h3 class="mb-3" data-i18n="findUsTitle">Find Us</h3>
             <!-- Google Maps Embed (customize in https://www.google.com/maps → Share → Embed map) -->
             <div class="ratio ratio-16x9 rounded shadow">
               <iframe
@@ -353,7 +353,7 @@
                 title="Map showing Herat, Afghanistan"
               ></iframe>
             </div>
-            <p class="text-muted mt-2 small">
+            <p class="text-muted mt-2 small" data-i18n="contactLocationNote">
               Representative location: Herat, Afghanistan. Contact us for exact
               details.
             </p>
@@ -365,7 +365,7 @@
     <!-- FAQ Accordion -->
     <section class="py-5 faq-section fade-in-section">
       <div class="container">
-        <h2 class="text-center mb-5 display-5">Frequently Asked Questions</h2>
+        <h2 class="text-center mb-5 display-5" data-i18n="faqTitle">Frequently Asked Questions</h2>
         <div class="accordion" id="faqAccordion">
           <div class="accordion-item">
             <h2 class="accordion-header">
@@ -375,7 +375,7 @@
                 data-bs-toggle="collapse"
                 data-bs-target="#faq1"
               >
-                How long does shipping take?
+                <span data-i18n="faq1Question">What makes your saffron different?</span>
               </button>
             </h2>
             <div
@@ -384,9 +384,12 @@
               data-bs-parent="#faqAccordion"
             >
               <div class="accordion-body">
-                Standard shipping within the US takes 3–7 business days.
-                International orders typically arrive in 7–14 days, depending on
-                customs.
+                <span data-i18n="faq1Answer">Our saffron is 100% pure, hand-harvested in Herat, Afghanistan.
+                We use traditional methods to ensure the highest quality and
+                flavor. Each thread is carefully selected for its aroma, color,
+                and taste, making it a premium choice for culinary and medicinal
+                use.</span>
+               
               </div>
             </div>
           </div>
@@ -398,7 +401,7 @@
                 data-bs-toggle="collapse"
                 data-bs-target="#faq2"
               >
-                How to identify pure saffron?
+                <span data-i18n="faq2Question">How to identify pure saffron?</span>
               </button>
             </h2>
             <div
@@ -407,11 +410,11 @@
               data-bs-parent="#faqAccordion"
             >
               <div class="accordion-body">
-                Real saffron: Releases golden-yellow color slowly in warm water
+                <span data-i18n="faq2Answer">Real saffron: Releases golden-yellow color slowly in warm water
                 (15+ min), smells sweet/aromatic, tastes slightly bitter,
                 threads are trumpet-shaped and turn skin yellow when rubbed.
                 Fake: Colors water red instantly, no aroma, sweet taste, uniform
-                thin threads.
+                thin threads.</span>
               </div>
             </div>
           </div>
@@ -423,7 +426,7 @@
                 data-bs-toggle="collapse"
                 data-bs-target="#faq3"
               >
-                What is your return policy?
+                <span data-i18n="faq3Question">What is your return policy?</span>
               </button>
             </h2>
             <div
@@ -432,8 +435,8 @@
               data-bs-parent="#faqAccordion"
             >
               <div class="accordion-body">
-                We accept returns within 14 days for unopened products. Contact
-                us to start the process.
+                <span data-i18n="faq3Answer">We accept returns within 14 days for unopened products. Contact
+                us to start the process.</span>
               </div>
             </div>
           </div>
@@ -493,6 +496,7 @@
                 class="brand-font text-2xl font-bold"
                 style="color: #ffc13b"
                 id="brand-name"
+                data-i18n="footerBrandName"
               >
                 Merghob Saffron
               </h2>
@@ -501,6 +505,7 @@
               class="text-sm leading-relaxed mb-5"
               style="color: rgba(232, 220, 200, 0.65)"
               id="tagline"
+              data-i18n="footerTagline"
             >
               Pure Afghan Saffron harvested with care, delivered with trust. The
               essence of authenticity in every thread.
@@ -510,6 +515,7 @@
               <span
                 class="text-xs tracking-widest uppercase"
                 style="color: rgba(212, 160, 32, 0.6)"
+                data-i18n="premiumQuality"
                 >Premium Quality</span
               >
             </div>
@@ -519,6 +525,7 @@
             <h3
               class="brand-font text-lg font-semibold mb-5"
               style="color: #ffc13b"
+              data-i18n="quickLinks"
             >
               Quick Links
             </h3>
@@ -560,6 +567,7 @@
             <h3
               class="brand-font text-lg font-semibold mb-5"
               style="color: #ffc13b"
+              data-i18n="getInTouch"
             >
               Get in Touch
             </h3>
@@ -605,7 +613,7 @@
                     flex-shrink: 0;
                   "
                 ></i>
-                <span class="text-sm" style="color: #e8dcc8" id="location-text"
+                <span class="text-sm" style="color: #e8dcc8" id="location-text" data-i18n="locationText"
                   >Herat, Afghanistan</span
                 >
               </div>
@@ -667,10 +675,11 @@
             <h3
               class="brand-font text-lg font-semibold mb-5"
               style="color: #ffc13b"
+              data-i18n="stayConnected"
             >
               Stay Connected
             </h3>
-            <p class="text-sm mb-4" style="color: rgba(232, 220, 200, 0.6)">
+            <p class="text-sm mb-4" style="color: rgba(232, 220, 200, 0.6)" data-i18n="newsletterText">
               Get updates on new harvests, exclusive offers, and saffron
               stories.
             </p>
@@ -682,10 +691,11 @@
               <input
                 type="email"
                 class="subscribe-input"
+                data-i18n="newsletterPlaceholder"
                 placeholder="Your email address"
                 aria-label="Email for newsletter"
               />
-              <button type="submit" class="subscribe-btn" id="sub-btn">
+              <button type="submit" class="subscribe-btn" id="sub-btn" data-i18n="subscribe">
                 Subscribe
               </button>
             </form>
@@ -693,6 +703,7 @@
               class="text-xs mt-3 hidden"
               id="sub-success"
               style="color: #d4a020"
+              data-i18n="subscribeSuccess"
             >
               Thank you for subscribing!
             </p>
@@ -705,18 +716,20 @@
           class="fade-section flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
           style="color: rgba(232, 220, 200, 0.4)"
         >
-          <span id="copyright-text">Â© 2025 Zafran. All rights reserved.</span>
+          <span id="copyright-text" data-i18n="copyrightText">Â© 2025 Zafran. All rights reserved.</span>
           <div class="flex gap-5">
             <a
               href="#"
               class="nav-link text-xs"
               onclick="event.preventDefault()"
+              data-i18n="privacyPolicy"
               >Privacy Policy</a
             >
             <a
               href="#"
               class="nav-link text-xs"
               onclick="event.preventDefault()"
+              data-i18n="termsOfService"
               >Terms of Service</a
             >
           </div>

@@ -146,7 +146,125 @@
 
       let cart = [],
         currentFilter = "all",
-        currentPage = "shop";
+        currentPage = "shop",
+        activeModalProductId = null;
+
+      const SHOP_UI = {
+        en: {
+          addToCart: "Add to Cart",
+          addedToCart: "Added to cart!",
+          cartEmpty: "Your cart is empty",
+          cartEmptyToast: "Cart is empty",
+          fillAllFields: "Please fill all fields",
+          remove: "Remove",
+          weight: "Weight",
+        },
+        dr: {
+          addToCart: "افزودن به سبد",
+          addedToCart: "به سبد خرید افزوده شد!",
+          cartEmpty: "سبد خرید شما خالی است",
+          cartEmptyToast: "سبد خرید خالی است",
+          fillAllFields: "لطفاً همه بخش‌ها را تکمیل کنید",
+          remove: "حذف",
+          weight: "وزن",
+        },
+      };
+
+      const SHOP_PRODUCT_TEXT = {
+        dr: {
+          1: {
+            name: "سوپر نگین",
+            badge: "کیفیت ممتاز",
+            desc: "رشته‌های سوپر نگین درجه الف از مرغهوب هری با خلوص بسیار بالا، رنگ سرخ درخشان و عطر اصیل هرات. سطح کروسین: ۲۷۰+. به‌صورت دستی برای بهترین کیفیت انتخاب شده است.",
+          },
+          2: {
+            name: "سوپر نگین",
+            badge: "بهترین ارزش",
+            desc: "سوپر نگین درجه ب با معیارهای عالی کیفیت. رنگ و عطر ممتاز برای آشپزی و استفاده سنتی. سطح کروسین: ۲۵۰+.",
+          },
+          3: {
+            name: "نگین منتخب",
+            badge: "محبوب",
+            desc: "زعفران نگین استاندارد از تعاونی‌های زنان کشاورز هرات با کیفیت یکنواخت و طعم غنی. مناسب برای استفاده روزانه در آشپزی. سطح کروسین: ۲۳۰+.",
+          },
+          4: {
+            name: "نگین عمده ۵ گرمی",
+            badge: "بسته اقتصادی",
+            desc: "۵ گرم زعفران نگین باکیفیت با قیمت مناسب برای رستورانت‌ها، آشپزان حرفه‌ای و مصرف تجارتی.",
+          },
+          5: {
+            name: "رشته پوشال ممتاز",
+            badge: null,
+            desc: "زعفران پوشال با کیفیت برتر و طعم اصیل و غنی که ماندگاری رنگ بسیار خوبی نیز دارد.",
+          },
+          6: {
+            name: "پوشال عمده ۲.۵ کیلوگرمی",
+            badge: "تجارتی",
+            desc: "۲.۵ کیلوگرم زعفران پوشال برای استفاده تجارتی.",
+          },
+          7: {
+            name: "پوشال ممتاز",
+            badge: "بهترین پوشال",
+            desc: "زعفران پوشال درجه الف با رشته‌های ضخیم، بیشتر سرخ، پاک و بلند. این رشته‌ها یکنواخت هستند، شکستگی کمی دارند و رنگ و عطر قوی ایجاد می‌کنند.",
+          },
+          8: {
+            name: "پوشال درجه الف عمده ۵۰۰ گرمی",
+            badge: "درجه رستورانی",
+            desc: "۵۰۰ گرم زعفران پوشال درجه الف برای آشپزخانه‌های حرفه‌ای.",
+          },
+          9: {
+            name: "پوشال درجه ب",
+            badge: "فرآوری‌شده",
+            desc: "رشته‌ها نازک‌تر و کوتاه‌تر هستند و بخش‌های زرد یا سفید بیشتری دارند. قدرت آن کمتر است اما همچنان طعم خوبی ارائه می‌دهد.",
+          },
+          10: {
+            name: "پوشال درجه ب عمده ۳۰ گرمی",
+            badge: "استفاده آسان",
+            desc: "۳۰ گرم زعفران پوشال درجه ب برای استفاده آسان در آشپزی و شیرینی‌پزی.",
+          },
+        },
+      };
+
+      function getShopLang() {
+        try {
+          return (
+            localStorage.getItem("zafaran-lang") ||
+            document.documentElement.lang ||
+            "en"
+          );
+        } catch (e) {
+          return document.documentElement.lang || "en";
+        }
+      }
+
+      function shopText(key) {
+        const lang = getShopLang();
+        return SHOP_UI[lang]?.[key] || SHOP_UI.en[key] || key;
+      }
+
+      function localizeProduct(product) {
+        const lang = getShopLang();
+        const translated = SHOP_PRODUCT_TEXT[lang]?.[product.id];
+        return translated ? { ...product, ...translated } : product;
+      }
+
+      function getSharedTranslation(key) {
+        const lang = getShopLang();
+        if (typeof TRANSLATIONS === "undefined") {
+          return "";
+        }
+
+        return TRANSLATIONS[lang]?.[key] || TRANSLATIONS.en?.[key] || "";
+      }
+
+      function renderShopTrustLine() {
+        const trustLine = document.getElementById("shopTrustLine");
+        if (!trustLine) return;
+
+        trustLine.textContent =
+          getSharedTranslation("shopTrustLine") ||
+          "Women-Owned - Lab-Tested - Direct from Herat";
+      }
 
       // ===== STORAGE =====
       function saveCart() {
@@ -281,27 +399,28 @@
           : "block";
 
         grid.innerHTML = filtered
-          .map(
-            (p, i) => `
+          .map((p, i) => {
+            const item = localizeProduct(p);
+            return `
         <div class="product-card reveal${i < 8 ? " visible" : ""}" style="animation-delay: ${i * 80}ms">
           <div class="card-img-wrap" style="cursor: pointer; background: linear-gradient(135deg, var(--bg2), var(--bg));" onclick="openModal(${p.id})">
-            ${p.badge ? `<span class="card-badge">${p.badge}</span>` : ""}
+            ${item.badge ? `<span class="card-badge">${item.badge}</span>` : ""}
             ${buildProductImage(p)}
           </div>
           <div class="card-body">
-            <h3 class="card-title">${p.name}</h3>
+            <h3 class="card-title">${item.name}</h3>
             <div class="card-rating">${stars(p.rating)}</div>
             <div class="d-flex align-items-center justify-content-between">
               <span class="card-price">${formatPrice(p.price)}</span>
               <button class="btn-primary" style="padding: 8px 14px; font-size: 0.8rem; gap: 4px;" onclick="addToCart(${p.id})">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;display:inline"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-                <span>Add to Cart</span>
+                <span>${shopText("addToCart")}</span>
               </button>
             </div>
           </div>
         </div>
-      `,
-          )
+      `;
+          })
           .join("");
         attachProductImageFallbacks(grid);
         observeReveal();
@@ -310,6 +429,9 @@
       function openModal(id) {
         const p = products.find((x) => x.id === id);
         if (!p) return;
+
+        activeModalProductId = p.id;
+        const item = localizeProduct(p);
         const m = document.getElementById("modalBody");
         m.innerHTML = `
         <button class="modal-close" onclick="closeModal()">
@@ -321,17 +443,17 @@
           ${buildProductImage(p, "modal")}
         </div>
         <div class="modal-body">
-          ${p.badge ? `<span style="background: var(--primary); color: white; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 6px; display: inline-block; margin-bottom: 8px;">${p.badge}</span>` : ""}
-          <h2 class="font-display" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">${p.name}</h2>
+          ${item.badge ? `<span style="background: var(--primary); color: white; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 6px; display: inline-block; margin-bottom: 8px;">${item.badge}</span>` : ""}
+          <h2 class="font-display" style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">${item.name}</h2>
           <div class="card-rating mb-2">${stars(p.rating)}<span style="opacity: 0.5; font-size: 0.8rem; margin-left: 8px;">(${p.rating})</span></div>
-          <p style="opacity: 0.7; line-height: 1.7; margin-bottom: 1rem;">${p.desc}</p>
+          <p style="opacity: 0.7; line-height: 1.7; margin-bottom: 1rem;">${item.desc}</p>
           <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 1.25rem;">
             <span style="font-size: 1.75rem; font-weight: 700; color: var(--primary);">${formatPrice(p.price)}</span>
-            <span style="opacity: 0.5; font-size: 0.8rem;">Weight: ${p.weight}</span>
+            <span style="opacity: 0.5; font-size: 0.8rem;">${shopText("weight")}: ${p.weight}</span>
           </div>
           <button class="btn-primary w-100" style="padding: 12px 28px; font-size: 0.95rem;" onclick="addToCart(${p.id}); closeModal();">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;display:inline"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-            <span>Add to Cart</span>
+            <span>${shopText("addToCart")}</span>
           </button>
         </div>
       `;
@@ -340,6 +462,7 @@
       }
 
       function closeModal() {
+        activeModalProductId = null;
         document.getElementById("productModal").classList.remove("open");
       }
 
@@ -350,7 +473,7 @@
         else cart.push({ id, qty: 1 });
         saveCart();
         updateCartBadge();
-        showToast("Added to cart!");
+        showToast(shopText("addedToCart"));
       }
 
       function updateCartBadge() {
@@ -381,7 +504,7 @@
         }
       }
 
-      function renderCartPage() {
+      function renderCartPageLegacy() {
         const itemsList = document.getElementById("cartItemsList");
         const summary = document.getElementById("orderSummary");
 
@@ -453,7 +576,7 @@
       function handleCheckout(e) {
         e.preventDefault();
         if (cart.length === 0) {
-          showToast("Cart is empty");
+          showToast(shopText("cartEmptyToast"));
           return;
         }
 
@@ -462,7 +585,7 @@
         const address = document.getElementById("address").value.trim();
 
         if (!fullName || !phone || !address) {
-          showToast("Please fill all fields");
+          showToast(shopText("fillAllFields"));
           return;
         }
 
@@ -482,6 +605,73 @@
         }, 2500);
       }
 
+      function renderCartPage() {
+        const itemsList = document.getElementById("cartItemsList");
+        const summary = document.getElementById("orderSummary");
+
+        if (!cart.length) {
+          itemsList.innerHTML = `<p style="text-align: center; opacity: 0.5; padding: 40px; font-size: 0.9rem;">${shopText("cartEmpty")}</p>`;
+          summary.innerHTML = "";
+          document.getElementById("summarySubtotal").textContent =
+            formatPrice(0);
+          document.getElementById("summaryTotal").textContent = formatPrice(0);
+          return;
+        }
+
+        let subtotal = 0;
+        itemsList.innerHTML = cart
+          .map((cartItem) => {
+            const product = products.find((item) => item.id === cartItem.id);
+            if (!product) return "";
+
+            const localized = localizeProduct(product);
+            const itemTotal = localized.price * cartItem.qty;
+            subtotal += itemTotal;
+
+            return `
+          <div style="display: flex; gap: 16px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--card-border);">
+            <div style="width: 100px; height: 100px; border-radius: 12px; background: var(--bg2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <img src="${localized.image}" alt="${localized.name}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;" onerror="console.error('Image failed to load:', this.src); this.style.display='none';">
+            </div>
+            <div style="flex: 1;">
+              <h4 style="font-weight: 700; margin-bottom: 4px; font-size: 0.95rem;">${localized.name}</h4>
+              <p style="opacity: 0.6; font-size: 0.85rem; margin-bottom: 8px;">${formatPrice(localized.price)} x ${cartItem.qty}</p>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <button onclick="updateQty(${localized.id}, ${cartItem.qty - 1})" style="width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--bg2); cursor: pointer; color: var(--text); font-weight: 600;">-</button>
+                <span style="min-width: 30px; text-align: center; font-weight: 600;">${cartItem.qty}</span>
+                <button onclick="updateQty(${localized.id}, ${cartItem.qty + 1})" style="width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--bg2); cursor: pointer; color: var(--text); font-weight: 600;">+</button>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <p style="font-weight: 700; font-size: 1rem; color: var(--primary); margin-bottom: 12px;">${formatPrice(itemTotal)}</p>
+              <button onclick="removeFromCart(${localized.id})" style="background: transparent; border: none; color: var(--accent); cursor: pointer; text-decoration: underline; font-size: 0.85rem; font-weight: 500;">${shopText("remove")}</button>
+            </div>
+          </div>
+        `;
+          })
+          .join("");
+
+        summary.innerHTML = cart
+          .map((cartItem) => {
+            const product = products.find((item) => item.id === cartItem.id);
+            if (!product) return "";
+
+            const localized = localizeProduct(product);
+            return `
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; opacity: 0.7;">
+            <span>${localized.name} x${cartItem.qty}</span>
+            <span>${formatPrice(localized.price * cartItem.qty)}</span>
+          </div>
+        `;
+          })
+          .join("");
+
+        document.getElementById("summarySubtotal").textContent =
+          formatPrice(subtotal);
+        document.getElementById("summaryTotal").textContent =
+          formatPrice(subtotal);
+      }
+
       // ===== EVENTS =====
       document.getElementById("filterBar").addEventListener("click", (e) => {
         if (!e.target.classList.contains("filter-pill")) return;
@@ -499,6 +689,19 @@
 
       document.getElementById("productModal").addEventListener("click", (e) => {
         if (e.target === e.currentTarget) closeModal();
+      });
+
+      document.addEventListener("languagechange", () => {
+        renderShopTrustLine();
+        renderProducts();
+
+        if (currentPage === "cart") {
+          renderCartPage();
+        }
+
+        if (activeModalProductId) {
+          openModal(activeModalProductId);
+        }
       });
 
       // ===== REVEAL OBSERVER =====
@@ -559,6 +762,7 @@
       updateCartBadge();
       showSkeletons();
       createThreads();
+      renderShopTrustLine();
       renderProducts();
 
       setTimeout(() => {
