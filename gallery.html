@@ -1,45 +1,62 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marghob Heray - Gallery</title>
-     <link rel="icon" href="Photos/logo/logo-tag.png" type="image/jpeg" sizes="16x16" />
-    <link rel="icon" href="Photos/logo/logo-tag.png" type="image/jpeg" sizes="32x32" />
-    <link rel="icon" href="Photos/logo/logo-tag.png" type="image/jpeg" sizes="64x64" />
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <script src="/_sdk/element_sdk.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="Css/gallery.css">
-   <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marghob Heray - Gallery</title>
+    <link
+      rel="icon"
+      href="Photos/logo/logo-tag.png"
+      type="image/jpeg"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      href="Photos/logo/logo-tag.png"
+      type="image/jpeg"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="Photos/logo/logo-tag.png"
+      type="image/jpeg"
+      sizes="64x64"
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Css/gallery.css" />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-  <script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        saffron: {
-          deep: '#f4c563',
-          rich: '#d4932d',
-          gold: '#d4932d',
-          cream: '#e8dcc8',
-          warm: '#c9b89c'
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              saffron: {
+                deep: "#f4c563",
+                rich: "#d4932d",
+                gold: "#d4932d",
+                cream: "#e8dcc8",
+                warm: "#c9b89c",
+              },
+            },
+          },
         },
-      }
-    }
-  }
-}
-</script>
- 
+      };
+    </script>
 
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body>
-   <!-- Navbar -->
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
     <nav class="saffron-nav fade-section" id="mainNav">
       <div class="nav-container">
         <!-- Logo -->
@@ -56,7 +73,7 @@ tailwind.config = {
         <!-- Desktop Menu -->
         <ul class="nav-menu">
           <li class="nav-item">
-            <a href="index.html" class="nav-link ">Home</a>
+            <a href="index.html" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
             <a href="about.html" class="nav-link">About</a>
@@ -93,7 +110,7 @@ tailwind.config = {
             <a href="contact.html" class="nav-link">Contact</a>
           </li>
         </ul>
-       
+
         <!-- RIGHT CONTROLS -->
         <div class="nav-controls">
           <div class="lang-group">
@@ -206,346 +223,493 @@ tailwind.config = {
         </button>
       </div>
     </div>
-  <div id="app" class="page-shell">
-   <main class="gallery-main">
-    <section class="hero-pattern relative w-full">
-     <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-      <div class="fade-up">
-       <span class="inline-block w-16 h-px bg-[#d4932d] mb-6"></span>
-       <h1 id="heroTitle" data-i18n="galleryHeroTitle" class="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-[#e8dcc8] tracking-wide">Our Gallery</h1>
-       <p id="heroSubtitle" data-i18n="galleryHeroSubtitle" class="mt-4 text-lg sm:text-xl text-[#c9b89c] font-light tracking-wider">From farm to final product.</p><span class="inline-block w-16 h-px bg-[#d4932d] mt-6"></span>
-      </div>
-      <div class="fade-up fade-up-d2 mt-8">
-       <a href="#gallery" data-i18n="galleryExplore" class="inline-flex items-center gap-2 text-[#d4932d]/80 hover:text-[#f4c563] transition-colors text-sm tracking-widest uppercase"> Explore <i data-lucide="chevron-down" style="width:16px;height:16px;"></i> </a>
-      </div>
-     </div>
-     <svg class="absolute bottom-0 left-0 w-full gallery-wave" style="height:60px;" viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none">
-      <path d="M0 60L1440 60L1440 20C1200 0 960 40 720 20C480 0 240 40 0 20Z" fill="currentColor" />
-     </svg>
-    </section>
-    <section id="gallery" class="gallery-intro max-w-4xl mx-auto px-6 pt-16 pb-10 text-center">
-     <div class="fade-up">
-      <span class="text-[#d4932d] text-sm tracking-[0.3em] uppercase font-semibold">Marghob Heray</span>
-      <h2 id="introHeading" data-i18n="galleryIntroHeading" class="font-display text-3xl sm:text-4xl text-[#f4c563] font-bold mt-3">The Journey of Saffron</h2>
-      <div class="w-12 h-0.5 bg-[#d4932d] mx-auto mt-4 mb-6"></div>
-      <p id="introText" data-i18n="galleryIntroText" class="text-[#c9b89c] leading-relaxed max-w-2xl mx-auto">From the fertile fields of Herat province, our saffron undergoes a meticulous journey — hand-picked at dawn, carefully dried, and precisely packaged to preserve its extraordinary aroma, flavor, and color for markets around the world.</p>
-     </div>
-    </section>
-    <section class="max-w-6xl mx-auto px-6 pb-8">
-     <div class="gallery-filter-wrap flex flex-wrap justify-center gap-2 sm:gap-4" id="filters">
-      <button class="filter-btn active px-4 py-2 text-sm font-semibold tracking-wide text-[#f4c563]" data-cat="all" data-i18n="galleryFilterAll">All</button> <button class="filter-btn px-4 py-2 text-sm font-medium text-gray-500 hover:text-[#f4c563]" data-cat="fields" data-i18n="galleryFilterFields">Saffron Fields</button> <button class="filter-btn px-4 py-2 text-sm font-medium text-gray-500 hover:text-[#f4c563]" data-cat="harvesting" data-i18n="galleryFilterHarvesting">Harvesting</button> <button class="filter-btn px-4 py-2 text-sm font-medium text-gray-500 hover:text-[#f4c563]" data-cat="processing" data-i18n="galleryFilterProcessing">Processing</button> <button class="filter-btn px-4 py-2 text-sm font-medium text-gray-500 hover:text-[#f4c563]" data-cat="packaging" data-i18n="galleryFilterPackaging">Packaging</button>
-     </div>
-    </section>
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
-     <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-     </div>
-     <div class="text-center mt-12 mb-16" id="loadMoreWrap">
-      <button id="loadMoreBtn" data-i18n="galleryLoadMore" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-[#d4932d] text-[#e8dcc8] rounded-full font-semibold text-sm tracking-wide hover:bg-[#b8460f] hover:border-[#b8460f] transition-all duration-300"> Load More <i data-lucide="arrow-down" style="width:16px;height:16px;"></i> </button>
-     </div>
-    </section>
-   </main>
-   <div id="lightbox" class="lightbox fixed inset-0 z-50 bg-black/90 flex items-center justify-center opacity-0 pointer-events-none" style="display:none;">
-    <button id="lbClose" class="absolute top-4 right-4 text-white/70 hover:text-white z-10 p-2"><i data-lucide="x" style="width:28px;height:28px;"></i></button> <button id="lbPrev" class="absolute left-2 sm:left-6 text-white/60 hover:text-white z-10 p-2 bg-white/10 rounded-full backdrop-blur-sm"><i data-lucide="chevron-left" style="width:28px;height:28px;"></i></button> <button id="lbNext" class="absolute right-2 sm:right-6 text-white/60 hover:text-white z-10 p-2 bg-white/10 rounded-full backdrop-blur-sm"><i data-lucide="chevron-right" style="width:28px;height:28px;"></i></button>
-    <div class="max-w-4xl w-full mx-4 text-center">
-     <div id="lbImageWrap" class="relative rounded-xl overflow-hidden bg-black/50" style="min-height:200px;"><img src="" alt="" loading="lazy" class="w-full h-auto rounded-xl">
-     </div>
-    </div>
-   </div>
-   <!-- footer -->
-    <footer
-      class="footer-wrap w-full h-full overflow-auto relative fade-section"
-      id="footer-root"
-    >
-      <!-- Decorative background threads -->
-      <svg
-        class="saffron-thread"
-        style="top: 10%; right: 5%; width: 120px"
-        viewbox="0 0 60 200"
-      >
-        <path
-          d="M30 0 Q35 50 25 100 Q15 150 30 200"
-          stroke="#d4a020"
-          fill="none"
-          stroke-width="1.5"
-        />
-      </svg>
-      <svg
-        class="saffron-thread"
-        style="bottom: 20%; left: 8%; width: 80px"
-        viewbox="0 0 60 200"
-      >
-        <path
-          d="M30 0 Q20 60 35 120 Q45 170 30 200"
-          stroke="#d4a020"
-          fill="none"
-          stroke-width="1.2"
-        />
-      </svg>
-      <div class="max-w-7xl mx-auto px-6 py-14 relative z-10">
-        <!-- Main Grid -->
-        <div
-          class="fade-section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12"
-        >
-          <!-- Brand -->
-          <div class="lg:col-span-1">
-            <div class="flex items-center gap-3 mb-4">
-              <div
-                class="rounded-full flex items-center justify-center"
-                style="min-width: 60px; height: 60px"
+    <div id="app" class="page-shell">
+      <main class="gallery-main">
+        <section class="hero-pattern relative w-full">
+          <div
+            class="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
+          >
+            <div class="fade-up">
+              <span class="inline-block w-16 h-px bg-[#d4932d] mb-6"></span>
+              <h1
+                id="heroTitle"
+                data-i18n="galleryHeroTitle"
+                class="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-[#e8dcc8] tracking-wide"
               >
-                <img
-                  class="footer-brand-logo"
-                  src="Photos/logo/logo-no-bc.png"
-                  alt="Zafran logo"
-                />
+                Our Gallery
+              </h1>
+              <p
+                id="heroSubtitle"
+                data-i18n="galleryHeroSubtitle"
+                class="mt-4 text-lg sm:text-xl text-[#c9b89c] font-light tracking-wider"
+              >
+                From farm to final product.
+              </p>
+              <span class="inline-block w-16 h-px bg-[#d4932d] mt-6"></span>
+            </div>
+            <div class="fade-up fade-up-d2 mt-8">
+              <a
+                href="#gallery"
+                data-i18n="galleryExplore"
+                class="inline-flex items-center gap-2 text-[#d4932d]/80 hover:text-[#f4c563] transition-colors text-sm tracking-widest uppercase"
+              >
+                Explore
+                <i
+                  data-lucide="chevron-down"
+                  style="width: 16px; height: 16px"
+                ></i>
+              </a>
+            </div>
+          </div>
+          <svg
+            class="absolute bottom-0 left-0 w-full gallery-wave"
+            style="height: 60px"
+            viewBox="0 0 1440 60"
+            fill="none"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0 60L1440 60L1440 20C1200 0 960 40 720 20C480 0 240 40 0 20Z"
+              fill="currentColor"
+            />
+          </svg>
+        </section>
+        <section
+          id="gallery"
+          class="gallery-intro max-w-4xl mx-auto px-6 pt-16 pb-10 text-center"
+        >
+          <div class="fade-up">
+            <span
+              class="text-[#d4932d] text-sm tracking-[0.3em] uppercase font-semibold"
+              >Marghob Heray</span
+            >
+            <h2
+              id="introHeading"
+              data-i18n="galleryIntroHeading"
+              class="font-display text-3xl sm:text-4xl text-[#f4c563] font-bold mt-3"
+            >
+              The Journey of Saffron
+            </h2>
+            <div class="w-12 h-0.5 bg-[#d4932d] mx-auto mt-4 mb-6"></div>
+            <p
+              id="introText"
+              data-i18n="galleryIntroText"
+              class="text-[#c9b89c] leading-relaxed max-w-2xl mx-auto"
+            >
+              From the fertile fields of Herat province, our saffron undergoes a
+              meticulous journey — hand-picked at dawn, carefully dried, and
+              precisely packaged to preserve its extraordinary aroma, flavor,
+              and color for markets around the world.
+            </p>
+          </div>
+        </section>
+        <section class="max-w-6xl mx-auto px-6 pb-8">
+          <div
+            class="gallery-filter-wrap flex flex-wrap justify-center gap-2 sm:gap-4"
+            id="filters"
+          >
+            <button
+              class="filter-btn active px-4 py-2 text-sm font-semibold tracking-wide text-[#f4c563]"
+              data-cat="all"
+              data-i18n="galleryFilterAll"
+            >
+              All
+            </button>
+            <button
+              class="filter-btn px-4 py-2 text-sm font-medium text-gray-500 hover:text-[#f4c563]"
+              data-cat="fields"
+              data-i18n="galleryFilterFields"
+            >
+              Saffron Fields
+            </button>
+            <button
+              class="filter-btn px-4 py-2 text-sm font-medium text-gray-500 hover:text-[#f4c563]"
+              data-cat="harvesting"
+              data-i18n="galleryFilterHarvesting"
+            >
+              Harvesting
+            </button>
+            <button
+              class="filter-btn px-4 py-2 text-sm font-medium text-gray-500 hover:text-[#f4c563]"
+              data-cat="processing"
+              data-i18n="galleryFilterProcessing"
+            >
+              Processing
+            </button>
+            <button
+              class="filter-btn px-4 py-2 text-sm font-medium text-gray-500 hover:text-[#f4c563]"
+              data-cat="packaging"
+              data-i18n="galleryFilterPackaging"
+            >
+              Packaging
+            </button>
+          </div>
+        </section>
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
+          <div
+            id="galleryGrid"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+          ></div>
+          <div class="text-center mt-12 mb-16" id="loadMoreWrap">
+            <button
+              id="loadMoreBtn"
+              data-i18n="galleryLoadMore"
+              class="inline-flex items-center gap-2 px-8 py-3 border-2 border-[#d4932d] text-[#e8dcc8] rounded-full font-semibold text-sm tracking-wide hover:bg-[#b8460f] hover:border-[#b8460f] transition-all duration-300"
+            >
+              Load More
+              <i data-lucide="arrow-down" style="width: 16px; height: 16px"></i>
+            </button>
+          </div>
+        </section>
+      </main>
+      <div
+        id="lightbox"
+        class="lightbox fixed inset-0 z-50 bg-black/90 flex items-center justify-center opacity-0 pointer-events-none"
+        style="display: none"
+      >
+        <button
+          id="lbClose"
+          class="absolute top-4 right-4 text-white/70 hover:text-white z-10 p-2"
+        >
+          <i data-lucide="x" style="width: 28px; height: 28px"></i>
+        </button>
+        <button
+          id="lbPrev"
+          class="absolute left-2 sm:left-6 text-white/60 hover:text-white z-10 p-2 bg-white/10 rounded-full backdrop-blur-sm"
+        >
+          <i data-lucide="chevron-left" style="width: 28px; height: 28px"></i>
+        </button>
+        <button
+          id="lbNext"
+          class="absolute right-2 sm:right-6 text-white/60 hover:text-white z-10 p-2 bg-white/10 rounded-full backdrop-blur-sm"
+        >
+          <i data-lucide="chevron-right" style="width: 28px; height: 28px"></i>
+        </button>
+        <div class="max-w-4xl w-full mx-4 text-center">
+          <div
+            id="lbImageWrap"
+            class="relative rounded-xl overflow-hidden bg-black/50"
+            style="min-height: 200px"
+          >
+            <img
+              src=""
+              alt=""
+              loading="lazy"
+              class="w-full h-auto rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- footer -->
+      <footer
+        class="footer-wrap w-full h-full overflow-auto relative fade-section"
+        id="footer-root"
+      >
+        <!-- Decorative background threads -->
+        <svg
+          class="saffron-thread"
+          style="top: 10%; right: 5%; width: 120px"
+          viewbox="0 0 60 200"
+        >
+          <path
+            d="M30 0 Q35 50 25 100 Q15 150 30 200"
+            stroke="#d4a020"
+            fill="none"
+            stroke-width="1.5"
+          />
+        </svg>
+        <svg
+          class="saffron-thread"
+          style="bottom: 20%; left: 8%; width: 80px"
+          viewbox="0 0 60 200"
+        >
+          <path
+            d="M30 0 Q20 60 35 120 Q45 170 30 200"
+            stroke="#d4a020"
+            fill="none"
+            stroke-width="1.2"
+          />
+        </svg>
+        <div class="max-w-7xl mx-auto px-6 py-14 relative z-10">
+          <!-- Main Grid -->
+          <div
+            class="fade-section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12"
+          >
+            <!-- Brand -->
+            <div class="lg:col-span-1">
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="rounded-full flex items-center justify-center"
+                  style="min-width: 60px; height: 60px"
+                >
+                  <img
+                    class="footer-brand-logo"
+                    src="Photos/logo/logo-no-bc.png"
+                    alt="Zafran logo"
+                  />
+                </div>
+                <h2
+                  class="brand-font text-2xl font-bold"
+                  style="color: #ffc13b"
+                  id="brand-name"
+                  data-i18n="footerBrandName"
+                >
+                  Merghob Saffron
+                </h2>
               </div>
-              <h2
-                class="brand-font text-2xl font-bold"
+              <p
+                class="text-sm leading-relaxed mb-5"
+                style="color: rgba(232, 220, 200, 0.65)"
+                id="tagline"
+                data-i18n="footerTagline"
+              >
+                Pure Afghan Saffron harvested with care, delivered with trust.
+                The essence of authenticity in every thread.
+              </p>
+              <div class="flex items-center gap-2">
+                <div class="glow-dot"></div>
+                <span
+                  class="text-xs tracking-widest uppercase"
+                  style="color: rgba(212, 160, 32, 0.6)"
+                  data-i18n="premiumQuality"
+                  >Premium Quality</span
+                >
+              </div>
+            </div>
+            <!-- Quick Links -->
+            <div>
+              <h3
+                class="brand-font text-lg font-semibold mb-5"
                 style="color: #ffc13b"
-                id="brand-name"
-                data-i18n="footerBrandName"
+                data-i18n="quickLinks"
               >
-                Merghob Saffron
-              </h2>
+                Quick Links
+              </h3>
+              <nav class="flex flex-col gap-3">
+                <a
+                  href="index.html"
+                  class="nav-link text-sm"
+                  onclick="event.preventDefault()"
+                  >Home</a
+                >
+                <a
+                  href="about.html"
+                  class="nav-link text-sm"
+                  onclick="event.preventDefault()"
+                  >About Us</a
+                >
+                <a
+                  href="service.html"
+                  class="nav-link text-sm"
+                  onclick="event.preventDefault()"
+                  >Services</a
+                >
+                <a
+                  href="gallery.html"
+                  class="nav-link text-sm"
+                  onclick="event.preventDefault()"
+                  >Gallery</a
+                >
+                <a
+                  href="contact.html"
+                  class="nav-link text-sm"
+                  onclick="event.preventDefault()"
+                  >Contact</a
+                >
+              </nav>
             </div>
-            <p
-              class="text-sm leading-relaxed mb-5"
-              style="color: rgba(232, 220, 200, 0.65)"
-              id="tagline"
-              data-i18n="footerTagline"
-            >
-              Pure Afghan Saffron harvested with care, delivered with trust. The
-              essence of authenticity in every thread.
-            </p>
-            <div class="flex items-center gap-2">
-              <div class="glow-dot"></div>
-              <span
-                class="text-xs tracking-widest uppercase"
-                style="color: rgba(212, 160, 32, 0.6)"
-                data-i18n="premiumQuality"
-                >Premium Quality</span
+            <!-- Contact -->
+            <div>
+              <h3
+                class="brand-font text-lg font-semibold mb-5"
+                style="color: #ffc13b"
+                data-i18n="getInTouch"
               >
+                Get in Touch
+              </h3>
+              <div class="flex flex-col gap-4">
+                <div class="flex items-start gap-3">
+                  <i
+                    class="fas fa-envelope"
+                    style="
+                      width: 18px;
+                      height: 18px;
+                      color: #d4a020;
+                      margin-top: 2px;
+                      flex-shrink: 0;
+                    "
+                  ></i>
+                  <span class="text-sm" style="color: #e8dcc8" id="email-text"
+                    >marghobheray@gmail.com</span
+                  >
+                </div>
+                <div class="flex items-start gap-3">
+                  <i
+                    class="fas fa-phone"
+                    style="
+                      width: 18px;
+                      height: 18px;
+                      color: #d4a020;
+                      margin-top: 2px;
+                      flex-shrink: 0;
+                    "
+                  ></i>
+                  <span class="text-sm" style="color: #e8dcc8" id="phone-text"
+                    >+93 795 808 155</span
+                  >
+                </div>
+                <div class="flex items-start gap-3">
+                  <i
+                    class="fas fa-map-marker-alt"
+                    style="
+                      width: 18px;
+                      height: 18px;
+                      color: #d4a020;
+                      margin-top: 2px;
+                      flex-shrink: 0;
+                    "
+                  ></i>
+                  <span
+                    class="text-sm"
+                    style="color: #e8dcc8"
+                    id="location-text"
+                    data-i18n="locationText"
+                    >Herat, Afghanistan</span
+                  >
+                </div>
+              </div>
+              <!-- Social -->
+              <div class="flex gap-3 mt-6 items-center">
+                <a
+                  href="https://instagram.com/marghob_heray_co"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="social-icon">
+                    <i
+                      class="fab fa-instagram text-center align-middle"
+                      style="width: 18px; height: 18px"
+                    ></i>
+                  </div>
+                </a>
+                <a
+                  href="https://facebook.com/marghobherayco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="social-icon text-center align-middle">
+                    <i
+                      class="fab fa-facebook-f"
+                      style="width: 18px; height: 18px"
+                    ></i>
+                  </div>
+                </a>
+                <a
+                  href="https://wa.me/message/567LQQQKVJ7UB1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="social-icon text-center align-middle">
+                    <i
+                      class="fab fa-whatsapp"
+                      style="width: 18px; height: 18px"
+                    ></i>
+                  </div>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/marghob-heray-agricultural-and-livestock-co/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="social-icon text-center align-middle">
+                    <i
+                      class="fab fa-linkedin"
+                      style="width: 18px; height: 18px"
+                    ></i>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- Newsletter -->
+            <div>
+              <h3
+                class="brand-font text-lg font-semibold mb-5"
+                style="color: #ffc13b"
+                data-i18n="stayConnected"
+              >
+                Stay Connected
+              </h3>
+              <p
+                class="text-sm mb-4"
+                style="color: rgba(232, 220, 200, 0.6)"
+                data-i18n="newsletterText"
+              >
+                Get updates on new harvests, exclusive offers, and saffron
+                stories.
+              </p>
+              <form
+                id="subscribe-form"
+                class="flex"
+                onsubmit="event.preventDefault()"
+              >
+                <input
+                  type="email"
+                  class="subscribe-input"
+                  data-i18n="newsletterPlaceholder"
+                  placeholder="Your email address"
+                  aria-label="Email for newsletter"
+                />
+                <button
+                  type="submit"
+                  class="subscribe-btn"
+                  id="sub-btn"
+                  data-i18n="subscribe"
+                >
+                  Subscribe
+                </button>
+              </form>
+              <p
+                class="text-xs mt-3 hidden"
+                id="sub-success"
+                style="color: #d4a020"
+                data-i18n="subscribeSuccess"
+              >
+                Thank you for subscribing!
+              </p>
             </div>
           </div>
-          <!-- Quick Links -->
-          <div>
-            <h3
-              class="brand-font text-lg font-semibold mb-5"
-              style="color: #ffc13b"
-              data-i18n="quickLinks"
+          <!-- Divider -->
+          <div class="divider-line mb-6 fade-section"></div>
+          <!-- Bottom Bar -->
+          <div
+            class="fade-section flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
+            style="color: rgba(232, 220, 200, 0.4)"
+          >
+            <span id="copyright-text" data-i18n="copyrightText"
+              >© 2025 Zafran. All rights reserved.</span
             >
-              Quick Links
-            </h3>
-            <nav class="flex flex-col gap-3">
+            <div class="flex gap-5">
               <a
-                href="index.html"
-                class="nav-link text-sm"
+                href="#"
+                class="nav-link text-xs"
                 onclick="event.preventDefault()"
-                >Home</a
+                data-i18n="privacyPolicy"
+                >Privacy Policy</a
               >
               <a
-                href="about.html"
-                class="nav-link text-sm"
+                href="#"
+                class="nav-link text-xs"
                 onclick="event.preventDefault()"
-                >About Us</a
+                data-i18n="termsOfService"
+                >Terms of Service</a
               >
-              <a
-                href="service.html"
-                class="nav-link text-sm"
-                onclick="event.preventDefault()"
-                >Services</a
-              >
-              <a
-                href="gallery.html"
-                class="nav-link text-sm"
-                onclick="event.preventDefault()"
-                >Gallery</a
-              >
-              <a
-                href="contact.html"
-                class="nav-link text-sm"
-                onclick="event.preventDefault()"
-                >Contact</a
-              >
-            </nav>
-          </div>
-          <!-- Contact -->
-          <div>
-            <h3
-              class="brand-font text-lg font-semibold mb-5"
-              style="color: #ffc13b"
-              data-i18n="getInTouch"
-            >
-              Get in Touch
-            </h3>
-            <div class="flex flex-col gap-4">
-              <div class="flex items-start gap-3">
-                <i
-                  class="fas fa-envelope"
-                  style="
-                    width: 18px;
-                    height: 18px;
-                    color: #d4a020;
-                    margin-top: 2px;
-                    flex-shrink: 0;
-                  "
-                ></i>
-                <span class="text-sm" style="color: #e8dcc8" id="email-text"
-                  >marghobheray@gmail.com</span
-                >
-              </div>
-              <div class="flex items-start gap-3">
-                <i
-                  class="fas fa-phone"
-                  style="
-                    width: 18px;
-                    height: 18px;
-                    color: #d4a020;
-                    margin-top: 2px;
-                    flex-shrink: 0;
-                  "
-                ></i>
-                <span class="text-sm" style="color: #e8dcc8" id="phone-text"
-                  >+93 795 808 155</span
-                >
-              </div>
-              <div class="flex items-start gap-3">
-                <i
-                  class="fas fa-map-marker-alt"
-                  style="
-                    width: 18px;
-                    height: 18px;
-                    color: #d4a020;
-                    margin-top: 2px;
-                    flex-shrink: 0;
-                  "
-                ></i>
-                <span class="text-sm" style="color: #e8dcc8" id="location-text" data-i18n="locationText"
-                  >Herat, Afghanistan</span
-                >
-              </div>
             </div>
-            <!-- Social -->
-            <div class="flex gap-3 mt-6 items-center">
-              <a
-                href="https://instagram.com/marghob_heray_co"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div class="social-icon">
-                  <i
-                    class="fab fa-instagram text-center align-middle"
-                    style="width: 18px; height: 18px"
-                  ></i>
-                </div>
-              </a>
-              <a
-                href="https://facebook.com/marghobherayco"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div class="social-icon text-center align-middle">
-                  <i
-                    class="fab fa-facebook-f"
-                    style="width: 18px; height: 18px"
-                  ></i>
-                </div>
-              </a>
-              <a
-                href="https://wa.me/message/567LQQQKVJ7UB1"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div class="social-icon text-center align-middle">
-                  <i
-                    class="fab fa-whatsapp"
-                    style="width: 18px; height: 18px"
-                  ></i>
-                </div>
-              </a>
-              <a
-                href="https://www.linkedin.com/company/marghob-heray-agricultural-and-livestock-co/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div class="social-icon text-center align-middle">
-                  <i
-                    class="fab fa-linkedin"
-                    style="width: 18px; height: 18px"
-                  ></i>
-                </div>
-              </a>
-            </div>
-          </div>
-          <!-- Newsletter -->
-          <div>
-            <h3
-              class="brand-font text-lg font-semibold mb-5"
-              style="color: #ffc13b"
-              data-i18n="stayConnected"
-            >
-              Stay Connected
-            </h3>
-            <p class="text-sm mb-4" style="color: rgba(232, 220, 200, 0.6)" data-i18n="newsletterText">
-              Get updates on new harvests, exclusive offers, and saffron
-              stories.
-            </p>
-            <form
-              id="subscribe-form"
-              class="flex"
-              onsubmit="event.preventDefault()"
-            >
-              <input
-                type="email"
-                class="subscribe-input"
-                data-i18n="newsletterPlaceholder"
-                placeholder="Your email address"
-                aria-label="Email for newsletter"
-              />
-              <button type="submit" class="subscribe-btn" id="sub-btn" data-i18n="subscribe">
-                Subscribe
-              </button>
-            </form>
-            <p
-              class="text-xs mt-3 hidden"
-              id="sub-success"
-              style="color: #d4a020"
-              data-i18n="subscribeSuccess"
-            >
-              Thank you for subscribing!
-            </p>
           </div>
         </div>
-        <!-- Divider -->
-        <div class="divider-line mb-6 fade-section"></div>
-        <!-- Bottom Bar -->
-        <div
-          class="fade-section flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
-          style="color: rgba(232, 220, 200, 0.4)"
-        >
-          <span id="copyright-text" data-i18n="copyrightText">Â© 2025 Zafran. All rights reserved.</span>
-          <div class="flex gap-5">
-            <a
-              href="#"
-              class="nav-link text-xs"
-              onclick="event.preventDefault()"
-              data-i18n="privacyPolicy"
-              >Privacy Policy</a
-            >
-            <a
-              href="#"
-              class="nav-link text-xs"
-              onclick="event.preventDefault()"
-              data-i18n="termsOfService"
-              >Terms of Service</a
-            >
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
-  <script src="javascript.js"></script>
+      </footer>
+    </div>
+    <script src="javascript.js"></script>
 
-<script src="JavaScript/gallery.js"></script>
- </body>
+    <script src="JavaScript/gallery.js"></script>
+  </body>
 </html>
