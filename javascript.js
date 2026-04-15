@@ -996,10 +996,17 @@ const TRANSLATIONS = {
   },
 };
 
+function getDirectTextContent(el) {
+  return Array.from(el.childNodes)
+    .filter((node) => node.nodeType === Node.TEXT_NODE)
+    .map((node) => node.textContent || "")
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function translateElement(el, lang) {
-  const textContent = el.textContent
-    ? el.textContent.replace(/\s+/g, " ").trim()
-    : "";
+  const textContent = getDirectTextContent(el);
   const derivedKey = TRANSLATION_KEYS[textContent];
   const key = el.dataset.i18n || el.dataset.translateKey || derivedKey;
 

@@ -37,7 +37,7 @@ h6 {
 }
 
 html[dir="rtl"] body {
-  font-family: "Vazirmatn", sans-serif;
+  font-family: "Noto Naskh Arabic", "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
 }
 
 /* hero */

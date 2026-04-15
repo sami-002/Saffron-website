@@ -16,6 +16,17 @@ body {
   line-height: 1.6;
 }
 
+html[dir="rtl"] body,
+html[dir="rtl"] .nav-link,
+html[dir="rtl"] .dropdown-toggle,
+html[dir="rtl"] .dropdown-item,
+html[dir="rtl"] .mobile-link,
+html[dir="rtl"] .mobile-submenu-link,
+html[dir="rtl"] .lang-btn,
+html[dir="rtl"] .brand-tagline {
+  font-family: "Noto Naskh Arabic", "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+}
+
 .container {
   width: min(100% - 2rem, 1200px);
   margin: 0 auto;

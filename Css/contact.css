@@ -17,7 +17,7 @@
       overflow-x: hidden;
       line-height: 1.6;
     }
-    html[dir="rtl"] body { font-family: 'Vazirmatn', sans-serif; }
+    html[dir="rtl"] body { font-family: "Noto Naskh Arabic", "Vazirmatn", "Segoe UI", Tahoma, sans-serif; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; color: #f5e6d0; }
     .lead, .form-label, .accordion-body, p, li { color: var(--text-muted); }
    
