@@ -1076,6 +1076,10 @@ body {
   width: 100%;
 }
 
+html[dir="rtl"] #footer-root form.flex {
+  direction: rtl;
+}
+
 @media (min-width: 768px) {
   #footer-root .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1195,6 +1199,17 @@ body {
 }
 .subscribe-input:focus {
   border-color: rgba(255, 193, 59, 0.4);
+}
+
+html[dir="rtl"] .subscribe-input {
+  border-right: 1px solid rgba(255, 193, 59, 0.15);
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  text-align: right;
+}
+
+html[dir="rtl"] .subscribe-btn {
+  border-radius: 10px 0 0 10px;
 }
 
 /* Glow accent */

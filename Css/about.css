@@ -240,6 +240,34 @@
     .timeline-right .card-container {
       flex-direction: row;
     }
+
+    html[dir="rtl"] .timeline-left {
+      padding-right: 0;
+      padding-left: 40px;
+    }
+
+    html[dir="rtl"] .timeline-right {
+      padding-left: 0;
+      padding-right: 40px;
+    }
+
+    html[dir="rtl"] .timeline-line-left {
+      right: auto;
+      left: -2px;
+    }
+
+    html[dir="rtl"] .timeline-line-right {
+      left: auto;
+      right: -2px;
+    }
+
+    html[dir="rtl"] .timeline-left .card-container {
+      flex-direction: row;
+    }
+
+    html[dir="rtl"] .timeline-right .card-container {
+      flex-direction: row-reverse;
+    }
     
     /* Stats grid */
     .stats-grid {
@@ -367,6 +395,21 @@
         background: linear-gradient(180deg, transparent, #d4af37 5%, #f59e0b 50%, #d4af37 95%, transparent);
         box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
       }
+
+      html[dir="rtl"] .timeline-right {
+        padding-left: 0;
+        padding-right: 40px;
+      }
+      
+      html[dir="rtl"] .timeline-left {
+        padding-right: 0;
+        padding-left: 40px;
+      }
+
+      html[dir="rtl"] .mobile-timeline-center {
+        left: auto;
+        right: 8px;
+      }
     }
     
     @media (max-width: 768px) {
@@ -431,4 +474,64 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #f4c563, #d4772c);
+}
+
+/* Footer newsletter form */
+#footer-root form.flex {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+html[dir="rtl"] #footer-root form.flex {
+  direction: rtl;
+}
+
+.subscribe-btn {
+  background: linear-gradient(135deg, #d4a020, #e8b530);
+  color: #1a1209;
+  font-weight: 600;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  padding: 12px 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.subscribe-btn:hover {
+  background: linear-gradient(135deg, #e8b530, #ffc13b);
+  box-shadow: 0 0 20px rgba(212, 160, 32, 0.35);
+}
+
+.subscribe-input {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 193, 59, 0.15);
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  color: #e8dcc8;
+  padding: 12px 16px;
+  outline: none;
+  flex: 1;
+  min-width: 0;
+  transition: border-color 0.3s;
+}
+
+.subscribe-input::placeholder {
+  color: rgba(232, 220, 200, 0.4);
+}
+
+.subscribe-input:focus {
+  border-color: rgba(255, 193, 59, 0.4);
+}
+
+html[dir="rtl"] .subscribe-input {
+  border-right: 1px solid rgba(255, 193, 59, 0.15);
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  text-align: right;
+}
+
+html[dir="rtl"] .subscribe-btn {
+  border-radius: 10px 0 0 10px;
 }

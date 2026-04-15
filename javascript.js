@@ -5,6 +5,7 @@
 const TRANSLATION_KEYS = {
   Home: "home",
   About: "about",
+  "About Us": "aboutUs",
   Service: "services",
   Services: "services",
   "Our Saffron": "ourSaffron",
