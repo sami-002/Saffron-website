@@ -1,0 +1,358 @@
+:root {
+  --preloader-bg:
+    radial-gradient(circle at top, rgba(212, 147, 45, 0.1), transparent 26%),
+    linear-gradient(160deg, #120d09 0%, #21160f 54%, #120d09 100%);
+  --preloader-surface: rgba(29, 21, 16, 0.8);
+  --preloader-surface-strong: rgba(38, 27, 20, 0.88);
+  --preloader-border: rgba(212, 147, 45, 0.1);
+  --preloader-line: rgba(232, 220, 200, 0.06);
+  --preloader-line-strong: rgba(212, 147, 45, 0.13);
+  --preloader-highlight: rgba(244, 197, 99, 0.18);
+  --preloader-text: rgba(232, 220, 200, 0.82);
+  --preloader-muted: rgba(232, 220, 200, 0.5);
+}
+
+body.preload-lock {
+  overflow: hidden;
+}
+
+.page-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  overflow: auto;
+  padding: 18px;
+  background: var(--preloader-bg);
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.55s ease,
+    visibility 0.55s ease;
+}
+
+.page-preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-shell {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 18px;
+  border-radius: 24px;
+  border: 1px solid var(--preloader-border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0)),
+    var(--preloader-surface);
+  box-shadow:
+    0 18px 48px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.preloader-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.preloader-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.preloader-brand-mark {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  flex-shrink: 0;
+}
+
+.preloader-header-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 160px;
+}
+
+.preloader-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.preloader-chip {
+  width: 72px;
+  height: 36px;
+  border-radius: 999px;
+}
+
+.preloader-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.preloader-hero-copy,
+.preloader-hero-visual,
+.preloader-card {
+  border-radius: 18px;
+  border: 1px solid rgba(244, 197, 99, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.preloader-hero-copy {
+  padding: 20px;
+}
+
+.preloader-hero-visual {
+  min-height: 190px;
+}
+
+.preloader-button-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.preloader-button {
+  width: 116px;
+  height: 38px;
+  border-radius: 999px;
+}
+
+.preloader-button-alt {
+  width: 138px;
+}
+
+.preloader-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.preloader-card {
+  padding: 14px;
+}
+
+.preloader-card-media {
+  width: 100%;
+  height: 112px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+.preloader-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preloader-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: var(--preloader-surface-strong);
+  border: 1px solid rgba(244, 197, 99, 0.06);
+}
+
+.preloader-footer-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.preloader-footer-badges {
+  display: flex;
+  gap: 8px;
+}
+
+.preloader-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+}
+
+.preloader-status {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--preloader-muted);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.preloader-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f4c563;
+  box-shadow: 0 0 18px rgba(244, 197, 99, 0.6);
+  animation: preloader-pulse 1.6s ease-in-out infinite;
+}
+
+.preloader-status-text {
+  color: var(--preloader-text);
+}
+
+.preloader-bar,
+.preloader-brand-mark,
+.preloader-chip,
+.preloader-hero-visual,
+.preloader-button,
+.preloader-card-media,
+.preloader-badge {
+  background:
+    linear-gradient(
+      90deg,
+      var(--preloader-line) 0%,
+      var(--preloader-line-strong) 45%,
+      var(--preloader-highlight) 50%,
+      var(--preloader-line-strong) 55%,
+      var(--preloader-line) 100%
+    );
+  background-size: 220% 100%;
+  animation: preloader-shimmer 1.65s linear infinite;
+}
+
+.preloader-bar {
+  height: 11px;
+  border-radius: 999px;
+}
+
+.preloader-bar-xs {
+  width: 96px;
+}
+
+.preloader-bar-sm {
+  width: 116px;
+}
+
+.preloader-bar-md {
+  width: 180px;
+  max-width: 100%;
+}
+
+.preloader-bar-lg {
+  width: 88%;
+}
+
+.preloader-bar-xl {
+  width: 100%;
+  height: 14px;
+}
+
+.preloader-bar-card-title {
+  width: 56%;
+}
+
+.preloader-bar-card-line {
+  width: 100%;
+}
+
+.preloader-bar-card-line-short {
+  width: 72%;
+}
+
+.preloader-bar-footer {
+  width: 180px;
+  max-width: 100%;
+}
+
+.preloader-bar-footer-short {
+  width: 120px;
+  max-width: 100%;
+}
+
+@keyframes preloader-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes preloader-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 920px) {
+  .preloader-hero,
+  .preloader-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preloader-hero-visual {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-preloader {
+    padding: 12px;
+  }
+
+  .preloader-shell {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .preloader-header,
+  .preloader-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .preloader-header-actions,
+  .preloader-footer-badges,
+  .preloader-button-row {
+    width: 100%;
+  }
+
+  .preloader-chip,
+  .preloader-button {
+    flex: 1;
+    width: auto;
+  }
+
+  .preloader-hero-copy {
+    padding: 16px;
+  }
+
+  .preloader-card-media {
+    height: 96px;
+  }
+
+  .preloader-badge {
+    flex: 1;
+    width: auto;
+  }
+}

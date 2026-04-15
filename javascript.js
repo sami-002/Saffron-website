@@ -1167,6 +1167,44 @@ function toggleMobileSubmenu(event) {
     : "";
 }
 
+(function initPagePreloader() {
+  const preloader = document.getElementById("pagePreloader");
+  if (!preloader) return;
+
+  document.body.classList.add("preload-lock");
+
+  let hasHidden = false;
+
+  function hidePreloader() {
+    if (hasHidden) return;
+    hasHidden = true;
+
+    preloader.classList.add("is-hidden");
+    document.body.classList.remove("preload-lock");
+
+    setTimeout(() => {
+      if (preloader.parentNode) {
+        preloader.parentNode.removeChild(preloader);
+      }
+    }, 650);
+  }
+
+  if (document.readyState === "complete") {
+    requestAnimationFrame(hidePreloader);
+    return;
+  }
+
+  window.addEventListener(
+    "load",
+    () => {
+      setTimeout(hidePreloader, 180);
+    },
+    { once: true },
+  );
+
+  setTimeout(hidePreloader, 3200);
+})();
+
 (function initNavbar() {
   const mainNav = document.getElementById("mainNav");
 
