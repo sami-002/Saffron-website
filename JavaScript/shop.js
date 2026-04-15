@@ -13,7 +13,7 @@
           weight: "1g",
           color1: "#8B1A1A",
           color2: "#C8963E",
-          image: "photos/shop/pho1.jpg",
+          image: "Photos/shop/pho1.jpg",
         },
         {
           id: 2,
@@ -26,7 +26,7 @@
           weight: "1g",
           color1: "#A02020",
           color2: "#D4A853",
-          image: "photos/shop/pho2.jpg",
+          image: "Photos/shop/pho2.jpg",
         },
 
         // Negin Standard
@@ -41,7 +41,7 @@
           weight: "1g",
           color1: "#B82828",
           color2: "#D4A853",
-          image: "photos/shop/pho3.jpg",
+          image: "Photos/shop/pho3.jpg",
         },
         {
           id: 4,
@@ -54,7 +54,7 @@
           weight: "5g",
           color1: "#8B1A1A",
           color2: "#C8963E",
-          image: "photos/shop/pho4.jpg",
+          image: "Photos/shop/pho4.jpg",
         },
 
         // Pushal Grade
@@ -69,7 +69,7 @@
           weight: "1g",
           color1: "#9B2C2C",
           color2: "#D4A853",
-          image: "photos/shop/pho5.jpg",
+          image: "Photos/shop/pho5.jpg",
         },
         {
           id: 6,
@@ -82,7 +82,7 @@
           weight: "2.5kg",
           color1: "#8B1A1A",
           color2: "#C8963E",
-          image: "photos/shop/pho6.jpg",
+          image: "Photos/shop/pho6.jpg",
         },
 
         // Pushal grade A
@@ -97,7 +97,7 @@
           weight: "1g",
           color1: "#C41E3A",
           color2: "#8B1A1A",
-          image: "photos/shop/pho7.jpg",
+          image: "Photos/shop/pho7.jpg",
         },
         {
           id: 8,
@@ -110,7 +110,7 @@
           weight: "500g",
           color1: "#8B1A1A",
           color2: "#D4A853",
-          image: "photos/shop/pho8.jpg",
+          image: "Photos/shop/pho8.jpg",
         },
 
         // pushal grade B
@@ -125,7 +125,7 @@
           weight: "2g",
           color1: "#D4A853",
           color2: "#8B5E1A",
-          image: "photos/shop/pho9.jpg",
+          image: "Photos/shop/pho9.jpg",
         },
         {
           id: 10,
@@ -138,7 +138,7 @@
           weight: "30g",
           color1: "#A02020",
           color2: "#C8963E",
-          image: "photos/shop/pho10.jpg",
+          image: "Photos/shop/pho10.jpg",
         },
       ];
 

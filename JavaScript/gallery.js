@@ -1,18 +1,18 @@
   
 const galleryData = [
-  { id:1, cat:'fields', title:'Purple Fields at Dawn', img:'photos/Gallery/fields/pho1.jpg', desc:'Rows of crocus flowers stretch across the Herat highlands' },
-  { id:2, cat:'fields', title:'Mountain Terraces', img:'photos/Gallery/fields/pho2.jpg', desc:'Terraced saffron fields against the Hindu Kush backdrop' },
-  { id:3, cat:'harvesting', title:'Hand-Picking at Sunrise', img:'photos/Gallery/harvesting/pho1.jpg', desc:'Workers carefully harvest each delicate flower by hand' },
-  { id:4, cat:'harvesting', title:'Morning Harvest Baskets', img:'photos/Gallery/harvesting/pho2.jpg', desc:'Woven baskets overflow with freshly picked crocus blooms' },
-  { id:5, cat:'processing', title:'Separating the Stigma', img:'photos/Gallery/processing/pho1.jpg', desc:'Skilled hands separate the precious red stigma threads' },
-  { id:6, cat:'processing', title:'Traditional Drying', img:'photos/Gallery/processing/pho2.jpg', desc:'Saffron threads gently dried using time-honored methods' },
-  { id:7, cat:'packaging', title:'Premium Glass Jars', img:'photos/Gallery/packaging/pho1.jpg', desc:'Each jar carefully filled and sealed for freshness' },
-  { id:8, cat:'packaging', title:'Gift Box Collection', img:'photos/Gallery/packaging/pho2.jpg', desc:'Elegant presentation boxes for export markets' },
-  { id:11, cat:'fields', title:'Bloom Season Panorama', img:'photos/Gallery/fields/pho3.jpg', desc:'A sea of purple during peak flowering season' },
-  { id:12, cat:'harvesting', title:'Community Harvest Day', img:'photos/Gallery/harvesting/pho3.jpg', desc:'The whole village joins for the annual harvest' },
-  { id:13, cat:'processing', title:'Quality Inspection', img:'photos/Gallery/processing/pho3.jpg', desc:'Every batch tested for color, aroma, and purity' },
-  { id:15, cat:'packaging', title:'Export Ready Tins', img:'photos/Gallery/packaging/pho3.jpg', desc:'Hermetically sealed tins for international shipping' },
-  { id:16, cat:'fields', title:'Irrigation Channels', img:'photos/Gallery/fields/pho4.jpg', desc:'Ancient water systems feeding the saffron beds' },
+  { id:1, cat:'fields', title:'Purple Fields at Dawn', img:'Photos/Gallery/fields/pho1.jpg', desc:'Rows of crocus flowers stretch across the Herat highlands' },
+  { id:2, cat:'fields', title:'Mountain Terraces', img:'Photos/Gallery/fields/pho2.jpg', desc:'Terraced saffron fields against the Hindu Kush backdrop' },
+  { id:3, cat:'harvesting', title:'Hand-Picking at Sunrise', img:'Photos/Gallery/harvesting/pho1.jpg', desc:'Workers carefully harvest each delicate flower by hand' },
+  { id:4, cat:'harvesting', title:'Morning Harvest Baskets', img:'Photos/Gallery/harvesting/pho2.jpg', desc:'Woven baskets overflow with freshly picked crocus blooms' },
+  { id:5, cat:'processing', title:'Separating the Stigma', img:'Photos/Gallery/processing/pho1.jpg', desc:'Skilled hands separate the precious red stigma threads' },
+  { id:6, cat:'processing', title:'Traditional Drying', img:'Photos/Gallery/processing/pho2.jpg', desc:'Saffron threads gently dried using time-honored methods' },
+  { id:7, cat:'packaging', title:'Premium Glass Jars', img:'Photos/Gallery/packaging/pho1.jpg', desc:'Each jar carefully filled and sealed for freshness' },
+  { id:8, cat:'packaging', title:'Gift Box Collection', img:'Photos/Gallery/packaging/pho2.jpg', desc:'Elegant presentation boxes for export markets' },
+  { id:11, cat:'fields', title:'Bloom Season Panorama', img:'Photos/Gallery/fields/pho3.jpg', desc:'A sea of purple during peak flowering season' },
+  { id:12, cat:'harvesting', title:'Community Harvest Day', img:'Photos/Gallery/harvesting/pho3.jpg', desc:'The whole village joins for the annual harvest' },
+  { id:13, cat:'processing', title:'Quality Inspection', img:'Photos/Gallery/processing/pho3.jpg', desc:'Every batch tested for color, aroma, and purity' },
+  { id:15, cat:'packaging', title:'Export Ready Tins', img:'Photos/Gallery/packaging/pho3.jpg', desc:'Hermetically sealed tins for international shipping' },
+  { id:16, cat:'fields', title:'Irrigation Channels', img:'Photos/Gallery/fields/pho4.jpg', desc:'Ancient water systems feeding the saffron beds' },
 ];
 
 let currentCat = 'all';
