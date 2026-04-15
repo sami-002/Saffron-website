@@ -1133,14 +1133,30 @@ function toggleMobileMenu() {
 function closeMobileMenu() {
   const overlay = document.getElementById("mobileOverlay");
   const hamburger = document.getElementById("hamburgerBtn");
+  const submenu = document.getElementById("mobileSubmenu");
+  const chevron = document.getElementById("mobileChevron");
   if (!overlay || !hamburger) return;
 
   overlay.classList.remove("open");
   hamburger.classList.remove("active");
   document.body.style.overflow = "";
+
+  if (submenu) submenu.classList.remove("open");
+  if (chevron) chevron.style.transform = "";
 }
 
-function toggleMobileSubmenu() {
+function handleMobileOverlayClick(event) {
+  if (event.target === event.currentTarget) {
+    closeMobileMenu();
+  }
+}
+
+function toggleMobileSubmenu(event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
   const submenu = document.getElementById("mobileSubmenu");
   const chevron = document.getElementById("mobileChevron");
   if (!submenu || !chevron) return;

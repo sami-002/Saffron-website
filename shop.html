@@ -162,7 +162,7 @@
       <div
         class="mobile-overlay"
         id="mobileOverlay"
-        onclick="closeMobileMenu()"
+        onclick="handleMobileOverlayClick(event)"
       >
         <div class="mobile-nav-item">
           <a href="index.html" class="mobile-link" onclick="closeMobileMenu()"
@@ -188,7 +188,11 @@
           >
         </div>
         <div class="mobile-nav-item">
-          <button class="mobile-link" onclick="toggleMobileSubmenu()">
+          <button
+            type="button"
+            class="mobile-link"
+            onclick="toggleMobileSubmenu(event)"
+          >
             Pages
             <svg
               style="

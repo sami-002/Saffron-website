@@ -243,10 +243,26 @@ function toggleMobileMenu() {
 function closeMobileMenu() {
   document.getElementById("mobileOverlay").classList.remove("open");
   document.getElementById("hamburgerBtn").classList.remove("active");
+  const submenu = document.getElementById("mobileSubmenu");
+  const chevron = document.getElementById("mobileChevron");
   document.body.style.overflow = "";
+
+  if (submenu) submenu.classList.remove("open");
+  if (chevron) chevron.style.transform = "";
 }
 
-function toggleMobileSubmenu() {
+function handleMobileOverlayClick(event) {
+  if (event.target === event.currentTarget) {
+    closeMobileMenu();
+  }
+}
+
+function toggleMobileSubmenu(event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
   const submenu = document.getElementById("mobileSubmenu");
   const chevron = document.getElementById("mobileChevron");
   submenu.classList.toggle("open");

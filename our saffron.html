@@ -110,7 +110,11 @@
       </div>
     </nav>
     <!-- Mobile Menu Overlay -->
-    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()">
+    <div
+      class="mobile-overlay"
+      id="mobileOverlay"
+      onclick="handleMobileOverlayClick(event)"
+    >
       <div class="mobile-nav-item">
         <a href="index.html" class="mobile-link" onclick="closeMobileMenu()"
           >Home</a
@@ -135,7 +139,11 @@
         >
       </div>
       <div class="mobile-nav-item">
-        <button class="mobile-link" onclick="toggleMobileSubmenu()">
+        <button
+          type="button"
+          class="mobile-link"
+          onclick="toggleMobileSubmenu(event)"
+        >
           Pages
           <svg
             style="
@@ -185,15 +193,6 @@
         <a href="contact.html" class="mobile-link" onclick="closeMobileMenu()"
           >Contact</a
         >
-      </div>
-      <div class="mobile-cta-section">
-        <button
-          class="premium-btn"
-          id="ctaBtnMobile"
-          onclick="closeMobileMenu()"
-        >
-          Explore Products
-        </button>
       </div>
     </div>
      <!-- Hero Section -->
